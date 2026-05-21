@@ -112,7 +112,7 @@
 /* MANIFESTO */
 #manifesto {
   background: var(--ink);
-  padding: 140px 56px 200px;
+  padding: 140px 0 200px;
   position: relative;
   overflow: visible;
   border-top: 1px solid rgba(200,167,117,0.07);
@@ -132,6 +132,7 @@
 .manifesto-inner {
   max-width: 1100px;
   margin: 0 auto;
+  padding: 0 56px;
   display: grid;
   grid-template-columns: 180px 1fr;
   gap: 80px;
@@ -169,18 +170,18 @@
 /* LÍNEAS PREVIEW */
 #lineas-preview {
   background: transparent;
-  padding: 100px 56px 120px;
+  padding: 100px 0 120px;
   position: relative;
   overflow: hidden;
 }
 .lineas-header {
   max-width: 1200px;
   margin: 0 auto 72px;
+  padding: 0 56px 40px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 40px;
-  padding-bottom: 40px;
   border-bottom: 1px solid var(--rule-med);
 }
 .lineas-header h2 {
@@ -210,8 +211,9 @@
 }
 
 .lineas-split {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   border: none;
@@ -316,18 +318,18 @@
 /* MATERIALES TEASER */
 #mat-teaser {
   background: transparent;
-  padding: 120px 56px;
+  padding: 120px 0;
   position: relative;
   overflow: hidden;
 }
 .mat-teaser-header {
   max-width: 1200px;
   margin: 0 auto 64px;
+  padding: 0 56px 36px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 40px;
-  padding-bottom: 36px;
   border-bottom: 1px solid var(--rule-med);
 }
 .mat-teaser-header h2 {
@@ -342,6 +344,7 @@
 .mat-teaser-grid {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 56px;
   display: grid;
   grid-template-columns: repeat(3,1fr);
   border: none;
@@ -392,6 +395,7 @@
 .mat-teaser-cta {
   max-width: 1200px;
   margin: 48px auto 0;
+  padding: 0 56px;
   display: flex;
   justify-content: flex-end;
 }
@@ -399,13 +403,13 @@
 /* CTA SECTION */
 #cta-contacto {
   background: transparent;
-  padding: 120px 56px;
+  padding: 120px 0;
   position: relative;
   overflow: hidden;
 }
 .cta-inner {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 56px;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
@@ -445,14 +449,15 @@
   .hero-content { padding: 0 24px; max-width: 100%; }
   .hero-eyebrow { margin-bottom: 28px; }
 
-  #manifesto { padding: 80px 24px; }
-  .manifesto-inner { grid-template-columns: 1fr; gap: 32px; }
+  #manifesto { padding: 80px 0; }
+  .manifesto-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
   .manifesto-aside { display: none; }
 
   .section-bridge { height: 80px; }
 
-  #lineas-preview { padding: 72px 24px 80px; }
+  #lineas-preview { padding: 72px 0 80px; }
   .lineas-header {
+    padding: 0 24px 32px;
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
@@ -463,17 +468,19 @@
   .linea-divider-v { display: none; }
   .linea-info { padding: 28px 24px 36px; }
 
-  #mat-teaser { padding: 72px 24px 80px; }
-  .mat-teaser-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .mat-teaser-grid { grid-template-columns: 1fr; }
+  #mat-teaser { padding: 72px 0 80px; }
+  .mat-teaser-header { flex-direction: column; align-items: flex-start; gap: 20px; padding: 0 24px 24px; }
+  .mat-teaser-grid { grid-template-columns: 1fr; padding: 0 24px; }
   .mat-col { border-right: none; border-bottom: 1px solid var(--rule-med); }
   .mat-col:last-child { border-bottom: none; }
+  .mat-teaser-cta { padding: 0 24px; }
 
-  #cta-contacto { padding: 72px 24px; }
+  #cta-contacto { padding: 72px 0; }
   .cta-inner {
     grid-template-columns: 1fr;
     gap: 36px;
     padding: 40px 28px;
+    margin: 0 24px;
   }
   .mat-teaser-cta { justify-content: flex-start; }
 }
@@ -711,6 +718,13 @@
   </div>
 </section>
 
+
+<!-- ═══ FOOTER SHAPE ═══════════════════════════════════════════ -->
+<div class="footer-shape" aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,72 C180,120 420,10 720,58 C1020,106 1260,8 1440,52 L1440,120 L0,120 Z" fill="var(--ink-soft)"/>
+  </svg>
+</div>
 
 <!-- ═══ FOOTER ════════════════════════════════════════════════ -->
 <footer id="main-footer">

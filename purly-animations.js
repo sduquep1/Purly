@@ -10,51 +10,68 @@
   /* ── prefers-reduced-motion ─────────────────────────────── */
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ── CUSTOM CURSOR ──────────────────────────────────────── */
+  /* ── MOUSE TRAIL ────────────────────────────────────────── */
   var isTouchDevice = window.matchMedia('(hover: none)').matches;
 
   if (!isTouchDevice && !reducedMotion) {
-    var dot = document.createElement('div');
-    dot.className = 'cursor-dot';
-    document.body.appendChild(dot);
+    var canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:fixed;top:0;left:0;pointer-events:none;z-index:9999;';
+    document.body.appendChild(canvas);
+    var ctx = canvas.getContext('2d');
 
-    var mx = window.innerWidth / 2, my = window.innerHeight / 2;
-    var cx = mx, cy = my;
-    var dotVisible = false;
+    function resizeCanvas() {
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas, { passive: true });
+
+    var trail = [];
+    var GOLD  = [200, 167, 117]; // --gold #C8A775
+    var LIFE  = 600;
 
     document.addEventListener('mousemove', function (e) {
-      mx = e.clientX;
-      my = e.clientY;
-      if (!dotVisible) {
-        cx = mx; cy = my;
-        dot.style.opacity = '1';
-        dotVisible = true;
+      for (var i = 0; i < 2; i++) {
+        trail.push({
+          x:    e.clientX + (Math.random() - 0.5) * 8,
+          y:    e.clientY + (Math.random() - 0.5) * 8,
+          size: 2.5 + Math.random() * 2.5,
+          born: performance.now()
+        });
       }
     });
-    document.addEventListener('mouseleave', function () {
-      dot.style.opacity = '0';
-      dotVisible = false;
-    });
+
+    function drawDiamond(c, x, y, s) {
+      c.beginPath();
+      c.moveTo(x,           y - s);
+      c.lineTo(x + s * 0.55, y);
+      c.lineTo(x,           y + s);
+      c.lineTo(x - s * 0.55, y);
+      c.closePath();
+      c.fill();
+    }
 
     (function tick() {
-      cx += (mx - cx) * 0.12;
-      cy += (my - cy) * 0.12;
-      dot.style.left = cx + 'px';
-      dot.style.top  = cy + 'px';
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      var now = performance.now();
+      trail = trail.filter(function (p) {
+        var t = (now - p.born) / LIFE;
+        if (t >= 1) return false;
+        ctx.globalAlpha = 0.55 * (1 - t);
+        ctx.fillStyle   = 'rgb(' + GOLD[0] + ',' + GOLD[1] + ',' + GOLD[2] + ')';
+        drawDiamond(ctx, p.x, p.y, p.size * (1 - t * 0.4));
+        return true;
+      });
+      ctx.globalAlpha = 1;
       requestAnimationFrame(tick);
     })();
-
-    document.querySelectorAll('a, button').forEach(function (el) {
-      el.addEventListener('mouseenter', function () { dot.classList.add('is-hover'); });
-      el.addEventListener('mouseleave', function () { dot.classList.remove('is-hover'); });
-    });
   }
 
   /* ── GSAP CHECK ─────────────────────────────────────────── */
   if (typeof gsap === 'undefined' || reducedMotion) {
     document.querySelectorAll('.clip-reveal, .hero-line').forEach(function (el) {
-      el.style.opacity = '1';
-      el.style.clipPath = 'none';
+      el.style.opacity   = '1';
+      el.style.clipPath  = 'none';
       el.style.transform = 'none';
     });
     document.querySelectorAll('.line-grow').forEach(function (el) {
@@ -165,24 +182,34 @@
   /* ── PACKAGING REVEAL — coleccion ───────────────────────── */
   var pkgItems = document.querySelectorAll('.pkg-item');
   if (pkgItems.length) {
-    gsap.set(pkgItems, { clipPath: 'inset(0 0 100% 0)', opacity: 0 });
+    var isMobilePkg = window.innerWidth < 768;
 
-    gsap.to(pkgItems, {
-      clipPath: 'inset(0 0 0% 0)',
-      opacity: 1,
-      duration: 1.3,
-      stagger: 0.18,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '#pkg-stage',
-        start: 'top 78%',
-        once: true
-      }
-    });
+    if (isMobilePkg) {
+      gsap.set(pkgItems, { opacity: 0, y: 40 });
+      gsap.to(pkgItems, {
+        opacity: 1, y: 0,
+        duration: 1.0, stagger: 0.2, ease: 'power3.out',
+        scrollTrigger: { trigger: '#pkg-stage', start: 'top 85%', once: true }
+      });
+    } else {
+      gsap.set(pkgItems, { clipPath: 'inset(0 0 100% 0)', opacity: 0 });
+      gsap.to(pkgItems, {
+        clipPath: 'inset(0 0 0% 0)',
+        opacity: 1,
+        duration: 1.3,
+        stagger: 0.18,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '#pkg-stage',
+          start: 'top 78%',
+          once: true
+        }
+      });
+    }
 
-    /* Gold packaging — slightly faster parallax (protagonist) */
+    /* Gold packaging — slightly faster parallax (protagonist) — desktop only */
     var goldPkg = document.querySelector('.pkg-item.gold');
-    if (goldPkg) {
+    if (goldPkg && window.innerWidth >= 768) {
       gsap.to(goldPkg, {
         yPercent: -6,
         ease: 'none',

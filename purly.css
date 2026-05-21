@@ -57,36 +57,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 ::-webkit-scrollbar-track { background: var(--cream); }
 ::-webkit-scrollbar-thumb { background: var(--gold); }
 
-/* ── CUSTOM CURSOR ── */
-@media (hover: hover) {
-  body { cursor: none; }
-  a, button { cursor: none; }
-}
-.cursor-dot {
-  position: fixed;
-  top: 0; left: 0;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--gold);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.18s var(--ease),
-              height 0.18s var(--ease),
-              background 0.18s,
-              border 0.18s,
-              opacity 0.3s;
-  mix-blend-mode: multiply;
-}
-.cursor-dot.is-hover {
-  width: 38px;
-  height: 38px;
-  background: transparent;
-  border: 1px solid var(--gold);
-  mix-blend-mode: normal;
-}
+/* ── MOUSE TRAIL CANVAS — injected by JS ── */
+/* pointer-events: none on canvas ensures no click interference */
 
 /* ══════════════════════════════════════════════════════════
    TYPOGRAPHY UTILITIES
@@ -370,9 +342,21 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    FOOTER
 ══════════════════════════════════════════════════════════ */
 
+/* ── FOOTER SHAPE ── */
+.footer-shape {
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+  margin-bottom: -2px;
+}
+.footer-shape svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
 #main-footer {
   background: var(--ink-soft);
-  border-top: 1px solid rgba(200,167,117,0.12);
   padding: 80px 56px 0;
 }
 .footer-inner {
