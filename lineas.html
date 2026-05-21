@@ -6,6 +6,8 @@
 <title>Las Líneas — Pūrly · Joyería Hipoalergénica</title>
 <meta name="description" content="Línea Bebé y Línea Adulta. Dos capítulos de la misma historia: pureza para cada piel, en cada etapa.">
 <link rel="stylesheet" href="purly.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
 <svg style="display:none" aria-hidden="true">
   <symbol id="gota" viewBox="0 0 1080 1080">
@@ -20,7 +22,7 @@
 
 /* Chapter intro */
 #lineas-intro {
-  background: var(--cream);
+  background: transparent;
   padding: 160px 56px 120px;
   position: relative;
   overflow: hidden;
@@ -83,9 +85,13 @@
 
 /* ── CAPÍTULO I: BEBÉ ── */
 #capitulo-bebe {
-  background: #F5EDE3;
+  background: transparent;
   position: relative;
   overflow: hidden;
+}
+/* Organic placeholder shapes */
+#capitulo-bebe .chapter-image .ph-wrap {
+  clip-path: polygon(6% 0, 94% 4%, 100% 18%, 96% 84%, 82% 100%, 10% 96%, 0 78%, 4% 12%);
 }
 .chapter-layout {
   display: grid;
@@ -204,12 +210,14 @@
 /* ── CHAPTER BRIDGE ── */
 .chapter-bridge {
   background: var(--ink-soft);
-  padding: 80px 56px;
+  padding: 120px 56px 140px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  z-index: 1;
+  clip-path: polygon(0 8%, 38% 0, 100% 6%, 100% 88%, 62% 100%, 0 93%);
 }
 .bridge-inner {
   text-align: center;
@@ -251,7 +259,15 @@
 #capitulo-adulta {
   background: var(--ink-soft);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  z-index: 0;
+  clip-path: polygon(0 5%, 44% 0, 100% 4%, 100% 95%, 55% 100%, 0 96%);
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+/* Organic adulta image shape */
+#capitulo-adulta .chapter-image .ph-wrap {
+  clip-path: polygon(4% 8%, 80% 0, 100% 12%, 94% 88%, 76% 100%, 0 96%, 0 0);
 }
 .chapter-adulta .chapter-content {
   padding: 80px 56px 80px 64px;
@@ -303,7 +319,7 @@
 
 /* ── COLECCIÓN TEASER ── */
 #lineas-cta {
-  background: var(--linen);
+  background: transparent;
   padding: 120px 56px;
   position: relative;
   overflow: hidden;
@@ -439,7 +455,7 @@
       <div class="chapter-num-bg" aria-hidden="true">I</div>
 
       <span class="chapter-tag reveal">Capítulo I</span>
-      <h2 class="chapter-title reveal delay-1">Pūrly<br>Bebé</h2>
+      <h2 class="chapter-title reveal delay-1 clip-reveal">Pūrly<br>Bebé</h2>
 
       <div class="stat-strip reveal delay-1">
         <span class="stat-num">100%</span>
@@ -490,7 +506,7 @@
       <div class="chapter-num-bg" aria-hidden="true">II</div>
 
       <span class="chapter-tag reveal" style="color:var(--gold);">Capítulo II</span>
-      <h2 class="chapter-title reveal delay-1">Pūrly<br><em>Adulta</em></h2>
+      <h2 class="chapter-title reveal delay-1 clip-reveal">Pūrly<br><em>Adulta</em></h2>
 
       <div class="stat-strip reveal delay-1">
         <div>
@@ -587,6 +603,7 @@
   </div>
 </footer>
 
+<script src="purly-animations.js" defer></script>
 <script>
 (function(){
   const nav=document.getElementById('main-nav');

@@ -6,6 +6,8 @@
 <title>Los Materiales — Pūrly · Joyería Hipoalergénica</title>
 <meta name="description" content="Oro laminado 18k, Plata 925 y Acero quirúrgico 316L. Los tres materiales de Pūrly: 100% libres de níquel, plomo y cadmio.">
 <link rel="stylesheet" href="purly.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
 <svg style="display:none" aria-hidden="true">
   <symbol id="gota" viewBox="0 0 1080 1080">
@@ -19,7 +21,7 @@
 /* ── MATERIALES PAGE ── */
 
 #mat-hero {
-  background: var(--paper);
+  background: transparent;
   padding: 160px 56px 120px;
   position: relative;
   overflow: hidden;
@@ -82,7 +84,7 @@
 
 /* ── MATERIALES GRID ── */
 #mat-grid {
-  background: var(--paper);
+  background: transparent;
   padding: 0 56px 100px;
   position: relative;
   overflow: hidden;
@@ -90,20 +92,20 @@
 .mat-grid-inner {
   max-width: 1200px;
   margin: 0 auto;
-  border: 1px solid var(--rule-med);
+  border: none;
   display: grid;
   grid-template-columns: repeat(3,1fr);
 }
 
 .mat-card {
   padding: 56px 48px 64px;
-  border-right: 1px solid var(--rule-med);
+  border-right: none;
   position: relative;
   overflow: hidden;
   transition: background 0.4s var(--ease);
 }
 .mat-card:last-child { border-right: none; }
-.mat-card:hover { background: var(--cream); }
+.mat-card:hover { background: rgba(244,238,228,0.4); }
 
 .mat-card-num {
   font-family: var(--f-mono);
@@ -200,7 +202,7 @@
 
 /* ── COMPARATIVA ── */
 #mat-compare {
-  background: var(--linen);
+  background: transparent;
   padding: 100px 56px;
   position: relative;
   overflow: hidden;
@@ -227,22 +229,22 @@
 .compare-table {
   max-width: 1200px;
   margin: 0 auto;
-  border: 1px solid var(--rule-med);
+  border: none;
 }
 .compare-row {
   display: grid;
   grid-template-columns: 1.2fr repeat(3,1fr);
   border-bottom: 1px solid var(--rule-med);
-  background: var(--paper);
+  background: transparent;
   transition: background 0.2s;
 }
 .compare-row:last-child { border-bottom: none; }
-.compare-row:hover { background: var(--white); }
+.compare-row:hover { background: rgba(244,238,228,0.45); }
 .compare-row.header-row {
-  background: var(--linen);
+  background: rgba(232,222,208,0.35);
   border-bottom: 1px solid var(--rule-str);
 }
-.compare-row.header-row:hover { background: var(--linen); }
+.compare-row.header-row:hover { background: rgba(232,222,208,0.35); }
 .compare-cell {
   padding: 20px 28px;
   border-right: 1px solid var(--rule-med);
@@ -293,9 +295,12 @@
 /* ── COMPROMISO COMPARTIDO ── */
 #mat-commitment {
   background: var(--ink);
-  padding: 120px 56px;
+  padding: 160px 56px 180px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  clip-path: polygon(0 8%, 28% 0, 65% 5%, 100% 2%, 100% 95%, 72% 100%, 35% 97%, 0 100%);
+  margin: 60px 0;
+  z-index: 1;
 }
 .commitment-inner {
   max-width: 1100px;
@@ -441,7 +446,7 @@
   <div class="mat-hero-inner">
     <div class="mat-hero-left">
       <div class="mat-hero-num reveal" aria-hidden="true">03</div>
-      <h1 class="mat-hero-title reveal delay-1">Los<br>materiales<br>que <em>importan.</em></h1>
+      <h1 class="mat-hero-title clip-reveal">Los<br>materiales<br>que <em>importan.</em></h1>
     </div>
     <div class="mat-hero-right">
       <p class="mat-hero-lead reveal">
@@ -515,7 +520,7 @@
 <!-- ═══ TABLA COMPARATIVA ════════════════════════════════════ -->
 <section id="mat-compare" aria-label="Comparativa de materiales">
   <div class="compare-header">
-    <h2 class="reveal">Los tres <em>comparados.</em></h2>
+    <h2 class="clip-reveal">Los tres <em>comparados.</em></h2>
     <span class="mono reveal delay-1">Guía de selección por tipo de piel</span>
   </div>
 
@@ -595,7 +600,7 @@
 
   <div class="commitment-inner">
     <span class="commitment-label reveal">Compromiso compartido</span>
-    <h2 class="commitment-title reveal delay-1">
+    <h2 class="commitment-title clip-reveal">
       "Los tres comparten<br>el mismo <strong>compromiso</strong>."
     </h2>
     <div class="commitment-pills reveal delay-2">
@@ -648,6 +653,7 @@
   </div>
 </footer>
 
+<script src="purly-animations.js" defer></script>
 <script>
 (function(){
   const nav=document.getElementById('main-nav');

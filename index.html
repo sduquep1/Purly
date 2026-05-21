@@ -6,6 +6,8 @@
 <title>Pūrly — Joyería Hipoalergénica · Colombia</title>
 <meta name="description" content="Joyería hipoalergénica premium colombiana. 100% libre de níquel, plomo y cadmio. Diseñada para pieles reactivas, desde bebés hasta adultos.">
 <link rel="stylesheet" href="purly.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
 <!-- SVG SYMBOLS ─ hidden, referenced everywhere -->
 <svg style="display:none" aria-hidden="true">
@@ -28,6 +30,10 @@
   align-items: flex-end;
   padding-bottom: 96px;
   overflow: hidden;
+}
+
+.hero-line {
+  display: block;
 }
 
 .hero-image-pane {
@@ -106,10 +112,22 @@
 /* MANIFESTO */
 #manifesto {
   background: var(--ink);
-  padding: 140px 56px 160px;
+  padding: 140px 56px 200px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   border-top: 1px solid rgba(200,167,117,0.07);
+  z-index: 1;
+}
+#manifesto::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 0; right: 0;
+  height: 100px;
+  background: var(--ink);
+  clip-path: polygon(0 0, 18% 65%, 36% 18%, 52% 72%, 70% 12%, 84% 58%, 100% 22%, 100% 0);
+  pointer-events: none;
+  z-index: 2;
 }
 .manifesto-inner {
   max-width: 1100px;
@@ -148,15 +166,9 @@
   color: var(--gold-pale);
 }
 
-/* TRANSITION BAND */
-.section-bridge {
-  height: 120px;
-  background: linear-gradient(to bottom, var(--ink) 0%, var(--cream) 100%);
-}
-
 /* LÍNEAS PREVIEW */
 #lineas-preview {
-  background: var(--cream);
+  background: transparent;
   padding: 100px 56px 120px;
   position: relative;
   overflow: hidden;
@@ -201,30 +213,37 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  border: 1px solid var(--rule-med);
+  grid-template-columns: 1fr 1fr;
+  border: none;
+  overflow: hidden;
 }
 .linea-divider-v {
-  background: var(--rule-med);
-  position: relative;
-}
-.linea-divider-v::after {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--gold);
-  opacity: 0.6;
+  display: none;
 }
 .linea-panel {
   display: grid;
   grid-template-rows: 340px auto;
   overflow: hidden;
 }
-.linea-panel.bebe { background: #F7EFE7; }
-.linea-panel.adulta { background: var(--ink-soft); }
+.linea-panel.bebe {
+  background: #F7EFE7;
+  position: relative;
+  z-index: 1;
+}
+.linea-panel.adulta {
+  background: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+  margin-left: -5%;
+  clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+}
+/* Organic placeholder shapes */
+.linea-panel.bebe .ph-wrap {
+  clip-path: polygon(0 0, 100% 0, 100% 76%, 78% 88%, 50% 94%, 22% 88%, 0 76%);
+}
+.linea-panel.adulta .ph-wrap {
+  clip-path: polygon(0 14%, 26% 0, 66% 10%, 100% 2%, 100% 100%, 0 100%);
+}
 .linea-image-area {
   position: relative;
   overflow: hidden;
@@ -296,7 +315,7 @@
 
 /* MATERIALES TEASER */
 #mat-teaser {
-  background: var(--paper);
+  background: transparent;
   padding: 120px 56px;
   position: relative;
   overflow: hidden;
@@ -325,7 +344,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  border: 1px solid var(--rule-med);
+  border: none;
 }
 .mat-col {
   padding: 48px 44px 56px;
@@ -379,7 +398,7 @@
 
 /* CTA SECTION */
 #cta-contacto {
-  background: var(--linen);
+  background: transparent;
   padding: 120px 56px;
   position: relative;
   overflow: hidden;
@@ -392,9 +411,10 @@
   align-items: center;
   gap: 60px;
   padding: 72px 80px;
-  border: 1px solid var(--rule-med);
   position: relative;
   overflow: hidden;
+  border-top: 1px solid var(--rule-med);
+  border-bottom: 1px solid var(--rule-med);
 }
 .cta-text h2 {
   font-family: var(--f-display);
@@ -534,9 +554,9 @@
     <div class="hero-eyebrow reveal">Pūrly™ · Joyería Hipoalergénica · Colombia</div>
 
     <h1 class="hero-headline">
-      <span class="reveal-line">Pureza</span>
-      <span class="reveal-line delay-1">que se</span>
-      <span class="reveal-line delay-2"><em>siente.</em></span>
+      <span class="hero-line">Pureza</span>
+      <span class="hero-line">que se</span>
+      <span class="hero-line"><em>siente.</em></span>
     </h1>
 
     <p class="hero-sub reveal delay-2">
@@ -568,16 +588,12 @@
     <div class="manifesto-aside">
       <span class="manifesto-label reveal">Manifiesto</span>
     </div>
-    <blockquote class="manifesto-quote reveal delay-1">
+    <blockquote class="manifesto-quote reveal delay-1 clip-reveal">
       "La piel reactiva no es un defecto.<br>
       Es una razón para <strong>diseñar mejor.</strong>"
     </blockquote>
   </div>
 </section>
-
-<!-- dark → cream transition -->
-<div class="section-bridge" aria-hidden="true"></div>
-
 
 <!-- ═══ LÍNEAS PREVIEW ═════════════════════════════════════════ -->
 <section id="lineas-preview" aria-label="Nuestras líneas">
@@ -586,8 +602,8 @@
     <svg width="480" height="480" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
   </div>
 
-  <div class="lineas-header reveal">
-    <h2>Dos líneas,<br>una filosofía.</h2>
+  <div class="lineas-header">
+    <h2 class="clip-reveal">Dos líneas,<br>una filosofía.</h2>
     <div class="lineas-header-aside">
       <p>Bebés y adultos. La misma exigencia de pureza, adaptada a cada etapa de la vida.</p>
       <a href="lineas.html" class="btn-outline-ink">Ver ambas líneas</a>
@@ -649,7 +665,7 @@
 <section id="mat-teaser" aria-label="Los materiales">
 
   <div class="mat-teaser-header">
-    <h2 class="reveal">Los materiales<br>que <em>importan.</em></h2>
+    <h2 class="clip-reveal">Los materiales<br>que <em>importan.</em></h2>
     <span class="mono reveal delay-1">100% libre de níquel · plomo · cadmio</span>
   </div>
 
@@ -755,6 +771,7 @@
 </footer>
 
 
+<script src="purly-animations.js" defer></script>
 <script>
 (function() {
   // NAV scroll behavior
