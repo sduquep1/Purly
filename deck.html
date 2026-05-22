@@ -376,6 +376,7 @@ html, body {
   font-size: 26px;
   font-weight: 400;
   color: var(--ink);
+  margin-top: 28px;
   margin-bottom: 8px;
   line-height: 1;
 }
@@ -504,11 +505,11 @@ html, body {
 
 /* S3 — PACKAGING IMAGES */
 .s3-pkg-img {
-  height: clamp(100px, 12vw, 160px);
+  height: clamp(140px, 18vw, 240px);
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 0;
   flex-shrink: 0;
 }
 .s3-pkg-img img {
@@ -587,13 +588,13 @@ html, body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  margin-top: 40px;
-  flex: 1;
+  align-items: start;
 }
 .s5-col {
   padding-right: 48px;
   display: flex;
   flex-direction: column;
+  padding-top: 0;
 }
 .s5-col:not(:first-child) {
   padding-left: 48px;
@@ -610,6 +611,7 @@ html, body {
   letter-spacing: -0.03em;
   color: var(--cream);
   margin-bottom: 20px;
+  min-height: clamp(52px, 5.5vw, 72px);
 }
 .s5-metric em { color: var(--gold); font-style: normal; }
 .s5-col-label {
@@ -1060,9 +1062,6 @@ html, body {
      S5 · SEGURIDAD & MERMA
      ═══════════════════════════════════════════════ -->
 <section class="slide s5" id="slide-5">
-  <div class="s5-img-bg" aria-hidden="true">
-    <img src="img-bebe.png" alt="" loading="lazy">
-  </div>
   <div class="wm-gota" style="left:-80px;top:50%;transform:translateY(-50%);opacity:.05;" aria-hidden="true">
     <svg width="460" height="460" viewBox="0 0 1080 1080"><use href="#gota" fill="#C8A775"/></svg>
   </div>
@@ -1079,7 +1078,7 @@ html, body {
       <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.3);">Ventaja operativa</span>
     </div>
 
-    <div class="s5-cols" style="position:relative;z-index:2;">
+    <div class="s5-cols" style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);padding:0 80px;box-sizing:border-box;z-index:2;">
       <div class="s5-col">
         <div class="s5-metric"><em>0%</em></div>
         <span class="s5-col-label">01 — Sin caducidad</span>
@@ -1093,10 +1092,11 @@ html, body {
         <p class="body on-dark">Cada unidad viene sellada e higiénica. Protege el producto y transmite confianza al cliente.</p>
       </div>
       <div class="s5-col">
-        <div class="s5-metric" style="font-size:clamp(42px,4.5vw,58px);color:var(--gold);">Hipoa<em style="font-style:normal;font-family:var(--f-display);font-weight:200;">lerg.</em></div>
-        <span class="s5-col-label">03 — Bajo hurto</span>
-        <div class="s5-col-title">Exhibición controlable</div>
-        <p class="body on-dark">Formato pequeño y seguro. Compatible con cajas, displays cerca de caja o góndola asistida.</p>
+        <div class="s5-metric" style="visibility:hidden;">&nbsp;</div>
+        <span class="s5-col-label">03 — Merma controlada</span>
+        <div class="s5-col-title">Merma Controlada</div>
+        <p class="body on-dark">Las condiciones de merma se definen directamente entre Pūrly y la cadena. Estamos abiertos a construir un esquema que se adapte al modelo operativo de cada aliado comercial.</p>
+        <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-top:20px;">Condiciones a convenir</span>
       </div>
     </div>
 
@@ -1154,9 +1154,6 @@ html, body {
           <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Bebé / mamá</span>
           <div class="s6-panel-title">Sección infantil</div>
           <p class="body" style="margin-top:10px;">Primera perforación, regalo de bebé. Decisión emocional de alta confianza de marca.</p>
-        </div>
-        <div class="gondola-image-wrap">
-          <img src="img-bebe.png" alt="" loading="lazy">
         </div>
       </div>
     </div>
