@@ -138,22 +138,9 @@
 /* MANIFESTO */
 #manifesto {
   background: var(--ink);
-  padding: 140px 0 200px;
+  padding: 140px 0 180px;
   position: relative;
-  overflow: visible;
-  border-top: 1px solid rgba(200,167,117,0.07);
-  z-index: 1;
-}
-#manifesto::after {
-  content: '';
-  position: absolute;
-  bottom: -60px;
-  left: 0; right: 0;
-  height: 100px;
-  background: var(--ink);
-  clip-path: polygon(0 0, 18% 65%, 36% 18%, 52% 72%, 70% 12%, 84% 58%, 100% 22%, 100% 0);
-  pointer-events: none;
-  z-index: 2;
+  overflow: hidden;
 }
 .manifesto-inner {
   max-width: 1100px;
@@ -614,6 +601,13 @@
     </blockquote>
   </div>
 </section>
+
+<!-- Manifesto (ink) → Líneas (cream) -->
+<div class="wave-divider dark-to-light" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,35 C240,80 480,5 720,42 C960,75 1200,15 1440,48 L1440,80 L0,80 Z" fill="var(--cream)"/>
+  </svg>
+</div>
 
 <!-- ═══ LÍNEAS PREVIEW ═════════════════════════════════════════ -->
 <section id="lineas-preview" aria-label="Nuestras líneas">
