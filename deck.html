@@ -3,33 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pūrly — Propuesta Comercial 2026</title>
-<meta name="description" content="Presentación comercial B2B Pūrly — Joyería Hipoalergénica Premium">
+<title>Pūrly™ — Propuesta Comercial · 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
-/* ═══════════════════════════════════════════════════════
-   PŪRLY · deck.html — B2B Commercial Presentation
-   ═══════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════
+   PŪRLY · deck.html — Propuesta Comercial B2B 2026
+   ═══════════════════════════════════════════════════ */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --cream:     #F4EEE4;
-  --paper:     #F2EBE0;
-  --linen:     #EAE0CE;
-  --ink:       #1A1510;
-  --ink-soft:  #2E2820;
-  --gold:      #C8A775;
-  --gold-pale: #E2CFA8;
-  --gold-deep: #A88550;
-  --blush:     #D8C0B0;
-  --muted:     #9A9085;
-  --f-display: 'Fraunces', Georgia, serif;
-  --f-body:    'Inter', -apple-system, sans-serif;
-  --f-mono:    'Geist Mono', monospace;
+  --cream:      #F4EEE4;
+  --paper:      #F2EBE0;
+  --linen:      #EAE0CE;
+  --white:      #F8F3EC;
+  --ink:        #1A1510;
+  --ink-soft:   #2E2820;
+  --gold:       #C8A775;
+  --gold-pale:  #E2CFA8;
+  --gold-deep:  #A88550;
+  --blush:      #D8C0B0;
+  --muted:      #9A9085;
+  --rule:       rgba(26,21,16,0.07);
+  --rule-med:   rgba(26,21,16,0.14);
+  --rule-str:   rgba(26,21,16,0.24);
+  --rule-gold:  rgba(200,167,117,0.22);
+  --f-display:  'Fraunces', Georgia, serif;
+  --f-body:     'Inter', -apple-system, sans-serif;
+  --f-mono:     'Geist Mono', monospace;
 }
 
 html, body {
@@ -38,13 +41,10 @@ html, body {
   background: var(--ink);
   font-family: var(--f-body);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── DECK WRAPPER ── */
 #deck {
-  width: 100vw;
-  height: 100vh;
+  width: 100vw; height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -53,98 +53,206 @@ html, body {
 .slide {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
   display: flex;
+  flex-direction: column;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform: translateX(24px);
-  will-change: opacity, transform;
+  transform: translateX(16px);
+  transition: opacity 0.38s cubic-bezier(0.25,0.46,0.45,0.94),
+              transform 0.38s cubic-bezier(0.25,0.46,0.45,0.94);
   overflow: hidden;
 }
-
 .slide.active {
   opacity: 1;
   pointer-events: all;
-  transform: translateX(0);
+  transform: none;
 }
-
-.slide.exit-left {
+.slide.exit {
   opacity: 0;
-  transform: translateX(-24px);
+  transform: translateX(-16px);
   pointer-events: none;
 }
 
-/* ── BACKGROUNDS ── */
-.slide-1 { background: var(--ink); }
-.slide-2 { background: var(--cream); }
-.slide-3 { background: var(--paper); }
-.slide-4 { background: var(--ink); }
-.slide-5 { background: var(--linen); }
-.slide-6 { background: var(--cream); }
-.slide-7 { background: var(--ink); }
+.s1  { background: var(--ink); }
+.s2  { background: var(--cream); }
+.s3  { background: var(--paper); }
+.s4  { background: var(--linen); }
+.s5  { background: var(--ink); }
+.s6  { background: var(--paper); }
+.s7  { background: var(--ink); }
 
-/* ── SLIDE INNER LAYOUT ── */
-.slide-inner {
-  width: 100%;
-  height: 100%;
+/* ── PADDING WRAPPER ── */
+.pad {
+  position: absolute;
+  inset: 0;
+  padding: 52px 72px;
   display: flex;
   flex-direction: column;
-  padding: 60px 80px;
-  position: relative;
-  z-index: 2;
 }
 
-.slide-inner.centered {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+/* ── SHARED TYPE ── */
+.mono {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--muted);
 }
+.mono.gold      { color: var(--gold-deep); }
+.mono.gold-lite { color: var(--gold); }
+.mono.dim       { color: rgba(244,238,228,0.38); }
 
-/* ── LOGO SVG ── */
-.deck-logo {
-  width: 120px;
-  height: auto;
-  display: block;
-  flex-shrink: 0;
-}
-
-/* ── PROGRESS BAR ── */
-#progress-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  background: var(--gold);
-  opacity: 0.6;
-  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  z-index: 1000;
-}
-
-/* ── SLIDE COUNTER ── */
-#slide-counter {
-  position: fixed;
-  bottom: 24px;
-  right: 32px;
+.kicker {
   font-family: var(--f-mono);
   font-size: 10px;
   letter-spacing: 2px;
-  color: rgba(200,167,117,0.5);
-  z-index: 1000;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--gold-deep);
+}
+.kicker::before {
+  content: '';
+  display: inline-block;
+  width: 22px; height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+.kicker.on-dark { color: var(--gold); }
+
+.h1 {
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-size: clamp(52px, 6.5vw, 92px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.h1 em { font-style: italic; color: var(--gold-deep); }
+.h1.on-dark { color: var(--cream); }
+.h1.on-dark em { color: var(--gold); }
+
+.h2 {
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-size: clamp(38px, 4.2vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.h2 em { font-style: italic; color: var(--gold-deep); }
+.h2.on-dark { color: var(--cream); }
+.h2.on-dark em { color: var(--gold); }
+
+.lead {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(18px, 2vw, 26px);
+  line-height: 1.38;
+  letter-spacing: -0.01em;
+  color: var(--ink-soft);
+}
+.lead.on-dark { color: rgba(244,238,228,0.7); }
+
+.body {
+  font-family: var(--f-body);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--muted);
+}
+.body.on-dark { color: rgba(244,238,228,0.52); }
+
+/* ── WATERMARKS ── */
+.wm-gota {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+.wm-text {
+  position: absolute;
+  font-family: var(--f-display);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ink);
+  opacity: 0.028;
+  letter-spacing: -0.03em;
+  line-height: 0.85;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+.wm-text.on-dark { color: var(--cream); opacity: 0.025; }
+
+/* ── SIDE LABEL ── */
+.side-label {
+  position: absolute;
+  font-family: var(--f-mono);
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.38;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  pointer-events: none;
   user-select: none;
 }
 
-/* ── NAV ARROWS ── */
+/* ── LAYOUT ROWS ── */
+.head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.foot-row {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* ── LOGO SVG ── */
+.logo { height: 26px; width: auto; display: block; }
+
+/* ── NAV DOTS ── */
+#nav-dots {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 1000;
+}
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(200,167,117,0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, transform 0.3s;
+  outline: none;
+}
+.dot.active {
+  background: var(--gold);
+  transform: scale(1.4);
+}
+
+/* ── ARROW BUTTONS ── */
 #nav-prev, #nav-next {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
+  width: 44px; height: 44px;
   background: transparent;
-  border: 1px solid rgba(200,167,117,0.25);
+  border: 1px solid rgba(200,167,117,0.2);
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -153,722 +261,894 @@ html, body {
   z-index: 1000;
   transition: border-color 0.2s, background 0.2s;
   outline: none;
+  color: rgba(200,167,117,0.6);
 }
-#nav-prev { left: 20px; }
-#nav-next { right: 20px; }
+#nav-prev { left: 18px; }
+#nav-next { right: 18px; }
 #nav-prev:hover, #nav-next:hover {
-  border-color: rgba(200,167,117,0.7);
-  background: rgba(200,167,117,0.08);
+  border-color: rgba(200,167,117,0.6);
+  background: rgba(200,167,117,0.07);
 }
-#nav-prev svg, #nav-next svg { width: 14px; height: 14px; }
+#nav-prev svg, #nav-next svg { width: 13px; height: 13px; }
 
-/* ── HINT LINE ── */
-.deck-hint {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--f-mono);
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(200,167,117,0.3);
-  z-index: 1000;
-  user-select: none;
-  white-space: nowrap;
-}
+/* ── SLIDE-SPECIFIC ── */
 
-/* ── MONO EYEBROW ── */
-.eyebrow {
-  font-family: var(--f-mono);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  flex-shrink: 0;
-}
-.eyebrow-gold { color: var(--gold); }
-.eyebrow-gold::before { background: var(--gold); opacity: 0.5; }
-.eyebrow-muted { color: var(--muted); }
-.eyebrow-muted::before { background: var(--muted); opacity: 0.4; }
-.eyebrow-ink { color: var(--gold-deep); }
-.eyebrow-ink::before { background: var(--gold-deep); opacity: 0.5; }
-
-/* ── RULE ── */
-.rule-gold {
-  width: 48px;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.4;
-  display: block;
-  margin: 28px 0;
-}
-
-/* ── DECORATIVE ── */
-.bg-glyph {
+/* S1 — PORTADA */
+.s1 .glow {
   position: absolute;
-  font-family: var(--f-display);
-  font-size: clamp(320px, 40vw, 520px);
-  font-weight: 200;
-  font-style: italic;
-  line-height: 1;
+  width: 900px; height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,167,117,0.13) 0%, transparent 65%);
+  top: 50%; left: 58%;
+  transform: translate(-50%,-50%);
   pointer-events: none;
-  user-select: none;
 }
-
-/* ══════════════════════════════════════════
-   SLIDE 1 — PORTADA
-   ══════════════════════════════════════════ */
-.slide-1 .bg-glyph {
-  right: -8%;
-  top: -5%;
-  color: rgba(200,167,117,0.04);
-  z-index: 1;
+.s1 .cover-center {
+  margin: auto 0;
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
 }
-.slide-1 .hero-mark {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-.slide-1 .cover-headline {
+.s1 .cover-tagline {
   font-family: var(--f-display);
-  font-weight: 200;
   font-style: italic;
-  font-size: clamp(52px, 8vw, 110px);
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-  color: var(--cream);
-  margin-top: 8px;
-}
-.slide-1 .cover-headline em {
-  font-style: normal;
-  color: var(--gold-pale);
-}
-.slide-1 .cover-bottom {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-.slide-1 .cover-meta {
-  font-family: var(--f-mono);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(200,167,117,0.45);
-  line-height: 2;
-}
-.slide-1 .cover-tagline {
-  font-family: var(--f-body);
-  font-size: 14px;
   font-weight: 300;
-  color: rgba(244,238,228,0.4);
-  text-align: right;
-  max-width: 240px;
-  line-height: 1.7;
+  font-size: clamp(22px, 2.8vw, 38px);
+  color: rgba(244,238,228,0.45);
+  letter-spacing: -0.01em;
+  margin-top: 28px;
+  line-height: 1.3;
 }
-.slide-1 .cover-gold-line {
+.s1 .cover-rule {
   width: 100%;
   height: 1px;
-  background: linear-gradient(to right, rgba(200,167,117,0.5), transparent);
-  margin: 48px 0 40px;
+  background: linear-gradient(to right, rgba(200,167,117,0.45), transparent);
+  margin: 36px 0 32px;
 }
 
-/* ══════════════════════════════════════════
-   SLIDE 2 — OPORTUNIDAD
-   ══════════════════════════════════════════ */
-.slide-2 .slide-inner {
-  justify-content: space-between;
+/* S2 — QUIÉNES SOMOS */
+.s2-img {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 44%;
+  overflow: hidden;
+  clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
-.slide-2 .opp-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: end;
-  margin-top: auto;
+.s2-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 40% top;
+  filter: brightness(0.88) contrast(1.04) saturate(0.82);
+  display: block;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 28%, black 58%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 28%, black 58%);
 }
-.slide-2 .opp-title {
-  font-family: var(--f-display);
-  font-weight: 300;
-  font-style: italic;
-  font-size: clamp(42px, 6vw, 80px);
-  letter-spacing: -0.03em;
-  line-height: 1.0;
-  color: var(--ink);
-}
-.slide-2 .opp-title em {
-  font-style: normal;
-  color: var(--gold-deep);
-}
-.slide-2 .opp-body {
-  font-family: var(--f-body);
-  font-size: 15px;
-  font-weight: 300;
-  color: var(--muted);
-  line-height: 1.75;
-  max-width: 340px;
-}
-.slide-2 .opp-stats {
+.s2 .pad { max-width: 60%; }
+.s2-facts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  margin-top: 72px;
-  border-top: 1px solid rgba(26,21,16,0.1);
+  gap: 0;
+  border-top: 1px solid var(--rule-med);
+  margin-top: auto;
 }
-.slide-2 .stat-cell {
-  padding: 36px 0 0;
-  padding-right: 40px;
+.s2-fact {
+  padding: 22px 0 0;
+  padding-right: 32px;
 }
-.slide-2 .stat-num {
+.s2-fact:not(:last-child) {
+  border-right: 1px solid var(--rule);
+  padding-right: 32px;
+  margin-right: 32px;
+}
+/* override last—fix grid border approach */
+
+/* S3 — PRODUCTOS */
+.s3-materials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  flex: 1;
+  margin-top: 40px;
+}
+.s3-mat {
+  padding: 0 40px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+.s3-mat:not(:first-child) {
+  padding-left: 40px;
+  padding-right: 0;
+  border-left: 1px solid var(--rule-med);
+}
+.s3-mat:nth-child(2) { padding-right: 40px; }
+.mat-dot-lg {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+.dot-gold-lg   { background: radial-gradient(circle at 35% 35%, #ECD08C, #C8A775 50%, #A88550 100%); box-shadow: 0 0 28px rgba(200,167,117,0.3); }
+.dot-silver-lg { background: radial-gradient(circle at 35% 35%, #F4F4F6, #CACACE 50%, #9A9EA2 100%); }
+.dot-steel-lg  { background: radial-gradient(circle at 35% 35%, #DCE0E4, #AEB6BE 50%, #707880 100%); }
+
+.s3-mat-name {
   font-family: var(--f-display);
-  font-weight: 300;
-  font-size: clamp(40px, 5vw, 64px);
-  letter-spacing: -0.04em;
-  line-height: 1;
+  font-size: 26px;
+  font-weight: 400;
   color: var(--ink);
   margin-bottom: 8px;
+  line-height: 1;
 }
-.slide-2 .stat-num sup {
-  font-size: 0.4em;
-  vertical-align: top;
-  margin-top: 0.2em;
-}
-.slide-2 .stat-label {
-  font-family: var(--f-body);
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--muted);
-  line-height: 1.5;
-}
-
-/* ══════════════════════════════════════════
-   SLIDE 3 — LA MARCA
-   ══════════════════════════════════════════ */
-.slide-3 .brand-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  height: 100%;
-  align-items: center;
-}
-.slide-3 .brand-left {}
-.slide-3 .brand-headline {
-  font-family: var(--f-display);
-  font-weight: 200;
-  font-style: italic;
-  font-size: clamp(38px, 5vw, 68px);
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  color: var(--ink);
-  margin: 28px 0 32px;
-}
-.slide-3 .brand-headline strong {
-  font-style: normal;
-  font-weight: 400;
-  color: var(--gold-deep);
-}
-.slide-3 .brand-body {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 380px;
-}
-.slide-3 .brand-right {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-.slide-3 .cert-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-  padding: 28px 32px;
-  background: rgba(26,21,16,0.04);
-  border-left: 2px solid var(--gold);
-}
-.slide-3 .cert-icon {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.slide-3 .cert-icon svg { width: 28px; height: 28px; }
-.slide-3 .cert-title {
+.s3-mat-spec {
   font-family: var(--f-mono);
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--gold-deep);
-  margin-bottom: 4px;
+  margin-bottom: 16px;
   display: block;
 }
-.slide-3 .cert-text {
-  font-size: 13px;
+.s3-retail {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--rule-med);
+  margin-top: 32px;
+}
+.s3-retail-item {
+  flex: 1;
+  padding: 20px 24px 0 0;
+}
+.s3-retail-item:not(:first-child) {
+  padding-left: 24px;
+  border-left: 1px solid var(--rule);
+}
+.s3-retail-num {
+  font-family: var(--f-display);
+  font-size: 20px;
   font-weight: 300;
-  color: var(--muted);
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+/* S4 — PRECIOS */
+.s4-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 64px;
+  flex: 1;
+  align-items: center;
+  margin-top: 36px;
+}
+.s4-margin-big {
+  font-family: var(--f-display);
+  font-weight: 200;
+  font-style: italic;
+  font-size: clamp(120px, 14vw, 180px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--gold);
+}
+.s4-margin-label {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-top: 12px;
   line-height: 1.6;
 }
-
-/* ══════════════════════════════════════════
-   SLIDE 4 — PRECIOS Y MARGEN
-   ══════════════════════════════════════════ */
-.slide-4 .bg-forty {
-  position: absolute;
-  right: -2%;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: var(--f-display);
-  font-weight: 200;
-  font-size: clamp(280px, 35vw, 480px);
-  letter-spacing: -0.05em;
-  line-height: 1;
-  color: rgba(200,167,117,0.07);
-  pointer-events: none;
-  user-select: none;
-  z-index: 1;
-}
-.slide-4 .slide-inner {
-  justify-content: space-between;
-}
-.slide-4 .price-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.slide-4 .margin-callout {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.slide-4 .margin-num {
-  font-family: var(--f-display);
-  font-weight: 200;
-  font-style: italic;
-  font-size: clamp(72px, 10vw, 128px);
-  letter-spacing: -0.04em;
-  line-height: 1;
-  color: var(--gold);
-}
-.slide-4 .margin-label {
-  font-family: var(--f-mono);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(200,167,117,0.5);
-  margin-top: 4px;
-  text-align: right;
-}
-.slide-4 .price-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: auto;
-}
-.slide-4 .price-card {
-  padding: 40px 36px;
-  background: rgba(244,238,228,0.03);
-  border-top: 1px solid rgba(200,167,117,0.15);
-  position: relative;
-  transition: background 0.3s;
-}
-.slide-4 .price-card.featured {
-  background: rgba(200,167,117,0.08);
-  border-top-color: rgba(200,167,117,0.5);
-}
-.slide-4 .mat-dot {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-.dot-gold   { background: radial-gradient(circle at 35% 35%, #ECD08C, #C8A775 50%, #A88550 100%); }
-.dot-silver { background: radial-gradient(circle at 35% 35%, #F4F4F6, #CACACE 50%, #9A9EA2 100%); }
-.dot-steel  { background: radial-gradient(circle at 35% 35%, #DCE0E4, #AEB6BE 50%, #707880 100%); }
-.slide-4 .mat-name {
-  font-family: var(--f-display);
-  font-weight: 300;
-  font-size: 22px;
-  color: var(--cream);
-  margin-bottom: 6px;
-}
-.slide-4 .mat-spec {
-  font-family: var(--f-mono);
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(200,167,117,0.4);
-  margin-bottom: 32px;
-  display: block;
-}
-.slide-4 .price-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 10px;
-}
-.slide-4 .price-label {
-  font-family: var(--f-mono);
-  font-size: 9px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: rgba(200,167,117,0.35);
-}
-.slide-4 .price-val {
-  font-family: var(--f-body);
-  font-size: 15px;
-  font-weight: 300;
-  color: rgba(244,238,228,0.5);
-}
-.slide-4 .price-val.canal {
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--gold-pale);
-}
-.slide-4 .price-rule {
+.s4-table {
   width: 100%;
-  height: 1px;
-  background: rgba(200,167,117,0.1);
-  margin: 16px 0;
+  border-collapse: collapse;
 }
-.slide-4 .margin-pct {
-  font-family: var(--f-display);
-  font-weight: 300;
-  font-style: italic;
-  font-size: 28px;
-  color: var(--gold);
+.s4-table thead tr {
+  border-bottom: 1px solid var(--rule-str);
 }
-
-/* ══════════════════════════════════════════
-   SLIDE 5 — LÍNEAS
-   ══════════════════════════════════════════ */
-.slide-5 .lineas-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 100%;
-}
-.slide-5 .linea-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 60px 64px 72px;
-  position: relative;
-  overflow: hidden;
-}
-.slide-5 .linea-col.bebe {
-  background: #F7EFE7;
-  border-right: 1px solid rgba(200,167,117,0.15);
-}
-.slide-5 .linea-col.adulta {
-  background: var(--ink-soft);
-}
-.slide-5 .linea-img-area {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 55%;
-  overflow: hidden;
-}
-.slide-5 .linea-img-area img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-}
-.slide-5 .linea-col.bebe .linea-img-area {
-  clip-path: polygon(0% 0%, 94% 0%, 100% 6%, 100% 100%, 0% 100%);
-}
-.slide-5 .linea-col.bebe .linea-img-area img {
-  filter: brightness(0.95) contrast(1.03) saturate(0.85) sepia(0.08);
-}
-.slide-5 .linea-col.adulta .linea-img-area {
-  clip-path: polygon(0% 6%, 6% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-.slide-5 .linea-col.adulta .linea-img-area img {
-  filter: brightness(0.80) contrast(1.10) saturate(0.82);
-}
-.slide-5 .linea-content {
-  position: relative;
-  z-index: 2;
-}
-.slide-5 .linea-tag {
+.s4-table th {
   font-family: var(--f-mono);
   font-size: 9px;
-  letter-spacing: 2px;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
-  display: block;
-  margin-bottom: 12px;
-}
-.slide-5 .linea-col.bebe .linea-tag  { color: var(--gold-deep); }
-.slide-5 .linea-col.adulta .linea-tag { color: var(--gold); }
-.slide-5 .linea-name {
-  font-family: var(--f-display);
-  font-weight: 300;
-  font-size: clamp(28px, 3vw, 44px);
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  margin-bottom: 12px;
-}
-.slide-5 .linea-col.bebe .linea-name  { color: var(--ink); font-style: italic; }
-.slide-5 .linea-col.adulta .linea-name { color: var(--cream); }
-.slide-5 .linea-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 16px;
-}
-.slide-5 .pill {
-  font-family: var(--f-mono);
-  font-size: 9px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 5px 10px;
-  border-radius: 2px;
-}
-.slide-5 .linea-col.bebe .pill {
-  background: rgba(200,167,117,0.12);
-  color: var(--gold-deep);
-  border: 1px solid rgba(200,167,117,0.2);
-}
-.slide-5 .linea-col.adulta .pill {
-  background: rgba(200,167,117,0.1);
-  color: var(--gold);
-  border: 1px solid rgba(200,167,117,0.2);
-}
-.slide-5 .linea-desc {
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.7;
-}
-.slide-5 .linea-col.bebe .linea-desc  { color: var(--muted); }
-.slide-5 .linea-col.adulta .linea-desc { color: rgba(244,238,228,0.45); }
-
-/* ══════════════════════════════════════════
-   SLIDE 6 — PROPUESTA DE CANAL
-   ══════════════════════════════════════════ */
-.slide-6 .canal-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  height: 100%;
-  align-items: center;
-}
-.slide-6 .canal-headline {
-  font-family: var(--f-display);
-  font-weight: 200;
-  font-style: italic;
-  font-size: clamp(38px, 5vw, 64px);
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  color: var(--ink);
-  margin: 28px 0 32px;
-}
-.slide-6 .canal-headline strong {
-  font-style: normal;
-  font-weight: 400;
-  color: var(--gold-deep);
-}
-.slide-6 .canal-body {
-  font-size: 14px;
-  font-weight: 300;
   color: var(--muted);
-  line-height: 1.8;
+  font-weight: 400;
+  text-align: left;
+  padding: 0 0 14px;
 }
-.slide-6 .benefit-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.s4-table th:not(:first-child) { text-align: right; }
+.s4-table tbody tr {
+  border-bottom: 1px solid var(--rule);
 }
-.slide-6 .benefit-item {
-  display: grid;
-  grid-template-columns: 36px 1fr;
-  gap: 20px;
-  align-items: start;
-  padding: 20px 24px;
-  background: rgba(26,21,16,0.04);
-  border-left: 2px solid transparent;
-  transition: border-color 0.2s;
+.s4-table tbody tr:last-child { border-bottom: none; }
+.s4-table td {
+  font-family: var(--f-display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ink-soft);
+  padding: 18px 0;
+  vertical-align: middle;
 }
-.slide-6 .benefit-item:hover { border-left-color: var(--gold); }
-.slide-6 .benefit-num {
-  font-family: var(--f-mono);
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: var(--gold-deep);
-  padding-top: 2px;
-}
-.slide-6 .benefit-title {
+.s4-table td.num {
   font-family: var(--f-body);
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
   color: var(--ink);
-  margin-bottom: 4px;
+  text-align: right;
 }
-.slide-6 .benefit-desc {
-  font-size: 12px;
-  font-weight: 300;
+.s4-table td.pvps {
+  font-family: var(--f-body);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--gold-deep);
+  text-align: right;
+}
+.s4-subtitle {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 32px;
+  display: block;
+  border-left: 2px solid var(--gold);
+  padding-left: 14px;
+}
+.s4-footnote {
+  font-family: var(--f-body);
+  font-style: italic;
+  font-size: 11px;
   color: var(--muted);
+  margin-top: 28px;
   line-height: 1.6;
+  opacity: 0.8;
 }
 
-/* ══════════════════════════════════════════
-   SLIDE 7 — CIERRE
-   ══════════════════════════════════════════ */
-.slide-7 .bg-glyph {
-  right: -8%;
-  bottom: -15%;
-  color: rgba(200,167,117,0.03);
-  z-index: 1;
-  font-size: clamp(260px, 38vw, 500px);
+/* S5 — SEGURIDAD */
+.s5-img-bg {
+  position: absolute;
+  right: 0; bottom: 0;
+  width: 38%;
+  height: 55%;
+  overflow: hidden;
+  clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
+  pointer-events: none;
 }
-.slide-7 .close-inner {
+.s5-img-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: brightness(0.22) contrast(1.1) saturate(0.3);
+  display: block;
+}
+.s5-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 40px;
+  flex: 1;
+}
+.s5-col {
+  padding-right: 48px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  position: relative;
-  z-index: 2;
 }
-.slide-7 .close-headline {
+.s5-col:not(:first-child) {
+  padding-left: 48px;
+  padding-right: 0;
+  border-left: 1px solid rgba(244,238,228,0.08);
+}
+.s5-col:nth-child(2) { padding-right: 48px; }
+.s5-metric {
   font-family: var(--f-display);
   font-weight: 200;
   font-style: italic;
-  font-size: clamp(52px, 7.5vw, 100px);
+  font-size: clamp(52px, 5.5vw, 72px);
+  line-height: 1;
   letter-spacing: -0.03em;
-  line-height: 0.95;
   color: var(--cream);
-  max-width: 740px;
+  margin-bottom: 20px;
 }
-.slide-7 .close-headline em {
-  font-style: normal;
-  color: var(--gold-pale);
-}
-.slide-7 .close-bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: end;
-}
-.slide-7 .contact-block {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.slide-7 .contact-row {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.slide-7 .contact-label {
+.s5-metric em { color: var(--gold); font-style: normal; }
+.s5-col-label {
   font-family: var(--f-mono);
   font-size: 9px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(200,167,117,0.4);
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: block;
 }
-.slide-7 .contact-val {
-  font-size: 14px;
-  font-weight: 300;
-  color: rgba(244,238,228,0.7);
+.s5-col-title {
+  font-family: var(--f-display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 12px;
+  line-height: 1.1;
 }
-.slide-7 .close-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 32px;
-  border: 1px solid rgba(200,167,117,0.4);
-  background: rgba(200,167,117,0.08);
-  font-family: var(--f-mono);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold-pale);
-  text-decoration: none;
-  width: fit-content;
-  transition: background 0.25s, border-color 0.25s;
-}
-.slide-7 .close-cta:hover {
-  background: rgba(200,167,117,0.16);
-  border-color: rgba(200,167,117,0.7);
-}
-.slide-7 .cta-arrow { opacity: 0.6; }
 
-/* ══════════════════════════════════════════
-   PRINT
-   ══════════════════════════════════════════ */
+/* S6 — EXHIBICIÓN */
+.s6-panels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 40px;
+  flex: 1;
+}
+.s6-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 36px 40px 36px 0;
+  overflow: hidden;
+}
+.s6-panel:not(:first-child) {
+  padding-left: 40px;
+  padding-right: 0;
+  border-left: 1px solid var(--rule-med);
+}
+.s6-panel:nth-child(2) { padding-right: 40px; }
+.s6-panel-gota {
+  position: absolute;
+  right: -20px; bottom: -20px;
+  opacity: 0.045;
+  pointer-events: none;
+}
+.s6-panel-num {
+  font-family: var(--f-display);
+  font-weight: 200;
+  font-style: italic;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--gold-deep);
+  opacity: 0.4;
+}
+.s6-panel-title {
+  font-family: var(--f-display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+.s6-panel-sub {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* S7 — CIERRE */
+.s7-center {
+  margin: auto 0;
+  position: relative;
+  z-index: 2;
+}
+.s7-metrics {
+  display: flex;
+  gap: 56px;
+  margin-top: 44px;
+}
+.s7-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.s7-metric-num {
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--cream);
+}
+.s7-metric-num em { color: var(--gold); font-style: normal; }
+
+/* ── PRINT ── */
 @media print {
-  html, body {
-    width: 100%;
-    height: auto;
-    overflow: visible;
-    background: var(--ink);
-  }
-  #deck {
-    width: auto;
-    height: auto;
-    overflow: visible;
-  }
-  #nav-prev, #nav-next, #progress-bar,
-  #slide-counter, .deck-hint { display: none !important; }
+  html, body { overflow: visible; height: auto; width: 100%; background: white; }
+  #deck { overflow: visible; height: auto; width: 100%; }
   .slide {
     opacity: 1 !important;
-    pointer-events: all !important;
     transform: none !important;
+    pointer-events: all !important;
     position: relative !important;
+    display: flex !important;
     width: 100vw !important;
     height: 100vh !important;
     page-break-after: always;
     break-after: always;
-    display: flex !important;
   }
-  @page {
-    size: landscape;
-    margin: 0;
-  }
+  #nav-dots, #nav-prev, #nav-next { display: none !important; }
+  @page { size: landscape; margin: 0; }
   * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 }
 </style>
 </head>
 <body>
 
+<!-- HIDDEN SVG SYMBOLS -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="gota" viewBox="0 0 1080 1080">
+    <path d="M553.61,1061.99c-182.73,4.91-325.16-122.5-350.41-277.05-15.52-95.02,6.44-182.07,47.79-267.55,31.94-66.04,74.48-123.51,122.82-177.32,45.57-50.72,98.08-93.86,153.6-133.37,10.12-7.2,18.81-6.81,28.69.66,110.05,83.22,206.16,178.86,269.49,303.45,35.25,69.34,57.22,142.16,56.16,220.92-2.16,160.68-127.14,302.93-286.29,325.98-14.52,2.1-29.04,2.87-41.86,4.27ZM538.82,1017.76c16.07.65,31.74-1.03,47.23-3.88,112.62-20.74,192.31-82.64,232.22-190.9,33.27-90.23,15.74-177.94-22.23-262.26-54.34-120.68-142.72-213.79-245.11-294.99-7.83-6.21-12.64-5.05-20.14.56-47.91,35.83-91.89,75.84-131.43,120.74-73.95,83.99-133.49,175.9-150.38,289.09-10.88,72.94-4.85,143.6,39.54,206.98,61.09,87.22,144.93,130.78,250.3,134.65Z"/>
+    <path d="M468.34,17.31c23.65.12,41.97,17.72,42.22,40.55.24,22.91-19.65,43.43-42.18,43.51-23.68.09-45.45-20.42-45.2-42.6.26-24.03,19.4-41.6,45.17-41.47Z"/>
+    <path d="M601.16,17.22c24.68-.21,44.01,17.3,44.59,40.4.59,23.54-19.83,44.02-43.69,43.82-22.61-.19-43.32-20.85-43.24-43.13.08-22.31,19.22-40.88,42.34-41.08Z"/>
+  </symbol>
+</svg>
+
 <div id="deck">
 
-  <!-- ══ PROGRESS ══ -->
-  <div id="progress-bar"></div>
-  <div id="slide-counter">01 / 07</div>
-  <div class="deck-hint">← → navegar · F pantalla completa · P imprimir</div>
+<!-- NAV DOTS -->
+<nav id="nav-dots" aria-label="Navegación de slides">
+  <button class="dot active" data-idx="0" aria-label="Slide 1"></button>
+  <button class="dot" data-idx="1" aria-label="Slide 2"></button>
+  <button class="dot" data-idx="2" aria-label="Slide 3"></button>
+  <button class="dot" data-idx="3" aria-label="Slide 4"></button>
+  <button class="dot" data-idx="4" aria-label="Slide 5"></button>
+  <button class="dot" data-idx="5" aria-label="Slide 6"></button>
+  <button class="dot" data-idx="6" aria-label="Slide 7"></button>
+</nav>
 
-  <!-- ══ NAV ══ -->
-  <button id="nav-prev" aria-label="Diapositiva anterior">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" color="rgba(200,167,117,0.7)">
-      <polyline points="15 18 9 12 15 6"></polyline>
-    </svg>
-  </button>
-  <button id="nav-next" aria-label="Diapositiva siguiente">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" color="rgba(200,167,117,0.7)">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </button>
+<button id="nav-prev" aria-label="Anterior">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+</button>
+<button id="nav-next" aria-label="Siguiente">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+</button>
 
-  <!-- ══════════════════════════════════════
-       SLIDE 1 — PORTADA
-       ══════════════════════════════════════ -->
-  <section class="slide slide-1 active" id="slide-1" aria-label="Portada">
-    <div class="bg-glyph" aria-hidden="true">Pūrly</div>
-    <div class="slide-inner">
-      <div class="hero-mark">
-        <!-- Logo -->
-        <svg class="deck-logo" viewBox="0 0 1080 400" aria-label="Pūrly">
+
+<!-- ═══════════════════════════════════════════════
+     S1 · PORTADA
+     ═══════════════════════════════════════════════ -->
+<section class="slide s1 active" id="slide-1">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wm-gota" style="right:-100px;top:50%;transform:translateY(-50%);opacity:.055;" aria-hidden="true">
+    <svg width="580" height="580" viewBox="0 0 1080 1080"><use href="#gota" fill="#C8A775"/></svg>
+  </div>
+  <span class="side-label" style="left:22px;top:50%;transform:translateY(-50%) rotate(180deg);color:rgba(200,167,117,0.28);">
+    Pūrly™ · Propuesta Comercial · 2026 · Confidencial
+  </span>
+
+  <div class="pad">
+    <div class="head-row" style="position:relative;z-index:2;">
+      <!-- Logo SVG -->
+      <svg class="logo" viewBox="0 0 1080 400" aria-label="Pūrly">
+        <g fill="#C8A775">
+          <path d="M151.12,372.22c-60.25,1.62-107.21-40.39-115.54-91.35-5.12-31.33,2.12-60.03,15.76-88.21,10.53-21.77,24.56-40.72,40.5-58.46,15.03-16.72,32.34-30.95,50.64-43.97,3.34-2.38,6.2-2.25,9.46.22,36.29,27.44,67.97,58.97,88.86,100.05,11.62,22.86,18.87,46.87,18.52,72.84-.71,52.98-41.92,99.88-94.39,107.48-4.79.69-9.58.95-13.8,1.41ZM146.24,357.63c5.3.21,10.46-.34,15.57-1.28,37.13-6.84,63.41-27.25,76.57-62.94,10.97-29.75,5.19-58.67-7.33-86.47-17.92-39.79-47.06-70.49-80.82-97.26-2.58-2.05-4.17-1.66-6.64.19-15.8,11.81-30.3,25-43.34,39.81-24.38,27.69-44.02,58-49.58,95.32-3.59,24.05-1.6,47.35,13.04,68.24,20.14,28.76,47.79,43.12,82.53,44.4Z"/>
+          <path d="M123,27.77c7.8.04,13.84,5.84,13.92,13.37.08,7.55-6.48,14.32-13.91,14.35-7.81.03-14.98-6.73-14.9-14.04.09-7.92,6.4-13.72,14.89-13.67Z"/>
+          <path d="M166.8,27.74c8.14-.07,14.51,5.7,14.7,13.32.2,7.76-6.54,14.51-14.4,14.45-7.46-.06-14.28-6.88-14.26-14.22.03-7.36,6.34-13.48,13.96-13.55Z"/>
+        </g>
+        <g fill="#F4EEE4">
+          <path d="M339.06,316.14v-6.66h19.71v-134.55h-19.71v-6.66h79.35c11,0,20.37,1.89,28.09,5.67,13.8,6.74,20.7,17.91,20.7,33.52,0,6.73-1.32,12.9-3.95,18.48-7.88,16.76-25.71,25.14-53.47,25.14h-20.7v58.4h17.99c3.45.33,5.67,2.55,6.66,6.66h-74.67ZM389.08,174.94v68.75h19.22c17.58-1.31,26.37-12.9,26.37-34.75,0-2.29-.08-4.52-.25-6.65-1.97-18.24-11-27.36-27.1-27.36h-18.24Z"/>
+          <path d="M473.61,168.28h69.49v6.66h-19.71v84.77c0,8.54.65,16.01,1.97,22.42,4.1,19.55,15.44,29.33,34.01,29.33,26.62-.16,40.01-17.33,40.17-51.51v-85.01h-19.71v-6.66h48.3v6.66h-19.71v83.54c0,11.17-1.23,20.79-3.7,28.83-6.73,20.86-23.57,31.3-50.51,31.3-40.25-.16-60.54-19.22-60.87-57.17v-86.5h-19.71v-6.66Z"/>
+          <path d="M635.76,316.14v-6.66h19.71v-134.55h-19.71v-6.66h79.35c12.97,0,23.98,3.04,33.02,9.12,10.84,7.4,16.26,17.25,16.26,29.57,0,4.11-.66,8.22-1.97,12.32-4.6,13.3-15.28,22.18-32.04,26.61l38.69,63.83h5.17c.99,0,1.98.08,2.96.25,2.14.49,3.2,2.55,3.2,6.16l-41.4.25-37.46-67.77h-15.77v60.87h19.71v6.66h-69.73ZM685.78,174.94v66.29h18.49c5.75,0,10.84-1.56,15.27-4.68,8.39-6.08,12.57-15.69,12.57-28.83,0-5.1-.83-9.86-2.46-14.29-4.6-12.32-13.55-18.49-26.86-18.49h-17Z"/>
+          <path d="M786.82,316.14v-6.66h19.71v-134.55h-19.71v-6.66h70.97v6.66h-20.94v134.55h28.09c4.59,0,8.62-.82,12.08-2.46,6.56-3.12,11.58-10.43,15.03-21.93l6.15-21.2h6.41l-.99,52.24h-116.8Z"/>
+          <path d="M941.33,316.14v-6.66h20.7v-54.71l-45.09-79.84h-12.32v-6.66h64.57v6.66h-18.73l37.21,69.49,34.5-69.49h-19.71v-6.66h43.62c-.33,3.45-2.55,5.67-6.66,6.66-5.26.16-9.45,2.46-12.56,6.9l-34.75,70.97v56.68h14.05c3.45.33,5.67,2.55,6.65,6.66h-71.46Z"/>
+        </g>
+      </svg>
+      <span class="mono dim">Propuesta Comercial — Grandes Superficies</span>
+    </div>
+
+    <div class="cover-center" style="position:relative;z-index:2;">
+      <span class="kicker on-dark" style="margin-bottom:28px;">Joyería hipoalergénica · Canal mayorista · 2026</span>
+      <div class="cover-rule"></div>
+      <h1 class="h1 on-dark">
+        Pureza que se siente.<br>
+        <em>Belleza que no daña.</em>
+      </h1>
+      <p class="cover-tagline">
+        Topos hipoalergénicos en oro laminado,<br>plata 925 y acero quirúrgico 316L.
+      </p>
+    </div>
+
+    <div class="foot-row" style="position:relative;z-index:2;">
+      <span class="mono dim">Medellín, Colombia · @purlyconcept</span>
+      <span class="mono dim">Presentación a aliados comerciales · Confidencial</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     S2 · QUIÉNES SOMOS
+     ═══════════════════════════════════════════════ -->
+<section class="slide s2" id="slide-2">
+  <div class="wm-text" style="font-size:clamp(110px,16vw,230px);right:38%;bottom:-20px;">Pūrly</div>
+  <div class="s2-img" aria-hidden="true">
+    <img src="img-hero.png" alt="" loading="lazy">
+  </div>
+
+  <div class="pad">
+    <div class="head-row">
+      <div>
+        <span class="kicker" style="margin-bottom:14px;">(02) — Quiénes somos</span>
+        <h2 class="h2" style="margin-top:8px;">
+          Una marca que cuida<br>la piel más <em>delicada</em>.
+        </h2>
+      </div>
+      <!-- small logo on light slide -->
+      <svg style="height:22px;width:auto;flex-shrink:0;" viewBox="0 0 1080 400" aria-label="Pūrly">
+        <g fill="#C8A775">
+          <path d="M151.12,372.22c-60.25,1.62-107.21-40.39-115.54-91.35-5.12-31.33,2.12-60.03,15.76-88.21,10.53-21.77,24.56-40.72,40.5-58.46,15.03-16.72,32.34-30.95,50.64-43.97,3.34-2.38,6.2-2.25,9.46.22,36.29,27.44,67.97,58.97,88.86,100.05,11.62,22.86,18.87,46.87,18.52,72.84-.71,52.98-41.92,99.88-94.39,107.48-4.79.69-9.58.95-13.8,1.41ZM146.24,357.63c5.3.21,10.46-.34,15.57-1.28,37.13-6.84,63.41-27.25,76.57-62.94,10.97-29.75,5.19-58.67-7.33-86.47-17.92-39.79-47.06-70.49-80.82-97.26-2.58-2.05-4.17-1.66-6.64.19-15.8,11.81-30.3,25-43.34,39.81-24.38,27.69-44.02,58-49.58,95.32-3.59,24.05-1.6,47.35,13.04,68.24,20.14,28.76,47.79,43.12,82.53,44.4Z"/>
+          <path d="M123,27.77c7.8.04,13.84,5.84,13.92,13.37.08,7.55-6.48,14.32-13.91,14.35-7.81.03-14.98-6.73-14.9-14.04.09-7.92,6.4-13.72,14.89-13.67Z"/>
+          <path d="M166.8,27.74c8.14-.07,14.51,5.7,14.7,13.32.2,7.76-6.54,14.51-14.4,14.45-7.46-.06-14.28-6.88-14.26-14.22.03-7.36,6.34-13.48,13.96-13.55Z"/>
+        </g>
+        <g fill="#1A1510">
+          <path d="M339.06,316.14v-6.66h19.71v-134.55h-19.71v-6.66h79.35c11,0,20.37,1.89,28.09,5.67,13.8,6.74,20.7,17.91,20.7,33.52,0,6.73-1.32,12.9-3.95,18.48-7.88,16.76-25.71,25.14-53.47,25.14h-20.7v58.4h17.99c3.45.33,5.67,2.55,6.66,6.66h-74.67ZM389.08,174.94v68.75h19.22c17.58-1.31,26.37-12.9,26.37-34.75,0-2.29-.08-4.52-.25-6.65-1.97-18.24-11-27.36-27.1-27.36h-18.24Z"/>
+          <path d="M473.61,168.28h69.49v6.66h-19.71v84.77c0,8.54.65,16.01,1.97,22.42,4.1,19.55,15.44,29.33,34.01,29.33,26.62-.16,40.01-17.33,40.17-51.51v-85.01h-19.71v-6.66h48.3v6.66h-19.71v83.54c0,11.17-1.23,20.79-3.7,28.83-6.73,20.86-23.57,31.3-50.51,31.3-40.25-.16-60.54-19.22-60.87-57.17v-86.5h-19.71v-6.66Z"/>
+          <path d="M635.76,316.14v-6.66h19.71v-134.55h-19.71v-6.66h79.35c12.97,0,23.98,3.04,33.02,9.12,10.84,7.4,16.26,17.25,16.26,29.57,0,4.11-.66,8.22-1.97,12.32-4.6,13.3-15.28,22.18-32.04,26.61l38.69,63.83h5.17c.99,0,1.98.08,2.96.25,2.14.49,3.2,2.55,3.2,6.16l-41.4.25-37.46-67.77h-15.77v60.87h19.71v6.66h-69.73ZM685.78,174.94v66.29h18.49c5.75,0,10.84-1.56,15.27-4.68,8.39-6.08,12.57-15.69,12.57-28.83,0-5.1-.83-9.86-2.46-14.29-4.6-12.32-13.55-18.49-26.86-18.49h-17Z"/>
+          <path d="M786.82,316.14v-6.66h19.71v-134.55h-19.71v-6.66h70.97v6.66h-20.94v134.55h28.09c4.59,0,8.62-.82,12.08-2.46,6.56-3.12,11.58-10.43,15.03-21.93l6.15-21.2h6.41l-.99,52.24h-116.8Z"/>
+          <path d="M941.33,316.14v-6.66h20.7v-54.71l-45.09-79.84h-12.32v-6.66h64.57v6.66h-18.73l37.21,69.49,34.5-69.49h-19.71v-6.66h43.62c-.33,3.45-2.55,5.67-6.66,6.66-5.26.16-9.45,2.46-12.56,6.9l-34.75,70.97v56.68h14.05c3.45.33,5.67,2.55,6.65,6.66h-71.46Z"/>
+        </g>
+      </svg>
+    </div>
+
+    <div style="margin-top:36px;max-width:520px;">
+      <p class="lead">Pūrly es una marca colombiana de <em>topos hipoalergénicos</em> en oro laminado, plata y acero quirúrgico.</p>
+      <p class="body" style="margin-top:20px;">Nacimos para resolver un problema real: la mayoría de los aretes del mercado irritan, alergizan o simplemente no son seguros para pieles sensibles, bebés o personas reactivas. Pūrly existe para que la belleza nunca sea un compromiso con la salud de la piel.</p>
+    </div>
+
+    <div class="s2-facts">
+      <div style="padding:22px 32px 0 0;">
+        <span class="mono gold" style="display:block;margin-bottom:8px;">Categoría</span>
+        <div style="font-family:var(--f-display);font-size:18px;font-weight:400;color:var(--ink);">Joyería hipoalergénica</div>
+      </div>
+      <div style="padding:22px 32px;border-left:1px solid var(--rule);">
+        <span class="mono gold" style="display:block;margin-bottom:8px;">Modelo</span>
+        <div style="font-family:var(--f-display);font-size:18px;font-weight:400;color:var(--ink);">Mayorista · Grandes superficies</div>
+      </div>
+      <div style="padding:22px 0 0 32px;border-left:1px solid var(--rule);">
+        <span class="mono gold" style="display:block;margin-bottom:8px;">Origen</span>
+        <div style="font-family:var(--f-display);font-size:18px;font-weight:400;color:var(--ink);">Medellín, Colombia</div>
+      </div>
+    </div>
+
+    <div class="foot-row">
+      <div style="display:flex;gap:48px;">
+        <div>
+          <span class="mono gold" style="display:block;margin-bottom:4px;">Misión</span>
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">Topos seguros, estética premium</span>
+        </div>
+        <div>
+          <span class="mono gold" style="display:block;margin-bottom:4px;">Visión</span>
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">Marca líder en Latinoamérica</span>
+        </div>
+      </div>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:0.5;">Pūrly™ · 2026</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     S3 · PRODUCTOS & ATRACTIVO
+     ═══════════════════════════════════════════════ -->
+<section class="slide s3" id="slide-3">
+  <div class="wm-gota" style="right:-60px;bottom:-60px;opacity:.038;" aria-hidden="true">
+    <svg width="420" height="420" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
+  </div>
+  <span class="side-label" style="right:22px;top:50%;transform:translateY(-50%) rotate(180deg);">
+    Productos · Tres materiales · Por qué atractivos
+  </span>
+
+  <div class="pad">
+    <div class="head-row">
+      <div>
+        <span class="kicker" style="margin-bottom:12px;">(03) — Productos &amp; atractivo</span>
+        <h2 class="h2">Tres materiales.<br><em>Cero alergias.</em></h2>
+      </div>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:0.5;">Catálogo base · Pūrly™</span>
+    </div>
+
+    <div class="s3-materials">
+      <div class="s3-mat">
+        <div class="mat-dot-lg dot-gold-lg"></div>
+        <div class="s3-mat-name">Oro laminado</div>
+        <span class="s3-mat-spec">18k · SKU-GP</span>
+        <p class="body" style="flex:1;">Cálido, brillante, percepción premium. El favorito para regalo y uso diario elegante.</p>
+      </div>
+      <div class="s3-mat">
+        <div class="mat-dot-lg dot-silver-lg"></div>
+        <div class="s3-mat-name">Plata</div>
+        <span class="s3-mat-spec">925 sterling · SKU-SS</span>
+        <p class="body" style="flex:1;">Frío, limpio, refinado. Atractivo para públicos que prefieren tonos neutros y minimalistas.</p>
+      </div>
+      <div class="s3-mat">
+        <div class="mat-dot-lg dot-steel-lg"></div>
+        <div class="s3-mat-name">Acero quirúrgico</div>
+        <span class="s3-mat-spec">316L · SKU-QS</span>
+        <p class="body" style="flex:1;">El más hipoalergénico. Ideal para bebés, pieles reactivas y primera perforación.</p>
+      </div>
+    </div>
+
+    <div class="s3-retail">
+      <div class="s3-retail-item">
+        <span class="mono gold" style="display:block;margin-bottom:6px;">Por qué atractivo</span>
+        <div class="s3-retail-num">Alta rotación</div>
+        <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">compra repetida · regalo</span>
+      </div>
+      <div class="s3-retail-item">
+        <span class="mono gold" style="display:block;margin-bottom:6px;">&nbsp;</span>
+        <div class="s3-retail-num">Ticket bajo</div>
+        <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">impulso en caja · accesible</span>
+      </div>
+      <div class="s3-retail-item">
+        <span class="mono gold" style="display:block;margin-bottom:6px;">&nbsp;</span>
+        <div class="s3-retail-num">Cero merma</div>
+        <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">no perecedero · larga vida</span>
+      </div>
+    </div>
+
+    <div class="foot-row">
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">Presentación: caja de 2 pares por unidad de venta</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:0.5;">Pūrly™ · 2026</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     S4 · ESTRUCTURA DE PRECIOS
+     ═══════════════════════════════════════════════ -->
+<section class="slide s4" id="slide-4">
+  <span class="side-label" style="left:22px;top:50%;transform:translateY(-50%) rotate(180deg);">
+    Precios · Rentabilidad · Margen del canal
+  </span>
+
+  <div class="pad">
+    <div class="head-row">
+      <div>
+        <span class="kicker" style="margin-bottom:12px;">(04) — Estructura de Precios</span>
+        <h2 class="h2">Margen <em>garantizado</em><br>para el canal.</h2>
+      </div>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.6;">Cifras en COP · sin IVA</span>
+    </div>
+
+    <div class="s4-layout">
+      <!-- Big 35% -->
+      <div>
+        <div class="s4-margin-big">35%</div>
+        <div class="s4-margin-label">
+          Margen canal<br>garantizado<br>sobre la venta
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div>
+        <span class="s4-subtitle">Margen garantizado para el canal: 35% sobre la venta</span>
+        <table class="s4-table">
+          <thead>
+            <tr>
+              <th>Material</th>
+              <th>P. Neto al Canal</th>
+              <th>PVPS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:14px;">
+                  <div style="width:12px;height:12px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 35% 35%,#ECD08C,#C8A775 50%,#A88550 100%);"></div>
+                  Oro laminado 18k
+                </div>
+              </td>
+              <td class="num">$27.300</td>
+              <td class="pvps">$42.000</td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:14px;">
+                  <div style="width:12px;height:12px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 35% 35%,#F4F4F6,#CACACE 50%,#9A9EA2 100%);"></div>
+                  Plata 925
+                </div>
+              </td>
+              <td class="num">$24.500</td>
+              <td class="pvps">$37.700</td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:14px;">
+                  <div style="width:12px;height:12px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 35% 35%,#DCE0E4,#AEB6BE 50%,#707880 100%);"></div>
+                  Acero quirúrgico 316L
+                </div>
+              </td>
+              <td class="num">$19.500</td>
+              <td class="pvps">$30.000</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top:18px;display:flex;gap:48px;border-top:1px solid var(--rule-med);padding-top:16px;">
+          <div>
+            <span class="mono gold" style="display:block;margin-bottom:4px;">P. Neto al Canal</span>
+            <span style="font-family:var(--f-mono);font-size:8.5px;letter-spacing:1px;color:var(--muted);">Precio de facturación a la cadena</span>
+          </div>
+          <div>
+            <span class="mono gold" style="display:block;margin-bottom:4px;">PVPS</span>
+            <span style="font-family:var(--f-mono);font-size:8.5px;letter-spacing:1px;color:var(--muted);">Precio de Venta al Público Sugerido</span>
+          </div>
+        </div>
+
+        <p class="s4-footnote">* Precios expresados sin IVA. El IVA aplicable según normativa vigente colombiana se adiciona al momento de facturación.</p>
+      </div>
+    </div>
+
+    <div class="foot-row">
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">Cifras de referencia · sujetas a volumen y negociación</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:0.5;">Pūrly™ · 2026</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     S5 · SEGURIDAD & MERMA
+     ═══════════════════════════════════════════════ -->
+<section class="slide s5" id="slide-5">
+  <div class="s5-img-bg" aria-hidden="true">
+    <img src="img-bebe.png" alt="" loading="lazy">
+  </div>
+  <div class="wm-gota" style="left:-80px;top:50%;transform:translateY(-50%);opacity:.05;" aria-hidden="true">
+    <svg width="460" height="460" viewBox="0 0 1080 1080"><use href="#gota" fill="#C8A775"/></svg>
+  </div>
+  <span class="side-label" style="right:22px;top:50%;transform:translateY(-50%) rotate(180deg);color:rgba(200,167,117,0.25);">
+    Seguridad · Merma · Riesgo operativo cero
+  </span>
+
+  <div class="pad">
+    <div class="head-row">
+      <div>
+        <span class="kicker on-dark" style="margin-bottom:12px;">(05) — Seguridad &amp; merma</span>
+        <h2 class="h2 on-dark">Un producto sin<br><em>merma</em> ni riesgo.</h2>
+      </div>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.3);">Ventaja operativa</span>
+    </div>
+
+    <div class="s5-cols" style="position:relative;z-index:2;">
+      <div class="s5-col">
+        <div class="s5-metric"><em>0%</em></div>
+        <span class="s5-col-label">01 — Sin caducidad</span>
+        <div class="s5-col-title">No es perecedero</div>
+        <p class="body on-dark">No vence, no se daña en góndola, no genera pérdida por rotación lenta.</p>
+      </div>
+      <div class="s5-col">
+        <div class="s5-metric">100<em>%</em></div>
+        <span class="s5-col-label">02 — Empaque sellado</span>
+        <div class="s5-col-title">Confianza sanitaria</div>
+        <p class="body on-dark">Cada unidad viene sellada e higiénica. Protege el producto y transmite confianza al cliente.</p>
+      </div>
+      <div class="s5-col">
+        <div class="s5-metric" style="font-size:clamp(42px,4.5vw,58px);color:var(--gold);">Hipoa<em style="font-style:normal;font-family:var(--f-display);font-weight:200;">lerg.</em></div>
+        <span class="s5-col-label">03 — Bajo hurto</span>
+        <div class="s5-col-title">Exhibición controlable</div>
+        <p class="body on-dark">Formato pequeño y seguro. Compatible con cajas, displays cerca de caja o góndola asistida.</p>
+      </div>
+    </div>
+
+    <div class="foot-row" style="position:relative;z-index:2;">
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Bajo riesgo operativo · alta confianza de categoría</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Pūrly™ · 2026</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     S6 · UBICACIÓN & EXHIBICIÓN
+     ═══════════════════════════════════════════════ -->
+<section class="slide s6" id="slide-6">
+  <div class="wm-gota" style="right:-70px;top:50%;transform:translateY(-50%);opacity:.038;" aria-hidden="true">
+    <svg width="440" height="440" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
+  </div>
+  <span class="side-label" style="left:22px;top:50%;transform:translateY(-50%) rotate(180deg);">
+    Ubicación · Exhibición · Punto de venta ideal
+  </span>
+
+  <div class="pad">
+    <div class="head-row">
+      <div>
+        <span class="kicker" style="margin-bottom:12px;">(06) — Ubicación &amp; exhibición</span>
+        <h2 class="h2">Dónde vive Pūrly<br>en el <em>punto de venta</em>.</h2>
+      </div>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Sugerencia de exhibición</span>
+    </div>
+
+    <div class="s6-panels">
+      <div class="s6-panel">
+        <div class="s6-panel-gota">
+          <svg width="140" height="140" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
+        </div>
+        <div class="s6-panel-num">01</div>
+        <div>
+          <span class="s6-panel-sub">Zona caja</span>
+          <div class="s6-panel-title">Compra por impulso</div>
+          <p class="body">Ticket bajo, decisión rápida. El cliente la ve al pagar y la lleva consigo.</p>
+        </div>
+      </div>
+      <div class="s6-panel">
+        <div class="s6-panel-gota">
+          <svg width="140" height="140" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
+        </div>
+        <div class="s6-panel-num">02</div>
+        <div>
+          <span class="s6-panel-sub">Cuidado personal</span>
+          <div class="s6-panel-title">Góndola dermo</div>
+          <p class="body">Contexto de piel sensible. Compra consciente por quien ya busca soluciones dermatológicas.</p>
+        </div>
+      </div>
+      <div class="s6-panel">
+        <div class="s6-panel-gota">
+          <svg width="140" height="140" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
+        </div>
+        <div class="s6-panel-num">03</div>
+        <div>
+          <span class="s6-panel-sub">Bebé / mamá</span>
+          <div class="s6-panel-title">Sección infantil</div>
+          <p class="body">Primera perforación, regalo de bebé. Decisión emocional de alta confianza de marca.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid var(--rule-med);padding-top:24px;margin-top:20px;display:flex;justify-content:space-between;align-items:center;">
+      <p class="lead" style="font-size:clamp(16px,1.8vw,22px);max-width:560px;">Display compacto, limpio y de marca — coherente con la estética <em>Pūrly</em>.</p>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">Material POP disponible bajo acuerdo</span>
+    </div>
+
+    <div class="foot-row">
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Imágenes de referencia · editable por canal</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Pūrly™ · 2026</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     S7 · CIERRE
+     ═══════════════════════════════════════════════ -->
+<section class="slide s7" id="slide-7">
+  <div style="position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(200,167,117,0.11) 0%,transparent 60%);pointer-events:none;" aria-hidden="true"></div>
+  <div class="wm-gota" style="right:-110px;top:50%;transform:translateY(-50%);opacity:.055;" aria-hidden="true">
+    <svg width="620" height="620" viewBox="0 0 1080 1080"><use href="#gota" fill="#C8A775"/></svg>
+  </div>
+  <span class="side-label" style="left:22px;top:50%;transform:translateY(-50%) rotate(180deg);color:rgba(200,167,117,0.28);">
+    Gracias · Conclusiones · Siguiente paso
+  </span>
+
+  <div class="pad">
+    <div class="head-row" style="position:relative;z-index:2;">
+      <span class="mono dim">(07) — Conclusiones</span>
+      <span class="mono dim">Pūrly™ · 2026</span>
+    </div>
+
+    <div class="s7-center">
+      <h1 class="h1 on-dark" style="font-size:clamp(44px,6vw,80px);">
+        Una categoría <em>limpia</em>,<br>rentable y sin riesgo.
+      </h1>
+      <div class="s7-metrics">
+        <div class="s7-metric">
+          <div class="s7-metric-num">35<em>%</em></div>
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.35);">Margen canal</span>
+        </div>
+        <div class="s7-metric">
+          <div class="s7-metric-num">0<em>%</em></div>
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.35);">Merma</span>
+        </div>
+        <div class="s7-metric">
+          <div class="s7-metric-num" style="color:var(--cream);">3</div>
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.35);">Materiales hipoalergénicos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-row" style="position:relative;z-index:2;align-items:center;">
+      <div style="display:flex;align-items:center;gap:20px;">
+        <svg width="40" height="40" viewBox="0 0 1080 1080"><use href="#gota" fill="#C8A775"/></svg>
+        <svg style="height:22px;width:auto;" viewBox="0 0 1080 400" aria-label="Pūrly">
           <g fill="#C8A775">
             <path d="M151.12,372.22c-60.25,1.62-107.21-40.39-115.54-91.35-5.12-31.33,2.12-60.03,15.76-88.21,10.53-21.77,24.56-40.72,40.5-58.46,15.03-16.72,32.34-30.95,50.64-43.97,3.34-2.38,6.2-2.25,9.46.22,36.29,27.44,67.97,58.97,88.86,100.05,11.62,22.86,18.87,46.87,18.52,72.84-.71,52.98-41.92,99.88-94.39,107.48-4.79.69-9.58.95-13.8,1.41ZM146.24,357.63c5.3.21,10.46-.34,15.57-1.28,37.13-6.84,63.41-27.25,76.57-62.94,10.97-29.75,5.19-58.67-7.33-86.47-17.92-39.79-47.06-70.49-80.82-97.26-2.58-2.05-4.17-1.66-6.64.19-15.8,11.81-30.3,25-43.34,39.81-24.38,27.69-44.02,58-49.58,95.32-3.59,24.05-1.6,47.35,13.04,68.24,20.14,28.76,47.79,43.12,82.53,44.4Z"/>
             <path d="M123,27.77c7.8.04,13.84,5.84,13.92,13.37.08,7.55-6.48,14.32-13.91,14.35-7.81.03-14.98-6.73-14.9-14.04.09-7.92,6.4-13.72,14.89-13.67Z"/>
@@ -882,464 +1162,120 @@ html, body {
             <path d="M941.33,316.14v-6.66h20.7v-54.71l-45.09-79.84h-12.32v-6.66h64.57v6.66h-18.73l37.21,69.49,34.5-69.49h-19.71v-6.66h43.62c-.33,3.45-2.55,5.67-6.66,6.66-5.26.16-9.45,2.46-12.56,6.9l-34.75,70.97v56.68h14.05c3.45.33,5.67,2.55,6.65,6.66h-71.46Z"/>
           </g>
         </svg>
-
-        <!-- Headline -->
-        <div>
-          <div class="cover-gold-line"></div>
-          <h1 class="cover-headline">
-            Joyería<br>
-            <em>hipoalergénica</em><br>
-            premium.
-          </h1>
-        </div>
-
-        <!-- Bottom row -->
-        <div class="cover-bottom">
-          <div class="cover-meta">
-            Propuesta Comercial 2026<br>
-            Canal Moderno · Colombia<br>
-            Farmatodo · Pasteur · Cruz Verde · Éxito · Super Inter
-          </div>
-          <div class="cover-tagline">
-            Diseñada para cada piel.<br>Formulada sin níquel,<br>plomo ni cadmio.
-          </div>
-        </div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-family:var(--f-display);font-style:italic;font-size:24px;color:var(--gold);margin-bottom:6px;">Gracias.</div>
+        <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.32);">@purlyconcept · Medellín, Colombia</span>
       </div>
     </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SLIDE 2 — LA OPORTUNIDAD
-       ══════════════════════════════════════ -->
-  <section class="slide slide-2" id="slide-2" aria-label="La oportunidad">
-    <div class="slide-inner">
-      <div class="eyebrow eyebrow-ink">02 — La oportunidad</div>
-
-      <div class="opp-header">
-        <div>
-          <h2 class="opp-title">
-            El mercado que<br>
-            nadie estaba<br>
-            <em>atendiendo</em>
-          </h2>
-        </div>
-        <div>
-          <p class="opp-body">
-            Más del 15% de la población colombiana presenta sensibilidad al níquel. Hasta hoy, las opciones disponibles en grandes superficies y farmacias han sido joyería de bajo costo con metales irritantes, o lujo inaccesible. Pūrly cierra esa brecha.
-          </p>
-        </div>
-      </div>
-
-      <div class="opp-stats">
-        <div class="stat-cell">
-          <div class="stat-num">15<sup>%</sup></div>
-          <div class="stat-label">de colombianos con<br>alergia al níquel</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-num">0</div>
-          <div class="stat-label">marcas hipoalergénicas<br>con presencia en cadenas</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-num">2</div>
-          <div class="stat-label">líneas certificadas:<br>bebé y adulta</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SLIDE 3 — LA MARCA
-       ══════════════════════════════════════ -->
-  <section class="slide slide-3" id="slide-3" aria-label="La marca">
-    <div class="slide-inner">
-      <div class="brand-grid">
-        <div class="brand-left">
-          <div class="eyebrow eyebrow-ink">03 — La marca</div>
-          <h2 class="brand-headline">
-            Formulada con<br>
-            <strong>rigor científico</strong>,<br>
-            diseñada con alma.
-          </h2>
-          <p class="brand-body">
-            Pūrly nace en Colombia como respuesta a la ausencia de joyería verdaderamente segura para pieles reactivas. Cada pieza es desarrollada bajo protocolos dermatológicos estrictos, con materiales certificados libres de metales pesados.
-          </p>
-          <span class="rule-gold"></span>
-          <p class="brand-body">
-            No somos moda pasajera. Somos una categoría nueva: joyería-dermatología, en el punto exacto donde el cuidado de la piel se encuentra con el deseo de adornarse.
-          </p>
-        </div>
-        <div class="brand-right">
-          <div class="cert-item">
-            <div class="cert-icon">
-              <svg viewBox="0 0 28 28" fill="none" stroke="#C8A775" stroke-width="1.5">
-                <path d="M14 3l2.5 5 5.5.8-4 3.9.95 5.5L14 15.7l-4.95 2.5.95-5.5L6 8.8l5.5-.8z"/>
-              </svg>
-            </div>
-            <div>
-              <span class="cert-title">Libre de níquel, plomo y cadmio</span>
-              <p class="cert-text">Certificación de materiales bajo norma EN 1811 y límites REACH. Seguro para uso prolongado desde recién nacidos.</p>
-            </div>
-          </div>
-          <div class="cert-item">
-            <div class="cert-icon">
-              <svg viewBox="0 0 28 28" fill="none" stroke="#C8A775" stroke-width="1.5">
-                <circle cx="14" cy="14" r="10"/>
-                <path d="M9 14l3.5 3.5L19 10"/>
-              </svg>
-            </div>
-            <div>
-              <span class="cert-title">Testado dermatológicamente</span>
-              <p class="cert-text">Formulación validada en laboratorio. Apta para piel atópica, bebés con oído recién perforado y adultos con sensibilidades.</p>
-            </div>
-          </div>
-          <div class="cert-item">
-            <div class="cert-icon">
-              <svg viewBox="0 0 28 28" fill="none" stroke="#C8A775" stroke-width="1.5">
-                <path d="M5 6h18M5 10h18M5 14h12M5 18h8"/>
-              </svg>
-            </div>
-            <div>
-              <span class="cert-title">Diseño colombiano de autor</span>
-              <p class="cert-text">Colección con identidad propia. Packaging premium listo para exhibición en punto de venta de alta rotación.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SLIDE 4 — PRECIOS
-       ══════════════════════════════════════ -->
-  <section class="slide slide-4" id="slide-4" aria-label="Precios y margen">
-    <div class="bg-forty" aria-hidden="true">40%</div>
-    <div class="slide-inner">
-      <div class="price-header">
-        <div>
-          <div class="eyebrow eyebrow-gold">04 — Precios y margen</div>
-          <h2 style="font-family:var(--f-display);font-weight:300;font-style:italic;font-size:clamp(32px,4vw,52px);letter-spacing:-0.03em;color:var(--cream);margin-top:20px;line-height:1.05;">
-            Tres materiales.<br>Un margen atractivo.
-          </h2>
-        </div>
-        <div class="margin-callout">
-          <div class="margin-num">+40%</div>
-          <div class="margin-label">margen promedio<br>para el canal</div>
-        </div>
-      </div>
-
-      <div class="price-cards">
-        <!-- Oro -->
-        <div class="price-card">
-          <div class="mat-dot dot-gold"></div>
-          <div class="mat-name">Oro</div>
-          <span class="mat-spec">Bañado 18k · alta rotación</span>
-          <div class="price-row">
-            <span class="price-label">Costo sugerido</span>
-            <span class="price-val">$20.450</span>
-          </div>
-          <div class="price-rule"></div>
-          <div class="price-row">
-            <span class="price-label">Precio canal</span>
-            <span class="price-val canal">$36.000</span>
-          </div>
-          <div style="margin-top:16px;">
-            <span class="margin-pct">~76%</span>
-          </div>
-        </div>
-
-        <!-- Plata — featured -->
-        <div class="price-card featured">
-          <div class="mat-dot dot-silver"></div>
-          <div class="mat-name">Plata</div>
-          <span class="mat-spec">925 sterling · bestseller</span>
-          <div class="price-row">
-            <span class="price-label">Costo sugerido</span>
-            <span class="price-val">$16.450</span>
-          </div>
-          <div class="price-rule"></div>
-          <div class="price-row">
-            <span class="price-label">Precio canal</span>
-            <span class="price-val canal">$32.000</span>
-          </div>
-          <div style="margin-top:16px;">
-            <span class="margin-pct">~95%</span>
-          </div>
-        </div>
-
-        <!-- Acero -->
-        <div class="price-card">
-          <div class="mat-dot dot-steel"></div>
-          <div class="mat-name">Acero</div>
-          <span class="mat-spec">316L quirúrgico · entrada</span>
-          <div class="price-row">
-            <span class="price-label">Costo sugerido</span>
-            <span class="price-val">$6.450</span>
-          </div>
-          <div class="price-rule"></div>
-          <div class="price-row">
-            <span class="price-label">Precio canal</span>
-            <span class="price-val canal">$13.000</span>
-          </div>
-          <div style="margin-top:16px;">
-            <span class="margin-pct">~100%</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SLIDE 5 — LÍNEAS
-       ══════════════════════════════════════ -->
-  <section class="slide slide-5" id="slide-5" aria-label="Líneas de producto">
-    <div class="lineas-grid">
-      <!-- Bebé -->
-      <div class="linea-col bebe">
-        <div class="linea-img-area">
-          <img src="img-bebe.png" alt="Línea Bebé Pūrly" loading="lazy">
-        </div>
-        <div class="linea-content">
-          <span class="linea-tag">Línea 01</span>
-          <h3 class="linea-name">Bebé</h3>
-          <p class="linea-desc">
-            Joyería diseñada para los primeros aretes. Materiales validados para piel neonatal, libre de irritantes. La opción segura que los padres exigen y los canales aún no ofrecen.
-          </p>
-          <div class="linea-pills">
-            <span class="pill">0–36 meses</span>
-            <span class="pill">Piel atópica</span>
-            <span class="pill">Sin alérgenos</span>
-          </div>
-        </div>
-      </div>
-      <!-- Adulta -->
-      <div class="linea-col adulta">
-        <div class="linea-img-area">
-          <img src="img-adulta.png" alt="Línea Adulta Pūrly" loading="lazy">
-        </div>
-        <div class="linea-content">
-          <span class="linea-tag">Línea 02</span>
-          <h3 class="linea-name">Adulta</h3>
-          <p class="linea-desc">
-            Para mujeres que aman la joyería y su piel se lo impedía. Diseño contemporáneo, acabado premium, sin concesiones en seguridad. La categoría que faltaba en el lineal.
-          </p>
-          <div class="linea-pills">
-            <span class="pill">Uso diario</span>
-            <span class="pill">Piel sensible</span>
-            <span class="pill">Diseño editorial</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SLIDE 6 — PROPUESTA DE CANAL
-       ══════════════════════════════════════ -->
-  <section class="slide slide-6" id="slide-6" aria-label="Propuesta de canal">
-    <div class="slide-inner">
-      <div class="canal-grid">
-        <div>
-          <div class="eyebrow eyebrow-ink">06 — Propuesta de canal</div>
-          <h2 class="canal-headline">
-            Todo listo para<br>
-            <strong>su lineal</strong>.
-          </h2>
-          <p class="canal-body">
-            Pūrly llega a su cadena con el trabajo hecho: empaques diseñados para la góndola, material POP, soporte en sell-through y formación al equipo de piso. Solo necesitamos el espacio.
-          </p>
-        </div>
-        <div class="benefit-list">
-          <div class="benefit-item">
-            <div class="benefit-num">01</div>
-            <div>
-              <div class="benefit-title">Exhibidor de marca incluido</div>
-              <div class="benefit-desc">Display de mesa o colgante con identidad Pūrly. Sin inversión adicional en POP para el canal.</div>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-num">02</div>
-            <div>
-              <div class="benefit-title">Mínimo de pedido flexible</div>
-              <div class="benefit-desc">Arrancamos con un mix de 30 referencias. Reposición quincenal con lead time de 5 días hábiles.</div>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-num">03</div>
-            <div>
-              <div class="benefit-title">Garantía de producto y devolución</div>
-              <div class="benefit-desc">Política de devolución 30 días sobre producto no vendido en el período de prueba piloto.</div>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-num">04</div>
-            <div>
-              <div class="benefit-title">Soporte en activación digital</div>
-              <div class="benefit-desc">Contenido de redes sociales y geolocalización en campaña digital apuntando a sus puntos de venta.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SLIDE 7 — CIERRE
-       ══════════════════════════════════════ -->
-  <section class="slide slide-7" id="slide-7" aria-label="Próximos pasos">
-    <div class="bg-glyph" aria-hidden="true">Pūrly</div>
-    <div class="slide-inner">
-      <div class="close-inner">
-        <!-- Logo -->
-        <svg class="deck-logo" viewBox="0 0 1080 400" aria-label="Pūrly">
-          <g fill="#C8A775">
-            <path d="M151.12,372.22c-60.25,1.62-107.21-40.39-115.54-91.35-5.12-31.33,2.12-60.03,15.76-88.21,10.53-21.77,24.56-40.72,40.5-58.46,15.03-16.72,32.34-30.95,50.64-43.97,3.34-2.38,6.2-2.25,9.46.22,36.29,27.44,67.97,58.97,88.86,100.05,11.62,22.86,18.87,46.87,18.52,72.84-.71,52.98-41.92,99.88-94.39,107.48-4.79.69-9.58.95-13.8,1.41ZM146.24,357.63c5.3.21,10.46-.34,15.57-1.28,37.13-6.84,63.41-27.25,76.57-62.94,10.97-29.75,5.19-58.67-7.33-86.47-17.92-39.79-47.06-70.49-80.82-97.26-2.58-2.05-4.17-1.66-6.64.19-15.8,11.81-30.3,25-43.34,39.81-24.38,27.69-44.02,58-49.58,95.32-3.59,24.05-1.6,47.35,13.04,68.24,20.14,28.76,47.79,43.12,82.53,44.4Z"/>
-            <path d="M123,27.77c7.8.04,13.84,5.84,13.92,13.37.08,7.55-6.48,14.32-13.91,14.35-7.81.03-14.98-6.73-14.9-14.04.09-7.92,6.4-13.72,14.89-13.67Z"/>
-            <path d="M166.8,27.74c8.14-.07,14.51,5.7,14.7,13.32.2,7.76-6.54,14.51-14.4,14.45-7.46-.06-14.28-6.88-14.26-14.22.03-7.36,6.34-13.48,13.96-13.55Z"/>
-          </g>
-          <g fill="#F4EEE4">
-            <path d="M339.06,316.14v-6.66h19.71v-134.55h-19.71v-6.66h79.35c11,0,20.37,1.89,28.09,5.67,13.8,6.74,20.7,17.91,20.7,33.52,0,6.73-1.32,12.9-3.95,18.48-7.88,16.76-25.71,25.14-53.47,25.14h-20.7v58.4h17.99c3.45.33,5.67,2.55,6.66,6.66h-74.67ZM389.08,174.94v68.75h19.22c17.58-1.31,26.37-12.9,26.37-34.75,0-2.29-.08-4.52-.25-6.65-1.97-18.24-11-27.36-27.1-27.36h-18.24Z"/>
-            <path d="M473.61,168.28h69.49v6.66h-19.71v84.77c0,8.54.65,16.01,1.97,22.42,4.1,19.55,15.44,29.33,34.01,29.33,26.62-.16,40.01-17.33,40.17-51.51v-85.01h-19.71v-6.66h48.3v6.66h-19.71v83.54c0,11.17-1.23,20.79-3.7,28.83-6.73,20.86-23.57,31.3-50.51,31.3-40.25-.16-60.54-19.22-60.87-57.17v-86.5h-19.71v-6.66Z"/>
-            <path d="M635.76,316.14v-6.66h19.71v-134.55h-19.71v-6.66h79.35c12.97,0,23.98,3.04,33.02,9.12,10.84,7.4,16.26,17.25,16.26,29.57,0,4.11-.66,8.22-1.97,12.32-4.6,13.3-15.28,22.18-32.04,26.61l38.69,63.83h5.17c.99,0,1.98.08,2.96.25,2.14.49,3.2,2.55,3.2,6.16l-41.4.25-37.46-67.77h-15.77v60.87h19.71v6.66h-69.73ZM685.78,174.94v66.29h18.49c5.75,0,10.84-1.56,15.27-4.68,8.39-6.08,12.57-15.69,12.57-28.83,0-5.1-.83-9.86-2.46-14.29-4.6-12.32-13.55-18.49-26.86-18.49h-17Z"/>
-            <path d="M786.82,316.14v-6.66h19.71v-134.55h-19.71v-6.66h70.97v6.66h-20.94v134.55h28.09c4.59,0,8.62-.82,12.08-2.46,6.56-3.12,11.58-10.43,15.03-21.93l6.15-21.2h6.41l-.99,52.24h-116.8Z"/>
-            <path d="M941.33,316.14v-6.66h20.7v-54.71l-45.09-79.84h-12.32v-6.66h64.57v6.66h-18.73l37.21,69.49,34.5-69.49h-19.71v-6.66h43.62c-.33,3.45-2.55,5.67-6.66,6.66-5.26.16-9.45,2.46-12.56,6.9l-34.75,70.97v56.68h14.05c3.45.33,5.67,2.55,6.65,6.66h-71.46Z"/>
-          </g>
-        </svg>
-
-        <!-- Headline -->
-        <div>
-          <h2 class="close-headline">
-            Agendemos<br>
-            una <em>cita</em>.
-          </h2>
-        </div>
-
-        <!-- Bottom -->
-        <div class="close-bottom">
-          <div class="contact-block">
-            <div class="contact-row">
-              <span class="contact-label">Contacto comercial</span>
-              <span class="contact-val">hola@purly.co</span>
-            </div>
-            <div class="contact-row">
-              <span class="contact-label">WhatsApp</span>
-              <span class="contact-val">+57 310 000 0000</span>
-            </div>
-            <div class="contact-row">
-              <span class="contact-label">Web</span>
-              <span class="contact-val">purly.co</span>
-            </div>
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px;">
-            <a href="contacto.html" class="close-cta">
-              Solicitar reunión
-              <span class="cta-arrow">→</span>
-            </a>
-            <p style="font-family:var(--f-mono);font-size:9px;letter-spacing:1px;color:rgba(200,167,117,0.25);text-align:right;">
-              Información confidencial<br>© 2026 Pūrly · Todos los derechos reservados
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
 </div><!-- /#deck -->
 
 <script>
-(function () {
+(function() {
   'use strict';
 
-  var slides     = Array.from(document.querySelectorAll('.slide'));
-  var total      = slides.length;
-  var current    = 0;
-  var animating  = false;
-
-  var progressBar = document.getElementById('progress-bar');
-  var counter     = document.getElementById('slide-counter');
-
-  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  var slides   = Array.from(document.querySelectorAll('.slide'));
+  var dots     = Array.from(document.querySelectorAll('.dot'));
+  var total    = slides.length;
+  var current  = 0;
+  var animating = false;
 
   function updateUI() {
-    progressBar.style.width = ((current + 1) / total * 100) + '%';
-    counter.textContent     = pad(current + 1) + ' / ' + pad(total);
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
+    });
     history.replaceState(null, '', '#slide-' + (current + 1));
   }
 
   function goTo(idx, dir) {
-    if (idx < 0 || idx >= total || idx === current || animating) return;
+    if (animating || idx < 0 || idx >= total || idx === current) return;
     animating = true;
 
-    var outSlide = slides[current];
-    var inSlide  = slides[idx];
+    var from = slides[current];
+    var to   = slides[idx];
 
-    outSlide.classList.add('exit-left');
-    inSlide.style.transform = 'translateX(' + (dir > 0 ? '24px' : '-24px') + ')';
-    inSlide.classList.add('active');
+    /* Set incoming slide off-screen */
+    to.style.transition = 'none';
+    to.style.opacity    = '0';
+    to.style.transform  = 'translateX(' + (dir >= 0 ? '16px' : '-16px') + ')';
 
-    requestAnimationFrame(function () {
-      inSlide.style.transform = '';
-      setTimeout(function () {
-        outSlide.classList.remove('active', 'exit-left');
-        inSlide.style.transform = '';
-        current   = idx;
-        animating = false;
-        updateUI();
-      }, 420);
-    });
+    /* Exit current */
+    from.style.transition = 'opacity 0.38s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.38s cubic-bezier(0.25,0.46,0.45,0.94)';
+    from.style.opacity    = '0';
+    from.style.transform  = 'translateX(' + (dir >= 0 ? '-16px' : '16px') + ')';
+    from.classList.remove('active');
+
+    /* Force reflow */
+    to.getBoundingClientRect();
+
+    /* Animate in */
+    to.style.transition = 'opacity 0.38s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.38s cubic-bezier(0.25,0.46,0.45,0.94)';
+    to.style.opacity    = '1';
+    to.style.transform  = 'none';
+    to.classList.add('active');
+
+    current = idx;
+    updateUI();
+
+    setTimeout(function() {
+      /* Reset inline styles — let CSS classes take over */
+      from.style.cssText  = '';
+      to.style.cssText    = '';
+      animating = false;
+    }, 420);
   }
 
   function next() { goTo(current + 1,  1); }
   function prev() { goTo(current - 1, -1); }
 
-  /* ── keyboard ── */
-  document.addEventListener('keydown', function (e) {
+  /* Keyboard */
+  document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  next();
     if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    prev();
-    if (e.key === 'f' || e.key === 'F') toggleFullscreen();
+    if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(function(){});
+      else document.exitFullscreen().catch(function(){});
+    }
     if (e.key === 'p' || e.key === 'P') window.print();
   });
 
-  /* ── buttons ── */
+  /* Arrow buttons */
   document.getElementById('nav-prev').addEventListener('click', prev);
   document.getElementById('nav-next').addEventListener('click', next);
 
-  /* ── click halves ── */
-  document.getElementById('deck').addEventListener('click', function (e) {
-    var navBtn = e.target.closest('#nav-prev, #nav-next');
-    if (navBtn) return;
+  /* Dot clicks */
+  dots.forEach(function(d) {
+    d.addEventListener('click', function() {
+      var idx = parseInt(d.getAttribute('data-idx'), 10);
+      goTo(idx, idx > current ? 1 : -1);
+    });
+  });
+
+  /* Click halves (ignore dot/button area) */
+  document.getElementById('deck').addEventListener('click', function(e) {
+    if (e.target.closest('#nav-prev, #nav-next, #nav-dots')) return;
     if (e.clientX > window.innerWidth / 2) next(); else prev();
   });
 
-  /* ── touch swipe ── */
-  var touchStartX = 0;
-  document.addEventListener('touchstart', function (e) {
-    touchStartX = e.touches[0].clientX;
-  }, { passive: true });
-  document.addEventListener('touchend', function (e) {
-    var dx = e.changedTouches[0].clientX - touchStartX;
+  /* Touch swipe */
+  var tx = 0;
+  document.addEventListener('touchstart', function(e) { tx = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend',   function(e) {
+    var dx = e.changedTouches[0].clientX - tx;
     if (Math.abs(dx) > 50) { if (dx < 0) next(); else prev(); }
   }, { passive: true });
 
-  /* ── fullscreen ── */
-  function toggleFullscreen() {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch(function () {});
-    } else {
-      document.exitFullscreen().catch(function () {});
-    }
-  }
-
-  /* ── URL hash on load ── */
-  var hash = location.hash;
-  if (hash) {
-    var m = hash.match(/slide-(\d+)/);
-    if (m) {
-      var target = parseInt(m[1], 10) - 1;
-      if (target > 0 && target < total) {
-        slides[0].classList.remove('active');
-        slides[target].classList.add('active');
-        current = target;
-      }
+  /* URL hash on load */
+  var m = location.hash.match(/slide-(\d+)/);
+  if (m) {
+    var t = parseInt(m[1], 10) - 1;
+    if (t > 0 && t < total) {
+      slides[0].classList.remove('active');
+      slides[t].classList.add('active');
+      current = t;
     }
   }
 
