@@ -89,10 +89,6 @@
   position: relative;
   overflow: hidden;
 }
-/* Organic placeholder shapes */
-#capitulo-bebe .chapter-image .ph-wrap {
-  clip-path: polygon(6% 0, 94% 4%, 100% 18%, 96% 84%, 82% 100%, 10% 96%, 0 78%, 4% 12%);
-}
 .chapter-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -264,10 +260,6 @@
   clip-path: polygon(0 5%, 44% 0, 100% 4%, 100% 95%, 55% 100%, 0 96%);
   padding-top: 80px;
   padding-bottom: 80px;
-}
-/* Organic adulta image shape */
-#capitulo-adulta .chapter-image .ph-wrap {
-  clip-path: polygon(4% 8%, 80% 0, 100% 12%, 94% 88%, 76% 100%, 0 96%, 0 0);
 }
 .chapter-adulta .chapter-content {
   padding: 80px 56px 80px 64px;
@@ -442,11 +434,8 @@
   <div class="chapter-layout">
     <!-- Imagen / Editorial -->
     <div class="chapter-image" aria-label="Imagen editorial línea bebé">
-      <div class="ph-wrap ph-blush" style="position:absolute;inset:0;">
-        <svg class="ph-icon" width="80" height="80" viewBox="0 0 1080 1080">
-          <use href="#gota" fill="#8A6050"/>
-        </svg>
-        <span class="ph-tag">Línea Bebé · Editorial</span>
+      <div class="lifestyle-frame bebe">
+        <img src="img-bebe.png" alt="Línea Bebé Pūrly" class="lifestyle-img" loading="lazy">
       </div>
     </div>
 
@@ -536,11 +525,8 @@
 
     <!-- Imagen editorial adulta -->
     <div class="chapter-image" style="direction:ltr;" aria-label="Imagen editorial línea adulta">
-      <div class="ph-wrap ph-dark" style="position:absolute;inset:0;">
-        <svg class="ph-icon" width="80" height="80" viewBox="0 0 1080 1080">
-          <use href="#gota" fill="#C8A775"/>
-        </svg>
-        <span class="ph-tag">Línea Adulta · Editorial</span>
+      <div class="lifestyle-frame adulta">
+        <img src="img-adulta.png" alt="Línea Adulta Pūrly" class="lifestyle-img" loading="lazy">
       </div>
     </div>
   </div>

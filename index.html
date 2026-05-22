@@ -39,15 +39,35 @@
 .hero-image-pane {
   position: absolute;
   right: 0; top: 0; bottom: 0;
-  width: 46%;
+  width: 52%;
   overflow: hidden;
+  clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 8%);
 }
-.hero-image-pane::after {
+
+.hero-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: brightness(0.82) contrast(1.06) saturate(0.88);
+  display: block;
+}
+
+.hero-image-pane::before {
   content: '';
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
   background:
-    linear-gradient(to right,  var(--ink) 0%, rgba(26,21,16,0.2) 50%, transparent 100%),
-    linear-gradient(to top,    var(--ink) 0%, transparent 35%);
+    linear-gradient(to right, var(--ink) 0%, transparent 30%),
+    linear-gradient(to top,   var(--ink) 0%, transparent 25%);
 }
 
 .hero-content {
@@ -238,13 +258,6 @@
   z-index: 2;
   margin-left: -5%;
   clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
-}
-/* Organic placeholder shapes */
-.linea-panel.bebe .ph-wrap {
-  clip-path: polygon(0 0, 100% 0, 100% 76%, 78% 88%, 50% 94%, 22% 88%, 0 76%);
-}
-.linea-panel.adulta .ph-wrap {
-  clip-path: polygon(0 14%, 26% 0, 66% 10%, 100% 2%, 100% 100%, 0 100%);
 }
 .linea-image-area {
   position: relative;
@@ -442,10 +455,7 @@
 /* RESPONSIVE — index */
 @media (max-width: 768px) {
   #hero { padding-bottom: 64px; align-items: center; min-height: 100dvh; }
-  .hero-image-pane { width: 100%; opacity: 0.3; }
-  .hero-image-pane::after {
-    background: linear-gradient(to bottom, var(--ink) 0%, rgba(26,21,16,0.6) 40%, var(--ink) 100%);
-  }
+  .hero-image-pane { width: 100%; clip-path: none; opacity: 0.25; }
   .hero-content { padding: 0 24px; max-width: 100%; }
   .hero-eyebrow { margin-bottom: 28px; }
 
@@ -547,12 +557,9 @@
   </div>
 
   <!-- editorial image pane -->
-  <div class="hero-image-pane" aria-hidden="true">
-    <div class="ph-wrap ph-dark" style="height:100%;">
-      <svg class="ph-icon" width="72" height="72" viewBox="0 0 1080 1080">
-        <use href="#gota" fill="#C8A775"/>
-      </svg>
-      <span class="ph-tag" style="color:rgba(200,167,117,0.28);">Fotografía · 2026</span>
+  <div class="hero-image-pane">
+    <div class="hero-img-wrap">
+      <img src="img-hero.png" alt="Pūrly" class="hero-img" loading="eager" fetchpriority="high">
     </div>
   </div>
 
@@ -621,11 +628,8 @@
     <!-- Línea Bebé -->
     <div class="linea-panel bebe">
       <div class="linea-image-area">
-        <div class="ph-wrap ph-blush" style="position:absolute;inset:0;">
-          <svg class="ph-icon" width="60" height="60" viewBox="0 0 1080 1080">
-            <use href="#gota" fill="#8A6050"/>
-          </svg>
-          <span class="ph-tag">Línea Bebé · Lifestyle</span>
+        <div class="lifestyle-frame bebe">
+          <img src="img-bebe.png" alt="Línea Bebé Pūrly" class="lifestyle-img" loading="lazy">
         </div>
       </div>
       <div class="linea-info">
@@ -645,11 +649,8 @@
     <!-- Línea Adulta -->
     <div class="linea-panel adulta">
       <div class="linea-image-area">
-        <div class="ph-wrap ph-dark" style="position:absolute;inset:0;">
-          <svg class="ph-icon" width="60" height="60" viewBox="0 0 1080 1080">
-            <use href="#gota" fill="#C8A775"/>
-          </svg>
-          <span class="ph-tag">Línea Adulta · Lifestyle</span>
+        <div class="lifestyle-frame adulta">
+          <img src="img-adulta.png" alt="Línea Adulta Pūrly" class="lifestyle-img" loading="lazy">
         </div>
       </div>
       <div class="linea-info">

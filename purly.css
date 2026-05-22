@@ -466,6 +466,68 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 /* ══════════════════════════════════════════════════════════
+   LIFESTYLE FRAMES — editorial photos in lineas + index
+══════════════════════════════════════════════════════════ */
+
+.lifestyle-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.lifestyle-frame.bebe {
+  clip-path: polygon(0% 0%, 94% 0%, 100% 6%, 100% 100%, 0% 100%);
+}
+
+.lifestyle-frame.adulta {
+  clip-path: polygon(0% 6%, 6% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.lifestyle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: block;
+}
+
+.lifestyle-frame.bebe .lifestyle-img {
+  filter: brightness(0.95) contrast(1.03) saturate(0.85) sepia(0.08);
+  object-position: 60% top;
+}
+
+.lifestyle-frame.adulta .lifestyle-img {
+  filter: brightness(0.80) contrast(1.10) saturate(0.82);
+  object-position: 40% top;
+}
+
+.lifestyle-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.lifestyle-frame.bebe::after {
+  background: linear-gradient(200deg, rgba(216,192,176,0.28) 0%, transparent 55%);
+}
+.lifestyle-frame.adulta::after {
+  background: linear-gradient(20deg, rgba(26,21,16,0.45) 0%, transparent 55%);
+}
+
+.lifestyle-frame:hover .lifestyle-img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .lifestyle-frame.bebe,
+  .lifestyle-frame.adulta {
+    clip-path: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
    SCROLL REVEAL
 ══════════════════════════════════════════════════════════ */
 
