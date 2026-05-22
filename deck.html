@@ -733,6 +733,24 @@ html, body {
   #nav-dots, #nav-prev, #nav-next { display: none !important; }
   @page { size: landscape; margin: 0; }
   * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+
+  /* FIX 1 — mask-image ignored by Chrome at print time */
+  [class*="image-wrap"], [class*="img-wrap"], .s2-img {
+    -webkit-mask-image: none !important; mask-image: none !important;
+    clip-path: inset(0 0 0 0 round 4px) !important; overflow: hidden !important;
+  }
+  [class*="image-wrap"] img, [class*="img-wrap"] img, .s2-img img {
+    width: 100% !important; height: 100% !important;
+    object-fit: cover !important; display: block !important;
+  }
+
+  /* FIX 2 — slide 2 overflow */
+  #slide-2 {
+    overflow: hidden !important; height: 720px !important;
+    max-height: 720px !important; display: flex !important; align-items: center !important;
+  }
+  #slide-2 img { max-height: 320px !important; width: auto !important; object-fit: cover !important; }
+  #slide-2 img:nth-child(2) { display: none !important; }
 }
 </style>
 </head>
