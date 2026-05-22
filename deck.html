@@ -519,22 +519,51 @@ html, body {
   filter: drop-shadow(0 4px 18px rgba(26,21,16,0.15));
 }
 
-/* S6 — PANEL PHOTOS */
-.s6-panel-photo {
-  flex: 1;
+/* S6 — GONDOLA ZONES */
+.gondola-zone {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 40px 0 0;
   overflow: hidden;
-  border-radius: 3px;
-  margin: 8px 0;
-  min-height: 80px;
 }
-.s6-panel-photo img {
+.gondola-zone:not(:first-child) {
+  padding-left: 40px;
+  padding-right: 0;
+  border-left: 1px solid var(--rule-med);
+}
+.gondola-zone:nth-child(2) { padding-right: 40px; }
+.gondola-text {
+  flex-shrink: 0;
+  padding-bottom: 24px;
+}
+.gondola-image-wrap {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+  background: linear-gradient(to bottom, transparent, rgba(200,167,117,0.08));
+}
+.gondola-image-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  filter: brightness(0.84) contrast(1.05) saturate(0.75);
-  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  filter: brightness(0.86) contrast(1.04) saturate(0.78);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
 }
 
 /* S5 — SEGURIDAD */
@@ -1100,46 +1129,34 @@ html, body {
     </div>
 
     <div class="s6-panels">
-      <div class="s6-panel">
-        <div class="s6-panel-gota">
-          <svg width="140" height="140" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
+      <div class="gondola-zone">
+        <div class="gondola-text">
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Zona caja</span>
+          <div class="s6-panel-title">Compra por impulso</div>
+          <p class="body" style="margin-top:10px;">Ticket bajo, decisión rápida. El cliente la ve al pagar y la lleva consigo.</p>
         </div>
-        <div class="s6-panel-num">01</div>
-        <div class="s6-panel-photo">
+        <div class="gondola-image-wrap">
           <img src="img-gondola-caja.jpg" alt="" loading="lazy">
         </div>
-        <div>
-          <span class="s6-panel-sub">Zona caja</span>
-          <div class="s6-panel-title">Compra por impulso</div>
-          <p class="body">Ticket bajo, decisión rápida. El cliente la ve al pagar y la lleva consigo.</p>
-        </div>
       </div>
-      <div class="s6-panel">
-        <div class="s6-panel-gota">
-          <svg width="140" height="140" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
+      <div class="gondola-zone">
+        <div class="gondola-text">
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Cuidado personal</span>
+          <div class="s6-panel-title">Góndola dermo</div>
+          <p class="body" style="margin-top:10px;">Contexto de piel sensible. Compra consciente por quien ya busca soluciones dermatológicas.</p>
         </div>
-        <div class="s6-panel-num">02</div>
-        <div class="s6-panel-photo">
+        <div class="gondola-image-wrap">
           <img src="img-gondola-belleza.jpg" alt="" loading="lazy">
         </div>
-        <div>
-          <span class="s6-panel-sub">Cuidado personal</span>
-          <div class="s6-panel-title">Góndola dermo</div>
-          <p class="body">Contexto de piel sensible. Compra consciente por quien ya busca soluciones dermatológicas.</p>
-        </div>
       </div>
-      <div class="s6-panel">
-        <div class="s6-panel-gota">
-          <svg width="140" height="140" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
-        </div>
-        <div class="s6-panel-num">03</div>
-        <div class="s6-panel-photo">
-          <img src="img-bebe.png" alt="" loading="lazy">
-        </div>
-        <div>
-          <span class="s6-panel-sub">Bebé / mamá</span>
+      <div class="gondola-zone">
+        <div class="gondola-text">
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Bebé / mamá</span>
           <div class="s6-panel-title">Sección infantil</div>
-          <p class="body">Primera perforación, regalo de bebé. Decisión emocional de alta confianza de marca.</p>
+          <p class="body" style="margin-top:10px;">Primera perforación, regalo de bebé. Decisión emocional de alta confianza de marca.</p>
+        </div>
+        <div class="gondola-image-wrap">
+          <img src="img-bebe.png" alt="" loading="lazy">
         </div>
       </div>
     </div>
