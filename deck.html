@@ -76,7 +76,7 @@ html, body {
 .s1  { background: var(--ink); }
 .s2  { background: var(--cream); }
 .s3  { background: var(--paper); }
-.s4  { background: var(--linen); }
+.s4  { background: var(--ink); }
 .s5  { background: var(--ink); }
 .s6  { background: var(--paper); }
 .s7  { background: var(--ink); }
@@ -413,8 +413,8 @@ html, body {
 /* S4 — PRECIOS */
 .s4-layout {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 64px;
+  grid-template-columns: clamp(200px, 22vw, 310px) 1fr;
+  gap: 72px;
   flex: 1;
   align-items: center;
   margin-top: 36px;
@@ -423,7 +423,7 @@ html, body {
   font-family: var(--f-display);
   font-weight: 200;
   font-style: italic;
-  font-size: clamp(120px, 14vw, 180px);
+  font-size: clamp(160px, 20vw, 280px);
   line-height: 0.9;
   letter-spacing: -0.04em;
   color: var(--gold);
@@ -433,7 +433,7 @@ html, body {
   font-size: 9px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--gold-deep);
+  color: var(--gold);
   margin-top: 12px;
   line-height: 1.6;
 }
@@ -442,28 +442,28 @@ html, body {
   border-collapse: collapse;
 }
 .s4-table thead tr {
-  border-bottom: 1px solid var(--rule-str);
+  border-bottom: 1px solid rgba(244,238,228,0.18);
 }
 .s4-table th {
   font-family: var(--f-mono);
   font-size: 9px;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(244,238,228,0.35);
   font-weight: 400;
   text-align: left;
   padding: 0 0 14px;
 }
 .s4-table th:not(:first-child) { text-align: right; }
 .s4-table tbody tr {
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid rgba(244,238,228,0.07);
 }
 .s4-table tbody tr:last-child { border-bottom: none; }
 .s4-table td {
   font-family: var(--f-display);
   font-size: 20px;
   font-weight: 400;
-  color: var(--ink-soft);
+  color: rgba(244,238,228,0.82);
   padding: 18px 0;
   vertical-align: middle;
 }
@@ -471,14 +471,14 @@ html, body {
   font-family: var(--f-body);
   font-size: 17px;
   font-weight: 500;
-  color: var(--ink);
+  color: var(--cream);
   text-align: right;
 }
 .s4-table td.pvps {
   font-family: var(--f-body);
   font-size: 17px;
   font-weight: 500;
-  color: var(--gold-deep);
+  color: var(--gold);
   text-align: right;
 }
 .s4-subtitle {
@@ -486,20 +486,55 @@ html, body {
   font-size: 10px;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: var(--gold-deep);
+  color: var(--gold);
   margin-bottom: 32px;
   display: block;
-  border-left: 2px solid var(--gold);
+  border-left: 2px solid var(--gold-deep);
   padding-left: 14px;
 }
 .s4-footnote {
   font-family: var(--f-body);
   font-style: italic;
   font-size: 11px;
-  color: var(--muted);
+  color: rgba(244,238,228,0.32);
   margin-top: 28px;
   line-height: 1.6;
   opacity: 0.8;
+}
+
+/* S3 — PACKAGING IMAGES */
+.s3-pkg-img {
+  height: clamp(100px, 12vw, 160px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+.s3-pkg-img img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 18px rgba(26,21,16,0.15));
+}
+
+/* S6 — PANEL PHOTOS */
+.s6-panel-photo {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 3px;
+  margin: 8px 0;
+  min-height: 80px;
+}
+.s6-panel-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.84) contrast(1.05) saturate(0.75);
+  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
 }
 
 /* S5 — SEGURIDAD */
@@ -847,19 +882,25 @@ html, body {
 
     <div class="s3-materials">
       <div class="s3-mat">
-        <div class="mat-dot-lg dot-gold-lg"></div>
+        <div class="s3-pkg-img">
+          <img src="pkg-gold.png" alt="Pūrly Oro laminado" loading="lazy">
+        </div>
         <div class="s3-mat-name">Oro laminado</div>
         <span class="s3-mat-spec">18k · SKU-GP</span>
         <p class="body" style="flex:1;">Cálido, brillante, percepción premium. El favorito para regalo y uso diario elegante.</p>
       </div>
       <div class="s3-mat">
-        <div class="mat-dot-lg dot-silver-lg"></div>
+        <div class="s3-pkg-img">
+          <img src="pkg-silver.png" alt="Pūrly Plata 925" loading="lazy">
+        </div>
         <div class="s3-mat-name">Plata</div>
         <span class="s3-mat-spec">925 sterling · SKU-SS</span>
         <p class="body" style="flex:1;">Frío, limpio, refinado. Atractivo para públicos que prefieren tonos neutros y minimalistas.</p>
       </div>
       <div class="s3-mat">
-        <div class="mat-dot-lg dot-steel-lg"></div>
+        <div class="s3-pkg-img">
+          <img src="pkg-steel.png" alt="Pūrly Acero quirúrgico 316L" loading="lazy">
+        </div>
         <div class="s3-mat-name">Acero quirúrgico</div>
         <span class="s3-mat-spec">316L · SKU-QS</span>
         <p class="body" style="flex:1;">El más hipoalergénico. Ideal para bebés, pieles reactivas y primera perforación.</p>
@@ -896,17 +937,17 @@ html, body {
      S4 · ESTRUCTURA DE PRECIOS
      ═══════════════════════════════════════════════ -->
 <section class="slide s4" id="slide-4">
-  <span class="side-label" style="left:22px;top:50%;transform:translateY(-50%) rotate(180deg);">
+  <span class="side-label" style="left:22px;top:50%;transform:translateY(-50%) rotate(180deg);color:rgba(200,167,117,0.25);">
     Precios · Rentabilidad · Margen del canal
   </span>
 
   <div class="pad">
     <div class="head-row">
       <div>
-        <span class="kicker" style="margin-bottom:12px;">(04) — Estructura de Precios</span>
-        <h2 class="h2">Margen <em>garantizado</em><br>para el canal.</h2>
+        <span class="kicker on-dark" style="margin-bottom:12px;">(04) — Estructura de Precios</span>
+        <h2 class="h2 on-dark">Margen <em>garantizado</em><br>para el canal.</h2>
       </div>
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.6;">Cifras en COP · sin IVA</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.32);">Cifras en COP · sin IVA</span>
     </div>
 
     <div class="s4-layout">
@@ -963,14 +1004,14 @@ html, body {
           </tbody>
         </table>
 
-        <div style="margin-top:18px;display:flex;gap:48px;border-top:1px solid var(--rule-med);padding-top:16px;">
+        <div style="margin-top:18px;display:flex;gap:48px;border-top:1px solid rgba(244,238,228,0.12);padding-top:16px;">
           <div>
-            <span class="mono gold" style="display:block;margin-bottom:4px;">P. Neto al Canal</span>
-            <span style="font-family:var(--f-mono);font-size:8.5px;letter-spacing:1px;color:var(--muted);">Precio de facturación a la cadena</span>
+            <span class="mono gold-lite" style="display:block;margin-bottom:4px;">P. Neto al Canal</span>
+            <span style="font-family:var(--f-mono);font-size:8.5px;letter-spacing:1px;color:rgba(244,238,228,0.32);">Precio de facturación a la cadena</span>
           </div>
           <div>
-            <span class="mono gold" style="display:block;margin-bottom:4px;">PVPS</span>
-            <span style="font-family:var(--f-mono);font-size:8.5px;letter-spacing:1px;color:var(--muted);">Precio de Venta al Público Sugerido</span>
+            <span class="mono gold-lite" style="display:block;margin-bottom:4px;">PVPS</span>
+            <span style="font-family:var(--f-mono);font-size:8.5px;letter-spacing:1px;color:rgba(244,238,228,0.32);">Precio de Venta al Público Sugerido</span>
           </div>
         </div>
 
@@ -979,8 +1020,8 @@ html, body {
     </div>
 
     <div class="foot-row">
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">Cifras de referencia · sujetas a volumen y negociación</span>
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:0.5;">Pūrly™ · 2026</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Cifras de referencia · sujetas a volumen y negociación</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Pūrly™ · 2026</span>
     </div>
   </div>
 </section>
@@ -1064,6 +1105,9 @@ html, body {
           <svg width="140" height="140" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
         </div>
         <div class="s6-panel-num">01</div>
+        <div class="s6-panel-photo">
+          <img src="img-gondola-caja.jpg" alt="" loading="lazy">
+        </div>
         <div>
           <span class="s6-panel-sub">Zona caja</span>
           <div class="s6-panel-title">Compra por impulso</div>
@@ -1075,6 +1119,9 @@ html, body {
           <svg width="140" height="140" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
         </div>
         <div class="s6-panel-num">02</div>
+        <div class="s6-panel-photo">
+          <img src="img-gondola-belleza.jpg" alt="" loading="lazy">
+        </div>
         <div>
           <span class="s6-panel-sub">Cuidado personal</span>
           <div class="s6-panel-title">Góndola dermo</div>
@@ -1086,6 +1133,9 @@ html, body {
           <svg width="140" height="140" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
         </div>
         <div class="s6-panel-num">03</div>
+        <div class="s6-panel-photo">
+          <img src="img-bebe.png" alt="" loading="lazy">
+        </div>
         <div>
           <span class="s6-panel-sub">Bebé / mamá</span>
           <div class="s6-panel-title">Sección infantil</div>
