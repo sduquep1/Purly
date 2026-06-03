@@ -567,6 +567,42 @@ html, body {
   );
 }
 
+/* S6 — GONDOLA PHOTOS (multi-frame) */
+.gondola-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.88) contrast(1.05) saturate(0.85);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 75%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 75%,
+    transparent 100%
+  );
+}
+.gondola-photos-wrap.two-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  height: 200px;
+}
+.gondola-photos-wrap.one-photo {
+  height: 220px;
+}
+.gondola-photo-frame {
+  overflow: hidden;
+  position: relative;
+}
+
 /* S5 — SEGURIDAD */
 .s5-img-bg {
   position: absolute;
@@ -743,6 +779,13 @@ html, body {
     width: 100% !important; height: 100% !important;
     object-fit: cover !important; display: block !important;
   }
+  .gondola-photo {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    opacity: 0.88;
+  }
+  .gondola-photo-frame { overflow: hidden !important; }
+  .gondola-photos-wrap.two-photos, .gondola-photos-wrap.one-photo { height: 200px !important; }
 
   /* FIX 2 — slide 2 overflow */
   #slide-2 {
@@ -1153,8 +1196,13 @@ html, body {
           <div class="s6-panel-title">Compra por impulso</div>
           <p class="body" style="margin-top:10px;">Ticket bajo, decisión rápida. El cliente la ve al pagar y la lleva consigo.</p>
         </div>
-        <div class="gondola-image-wrap">
-          <img src="img-gondola-caja.jpg" alt="" loading="lazy">
+        <div class="gondola-photos-wrap two-photos">
+          <div class="gondola-photo-frame">
+            <img src="img-caja1.jpg" class="gondola-photo" alt="Caja - Compra por impulso" loading="lazy">
+          </div>
+          <div class="gondola-photo-frame">
+            <img src="img-caja2.jpg" class="gondola-photo" alt="Caja - Compra por impulso" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="gondola-zone">
@@ -1163,8 +1211,10 @@ html, body {
           <div class="s6-panel-title">Góndola dermo</div>
           <p class="body" style="margin-top:10px;">Contexto de piel sensible. Compra consciente por quien ya busca soluciones dermatológicas.</p>
         </div>
-        <div class="gondola-image-wrap">
-          <img src="img-gondola-belleza.jpg" alt="" loading="lazy">
+        <div class="gondola-photos-wrap one-photo">
+          <div class="gondola-photo-frame">
+            <img src="img-belleza.jpg" class="gondola-photo" alt="Zona Belleza" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="gondola-zone">
@@ -1172,6 +1222,14 @@ html, body {
           <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Bebé / mamá</span>
           <div class="s6-panel-title">Sección infantil</div>
           <p class="body" style="margin-top:10px;">Primera perforación, regalo de bebé. Decisión emocional de alta confianza de marca.</p>
+        </div>
+        <div class="gondola-photos-wrap two-photos">
+          <div class="gondola-photo-frame">
+            <img src="img-bebes1.jpg" class="gondola-photo" alt="Línea Bebé" loading="lazy">
+          </div>
+          <div class="gondola-photo-frame">
+            <img src="img-bebes2.jpg" class="gondola-photo" alt="Línea Bebé" loading="lazy">
+          </div>
         </div>
       </div>
     </div>
