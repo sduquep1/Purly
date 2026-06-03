@@ -524,7 +524,7 @@ html, body {
 .gondola-zone {
   display: flex;
   flex-direction: column;
-  padding: 24px 40px 0 0;
+  padding: 16px 40px 0 0;
   overflow: hidden;
 }
 .gondola-zone:not(:first-child) {
@@ -577,15 +577,15 @@ html, body {
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    black 15%,
-    black 75%,
+    black 8%,
+    black 88%,
     transparent 100%
   );
   mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    black 15%,
-    black 75%,
+    black 8%,
+    black 88%,
     transparent 100%
   );
 }
@@ -593,14 +593,15 @@ html, body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  height: 200px;
+  height: 240px;
 }
 .gondola-photos-wrap.one-photo {
-  height: 220px;
+  height: 260px;
 }
 .gondola-photo-frame {
   overflow: hidden;
   position: relative;
+  height: 100%;
 }
 
 /* S5 — SEGURIDAD */
@@ -673,7 +674,7 @@ html, body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  margin-top: 40px;
+  margin-top: 20px;
   flex: 1;
 }
 .s6-panel {
@@ -785,7 +786,8 @@ html, body {
     opacity: 0.88;
   }
   .gondola-photo-frame { overflow: hidden !important; }
-  .gondola-photos-wrap.two-photos, .gondola-photos-wrap.one-photo { height: 200px !important; }
+  .gondola-photos-wrap.two-photos { height: 180px !important; }
+  .gondola-photos-wrap.one-photo  { height: 180px !important; }
 
   /* FIX 2 — slide 2 overflow */
   #slide-2 {
@@ -1184,7 +1186,7 @@ html, body {
     <div class="head-row">
       <div>
         <span class="kicker" style="margin-bottom:12px;">(06) — Ubicación &amp; exhibición</span>
-        <h2 class="h2">Dónde vive Pūrly<br>en el <em>punto de venta</em>.</h2>
+        <h2 class="h2" style="font-size:clamp(32px,3.8vw,52px);white-space:nowrap;">Dónde vive Pūrly en el <em>punto de venta</em>.</h2>
       </div>
       <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Sugerencia de exhibición</span>
     </div>
