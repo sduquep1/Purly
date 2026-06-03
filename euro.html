@@ -752,6 +752,253 @@ html, body {
 }
 .s7-metric-num em { color: var(--gold); font-style: normal; }
 
+/* ── MOBILE COUNTER ── */
+#mobile-counter {
+  display: none;
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(200,167,117,0.45);
+  z-index: 1001;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════════
+   MOBILE — max-width: 768px
+   Slides flow vertically. Scroll natural. UX tactil.
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── SCROLL LAYOUT ── */
+  html, body { overflow: auto !important; height: auto !important; }
+  #deck { width: 100% !important; height: auto !important; overflow: visible !important; }
+  #nav-dots, #nav-prev, #nav-next { display: none !important; }
+  #mobile-counter { display: block !important; }
+
+  .slide {
+    position: relative !important;
+    inset: auto !important;
+    height: auto !important;
+    min-height: 100svh;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: all !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .pad {
+    position: relative !important;
+    inset: auto !important;
+    padding: 64px 24px 56px !important;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .side-label,
+  .wm-gota,
+  .wm-text { display: none !important; }
+
+  /* ── TYPOGRAPHY ── */
+  .h1 {
+    font-size: clamp(28px, 7.5vw, 40px) !important;
+    white-space: normal !important;
+    line-height: 1.1 !important;
+  }
+  .h2 {
+    font-size: clamp(24px, 7vw, 36px) !important;
+    white-space: normal !important;
+    line-height: 1.1 !important;
+  }
+  .lead { font-size: clamp(15px, 4.2vw, 20px) !important; }
+  .body { font-size: 14px; line-height: 1.7; }
+  .kicker { font-size: 9px; letter-spacing: 1.4px; gap: 10px; }
+  .mono { font-size: 9px; }
+
+  /* ── SHARED ROWS ── */
+  .head-row {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .foot-row {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    margin-top: 32px !important;
+  }
+
+  /* ── S1 PORTADA ── */
+  .s1 .glow {
+    width: 100vw; height: 100vw;
+    left: 50%; top: 50%;
+  }
+  .s1 .cover-center {
+    max-width: 100% !important;
+    margin: 24px 0 0;
+  }
+  .s1 .cover-tagline { font-size: clamp(16px, 4.2vw, 22px); }
+  .s1 .cover-rule { margin: 20px 0 18px; }
+  .deck-client-name { margin-top: 10px; }
+
+  /* ── S2 QUIÉNES SOMOS ── */
+  .s2-img { display: none !important; }
+  .s2 .pad { max-width: 100% !important; }
+  .s2-facts {
+    grid-template-columns: 1fr !important;
+    border-top: 1px solid var(--rule-med);
+    margin-top: 24px;
+  }
+  .s2-facts > div {
+    border-left: none !important;
+    border-right: none !important;
+    padding: 16px 0 !important;
+    margin-right: 0 !important;
+    border-top: 1px solid var(--rule);
+  }
+  .s2-facts > div:first-child { border-top: none; padding-top: 12px; }
+
+  /* ── S3 MATERIALES ── */
+  .s3-materials {
+    grid-template-columns: 1fr !important;
+    flex: none !important;
+    margin-top: 20px;
+  }
+  .s3-mat {
+    padding: 0 0 28px 0 !important;
+    border-left: none !important;
+    border-bottom: 1px solid var(--rule-med);
+    margin-bottom: 4px;
+  }
+  .s3-mat:last-child { border-bottom: none; padding-bottom: 4px; }
+  .s3-mat:not(:first-child) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 28px;
+  }
+  .s3-mat:nth-child(2) { padding-right: 0 !important; }
+  .s3-retail {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .s3-retail-item {
+    flex: none;
+    border-left: none !important;
+    padding: 12px 0 !important;
+    border-top: 1px solid var(--rule);
+  }
+  .s3-retail-item:first-child { border-top: none; padding-top: 4px; }
+  .pkg-img-wrap { height: 200px !important; width: 100%; }
+  .pkg-img { max-height: 180px !important; }
+
+  /* ── S4 PRECIOS ── */
+  .s4-layout {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    align-items: flex-start;
+    margin-top: 16px;
+  }
+  .s4-margin-big {
+    font-size: clamp(96px, 22vw, 140px) !important;
+    text-align: center;
+  }
+  .s4-margin-label { text-align: center; }
+  .s4-table th {
+    font-size: 8px !important;
+    letter-spacing: 0.8px !important;
+    padding: 0 4px 10px !important;
+  }
+  .s4-table th:first-child { padding-left: 0 !important; }
+  .s4-table td {
+    font-size: 13px !important;
+    padding: 10px 4px !important;
+  }
+  .s4-table td:first-child { padding-left: 0 !important; }
+  .s4-table td.num, .s4-table td.pvps { font-size: 13px !important; }
+  .s4-footnote { font-size: 10px; }
+  .s4-subtitle { font-size: 8px; letter-spacing: 1px; margin-bottom: 20px; }
+
+  /* ── S5 SEGURIDAD ── */
+  .s5-img-bg { display: none !important; }
+  .s5-cols {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    padding: 28px 0 0 !important;
+    grid-template-columns: 1fr !important;
+    z-index: auto !important;
+    box-sizing: border-box;
+  }
+  .s5-col {
+    padding-right: 0 !important;
+  }
+  .s5-col:not(:first-child) {
+    padding-left: 0 !important;
+    border-left: none !important;
+    border-top: 1px solid rgba(244,238,228,0.1);
+    padding-top: 28px !important;
+    margin-top: 28px;
+  }
+  .s5-col:nth-child(2) { padding-right: 0 !important; }
+  .s5-metric {
+    font-size: clamp(44px, 11vw, 60px) !important;
+    min-height: auto !important;
+  }
+
+  /* ── S6 EXHIBICIÓN ── */
+  .s6-panels {
+    grid-template-columns: 1fr !important;
+    margin-top: 16px;
+  }
+  .gondola-zone {
+    padding: 24px 0 28px 0 !important;
+    border-left: none !important;
+    border-top: 1px solid var(--rule-med);
+  }
+  .gondola-zone:first-child { border-top: none; padding-top: 8px; }
+  .gondola-zone:nth-child(2) { padding-right: 0 !important; }
+  .gondola-text { padding-bottom: 16px; }
+  .gondola-photos-wrap.two-photos {
+    grid-template-columns: 1fr 1fr !important;
+    height: 180px !important;
+  }
+  .gondola-photos-wrap.one-photo { height: 200px !important; }
+  .s6-panel-title { font-size: 20px; }
+
+  /* S6 footer */
+  .s6 .foot-row { display: none; }
+
+  /* ── S7 CIERRE ── */
+  .s7-center { margin: 24px 0 0; z-index: 2; position: relative; }
+  .s7-metrics {
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .s7-metric-num { font-size: clamp(36px, 9vw, 52px) !important; }
+  .deck-final-cta { margin-top: 32px; gap: 14px; }
+  .deck-final-cta-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 18px !important;
+    padding: 18px 24px !important;
+    min-height: 52px;
+  }
+}
+
 /* ── PRINT ── */
 @media print {
   html, body { overflow: visible; height: auto; width: 100%; background: white; }
@@ -942,6 +1189,7 @@ html, body {
 <button id="nav-next" aria-label="Siguiente">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
 </button>
+<div id="mobile-counter" aria-live="polite">1 / 7</div>
 
 
 <!-- ═══════════════════════════════════════════════
@@ -1556,6 +1804,28 @@ html, body {
   }
 
   updateUI();
+})();
+</script>
+
+<!-- MOBILE COUNTER -->
+<script>
+(function() {
+  var counter = document.getElementById('mobile-counter');
+  if (!counter || !('IntersectionObserver' in window)) return;
+  var slides = Array.from(document.querySelectorAll('.slide'));
+  var total  = slides.length;
+  var ratios = new Array(total).fill(0);
+
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      var idx = slides.indexOf(e.target);
+      if (idx !== -1) ratios[idx] = e.intersectionRatio;
+    });
+    var best = ratios.indexOf(Math.max.apply(null, ratios));
+    counter.textContent = (best + 1) + ' / ' + total;
+  }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+
+  slides.forEach(function(s) { obs.observe(s); });
 })();
 </script>
 
