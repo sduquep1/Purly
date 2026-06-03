@@ -975,7 +975,7 @@ html, body {
     grid-template-columns: 1fr 1fr !important;
     height: 180px !important;
   }
-  .gondola-photos-wrap.one-photo { height: 200px !important; }
+  .gondola-photos-wrap.one-photo { height: 280px !important; }
   .s6-panel-title { font-size: 20px; }
 
   /* S6 footer */
@@ -996,6 +996,27 @@ html, body {
     font-size: 18px !important;
     padding: 18px 24px !important;
     min-height: 52px;
+  }
+
+  /* ── PKG COLS — anti-overlap ── */
+  [class*="material-col"], [class*="pkg-col"],
+  [class*="product-col"] {
+    transform: none !important;
+    position: relative !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+  [class*="materials"], [class*="pkg-grid"],
+  [class*="products"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 32px !important;
+  }
+  .s3-mat {
+    transform: none !important;
+    position: relative !important;
   }
 }
 
@@ -1784,12 +1805,31 @@ html, body {
     if (e.clientX > window.innerWidth / 2) next(); else prev();
   });
 
-  /* Touch swipe */
-  var tx = 0;
-  document.addEventListener('touchstart', function(e) { tx = e.touches[0].clientX; }, { passive: true });
-  document.addEventListener('touchend',   function(e) {
-    var dx = e.changedTouches[0].clientX - tx;
-    if (Math.abs(dx) > 50) { if (dx < 0) next(); else prev(); }
+  /* Touch swipe — horizontal intent detection */
+  var touchStartX = 0, touchStartY = 0, touchStartTime = 0, isSwiping = false;
+
+  document.addEventListener('touchstart', function(e) {
+    touchStartX    = e.touches[0].clientX;
+    touchStartY    = e.touches[0].clientY;
+    touchStartTime = Date.now();
+    isSwiping      = false;
+  }, { passive: true });
+
+  document.addEventListener('touchmove', function(e) {
+    var dX = Math.abs(e.touches[0].clientX - touchStartX);
+    var dY = Math.abs(e.touches[0].clientY - touchStartY);
+    if (dX > dY && dX > 10) isSwiping = true;
+  }, { passive: true });
+
+  document.addEventListener('touchend', function(e) {
+    if (!isSwiping) return;
+    var deltaX    = touchStartX - e.changedTouches[0].clientX;
+    var deltaTime = Date.now() - touchStartTime;
+    var speed     = Math.abs(deltaX) / deltaTime;
+    if (Math.abs(deltaX) > 35 || speed > 0.3) {
+      if (deltaX > 0) next(); else prev();
+    }
+    isSwiping = false;
   }, { passive: true });
 
   /* URL hash on load */
