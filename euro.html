@@ -1558,5 +1558,66 @@ html, body {
   updateUI();
 })();
 </script>
+
+<!-- MOUSE TRAIL -->
+<script>
+(function () {
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isTouchDevice = window.matchMedia('(hover: none)').matches;
+  if (isTouchDevice || reducedMotion) return;
+
+  var canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;top:0;left:0;pointer-events:none;z-index:9999;width:100vw;height:100vh;';
+  document.body.appendChild(canvas);
+  var ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas, { passive: true });
+
+  var trail = [];
+  var GOLD  = [200, 167, 117];
+  var LIFE  = 600;
+
+  document.addEventListener('mousemove', function (e) {
+    for (var i = 0; i < 2; i++) {
+      trail.push({
+        x:    e.clientX + (Math.random() - 0.5) * 8,
+        y:    e.clientY + (Math.random() - 0.5) * 8,
+        size: 2.5 + Math.random() * 2.5,
+        born: performance.now()
+      });
+    }
+  });
+
+  function drawDiamond(c, x, y, s) {
+    c.beginPath();
+    c.moveTo(x,            y - s);
+    c.lineTo(x + s * 0.55, y);
+    c.lineTo(x,            y + s);
+    c.lineTo(x - s * 0.55, y);
+    c.closePath();
+    c.fill();
+  }
+
+  (function tick() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var now = performance.now();
+    trail = trail.filter(function (p) {
+      var t = (now - p.born) / LIFE;
+      if (t >= 1) return false;
+      ctx.globalAlpha = 0.55 * (1 - t);
+      ctx.fillStyle   = 'rgb(' + GOLD[0] + ',' + GOLD[1] + ',' + GOLD[2] + ')';
+      drawDiamond(ctx, p.x, p.y, p.size * (1 - t * 0.4));
+      return true;
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(tick);
+  })();
+})();
+</script>
 </body>
 </html>

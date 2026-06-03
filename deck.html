@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pūrly™ — Propuesta Comercial · 2026</title>
+<title>Pürly™ — Propuesta Comercial · 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════
-   PŪRLY · deck.html — Propuesta Comercial B2B 2026
+   PÜRLY · deck.html — Propuesta Comercial B2B 2026
    ═══════════════════════════════════════════════════ */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -593,10 +593,10 @@ html, body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  height: 240px;
+  height: 300px;
 }
 .gondola-photos-wrap.one-photo {
-  height: 260px;
+  height: 320px;
 }
 .gondola-photo-frame {
   overflow: hidden;
@@ -752,6 +752,101 @@ html, body {
 }
 .s7-metric-num em { color: var(--gold); font-style: normal; }
 
+/* PKG IMAGES */
+.pkg-img-wrap {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  padding: 8px;
+}
+.pkg-img {
+  max-height: 220px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center bottom;
+}
+.pkg-img-wrap:hover .pkg-img {
+  transform: scale(1.08);
+}
+
+/* FINAL CTA */
+.deck-final-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-top: 52px;
+}
+.deck-final-cta-line {
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.35;
+}
+.deck-final-cta-label {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(244,238,228,0.3);
+}
+.deck-final-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--f-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  background: transparent;
+  border: 1px solid rgba(200,167,117,0.35);
+  padding: 18px 40px;
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+.deck-final-cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: translateX(-101%);
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+.deck-final-cta-btn:hover::before { transform: translateX(0); }
+.deck-final-cta-btn .btn-text,
+.deck-final-cta-btn .btn-arrow {
+  position: relative;
+  z-index: 1;
+  transition: color 0.35s;
+}
+.deck-final-cta-btn:hover .btn-text,
+.deck-final-cta-btn:hover .btn-arrow { color: var(--ink); }
+.btn-arrow {
+  display: flex;
+  align-items: center;
+  transition: transform 0.35s;
+}
+.deck-final-cta-btn:hover .btn-arrow { transform: translate(4px, -4px); }
+.deck-final-domain {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(200,167,117,0.25);
+}
+
 /* ── PRINT ── */
 @media print {
   html, body { overflow: visible; height: auto; width: 100%; background: white; }
@@ -788,6 +883,7 @@ html, body {
   .gondola-photo-frame { overflow: hidden !important; }
   .gondola-photos-wrap.two-photos { height: 180px !important; }
   .gondola-photos-wrap.one-photo  { height: 180px !important; }
+  .deck-final-cta { display: none; }
 
   /* FIX 2 — slide 2 overflow */
   #slide-2 {
@@ -840,13 +936,13 @@ html, body {
     <svg width="580" height="580" viewBox="0 0 1080 1080"><use href="#gota" fill="#C8A775"/></svg>
   </div>
   <span class="side-label" style="left:22px;top:50%;transform:translateY(-50%) rotate(180deg);color:rgba(200,167,117,0.28);">
-    Pūrly™ · Propuesta Comercial · 2026 · Confidencial
+    Pürly™ · Propuesta Comercial · 2026 · Confidencial
   </span>
 
   <div class="pad">
     <div class="head-row" style="position:relative;z-index:2;">
       <!-- Logo SVG -->
-      <svg class="logo" viewBox="0 0 1080 400" aria-label="Pūrly">
+      <svg class="logo" viewBox="0 0 1080 400" aria-label="Pürly">
         <g fill="#C8A775">
           <path d="M151.12,372.22c-60.25,1.62-107.21-40.39-115.54-91.35-5.12-31.33,2.12-60.03,15.76-88.21,10.53-21.77,24.56-40.72,40.5-58.46,15.03-16.72,32.34-30.95,50.64-43.97,3.34-2.38,6.2-2.25,9.46.22,36.29,27.44,67.97,58.97,88.86,100.05,11.62,22.86,18.87,46.87,18.52,72.84-.71,52.98-41.92,99.88-94.39,107.48-4.79.69-9.58.95-13.8,1.41ZM146.24,357.63c5.3.21,10.46-.34,15.57-1.28,37.13-6.84,63.41-27.25,76.57-62.94,10.97-29.75,5.19-58.67-7.33-86.47-17.92-39.79-47.06-70.49-80.82-97.26-2.58-2.05-4.17-1.66-6.64.19-15.8,11.81-30.3,25-43.34,39.81-24.38,27.69-44.02,58-49.58,95.32-3.59,24.05-1.6,47.35,13.04,68.24,20.14,28.76,47.79,43.12,82.53,44.4Z"/>
           <path d="M123,27.77c7.8.04,13.84,5.84,13.92,13.37.08,7.55-6.48,14.32-13.91,14.35-7.81.03-14.98-6.73-14.9-14.04.09-7.92,6.4-13.72,14.89-13.67Z"/>
@@ -887,7 +983,7 @@ html, body {
      S2 · QUIÉNES SOMOS
      ═══════════════════════════════════════════════ -->
 <section class="slide s2" id="slide-2">
-  <div class="wm-text" style="font-size:clamp(110px,16vw,230px);right:38%;bottom:-20px;">Pūrly</div>
+  <div class="wm-text" style="font-size:clamp(110px,16vw,230px);right:38%;bottom:-20px;">Pürly</div>
   <div class="s2-img" aria-hidden="true">
     <img src="img-hero.png" alt="" loading="lazy">
   </div>
@@ -901,7 +997,7 @@ html, body {
         </h2>
       </div>
       <!-- small logo on light slide -->
-      <svg style="height:22px;width:auto;flex-shrink:0;" viewBox="0 0 1080 400" aria-label="Pūrly">
+      <svg style="height:22px;width:auto;flex-shrink:0;" viewBox="0 0 1080 400" aria-label="Pürly">
         <g fill="#C8A775">
           <path d="M151.12,372.22c-60.25,1.62-107.21-40.39-115.54-91.35-5.12-31.33,2.12-60.03,15.76-88.21,10.53-21.77,24.56-40.72,40.5-58.46,15.03-16.72,32.34-30.95,50.64-43.97,3.34-2.38,6.2-2.25,9.46.22,36.29,27.44,67.97,58.97,88.86,100.05,11.62,22.86,18.87,46.87,18.52,72.84-.71,52.98-41.92,99.88-94.39,107.48-4.79.69-9.58.95-13.8,1.41ZM146.24,357.63c5.3.21,10.46-.34,15.57-1.28,37.13-6.84,63.41-27.25,76.57-62.94,10.97-29.75,5.19-58.67-7.33-86.47-17.92-39.79-47.06-70.49-80.82-97.26-2.58-2.05-4.17-1.66-6.64.19-15.8,11.81-30.3,25-43.34,39.81-24.38,27.69-44.02,58-49.58,95.32-3.59,24.05-1.6,47.35,13.04,68.24,20.14,28.76,47.79,43.12,82.53,44.4Z"/>
           <path d="M123,27.77c7.8.04,13.84,5.84,13.92,13.37.08,7.55-6.48,14.32-13.91,14.35-7.81.03-14.98-6.73-14.9-14.04.09-7.92,6.4-13.72,14.89-13.67Z"/>
@@ -918,8 +1014,8 @@ html, body {
     </div>
 
     <div style="margin-top:36px;max-width:520px;">
-      <p class="lead">Pūrly es una marca colombiana de <em>topos hipoalergénicos</em> en oro laminado, plata y acero quirúrgico.</p>
-      <p class="body" style="margin-top:20px;">Nacimos para resolver un problema real: la mayoría de los aretes del mercado irritan, alergizan o simplemente no son seguros para pieles sensibles, bebés o personas reactivas. Pūrly existe para que la belleza nunca sea un compromiso con la salud de la piel.</p>
+      <p class="lead">Pürly es una marca colombiana de <em>topos hipoalergénicos</em> en oro laminado, plata y acero quirúrgico.</p>
+      <p class="body" style="margin-top:20px;">Nacimos para resolver un problema real: la mayoría de los aretes del mercado irritan, alergizan o simplemente no son seguros para pieles sensibles, bebés o personas reactivas. Pürly existe para que la belleza nunca sea un compromiso con la salud de la piel.</p>
     </div>
 
     <div class="s2-facts">
@@ -948,7 +1044,7 @@ html, body {
           <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">Marca líder en Latinoamérica</span>
         </div>
       </div>
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:0.5;">Pūrly™ · 2026</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:0.5;">Pürly™ · 2026</span>
     </div>
   </div>
 </section>
@@ -971,13 +1067,15 @@ html, body {
         <span class="kicker" style="margin-bottom:12px;">(03) — Productos &amp; atractivo</span>
         <h2 class="h2">Tres materiales.<br><em>Cero alergias.</em></h2>
       </div>
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:0.5;">Catálogo base · Pūrly™</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:0.5;">Catálogo base · Pürly™</span>
     </div>
 
     <div class="s3-materials">
       <div class="s3-mat">
         <div class="s3-pkg-img">
-          <img src="pkg-gold.png" alt="Pūrly Oro laminado" loading="lazy">
+          <div class="pkg-img-wrap">
+            <img src="pkg-gold.jpg" class="pkg-img" alt="Pürly Oro laminado" loading="lazy">
+          </div>
         </div>
         <div class="s3-mat-name">Oro laminado</div>
         <span class="s3-mat-spec">18k · SKU-GP</span>
@@ -985,7 +1083,9 @@ html, body {
       </div>
       <div class="s3-mat">
         <div class="s3-pkg-img">
-          <img src="pkg-silver.png" alt="Pūrly Plata 925" loading="lazy">
+          <div class="pkg-img-wrap">
+            <img src="pkg-silver.jpg" class="pkg-img" alt="Pürly Plata 925" loading="lazy">
+          </div>
         </div>
         <div class="s3-mat-name">Plata</div>
         <span class="s3-mat-spec">925 sterling · SKU-SS</span>
@@ -993,7 +1093,9 @@ html, body {
       </div>
       <div class="s3-mat">
         <div class="s3-pkg-img">
-          <img src="pkg-steel.png" alt="Pūrly Acero quirúrgico 316L" loading="lazy">
+          <div class="pkg-img-wrap">
+            <img src="pkg-steel.jpg" class="pkg-img" alt="Pürly Acero quirúrgico 316L" loading="lazy">
+          </div>
         </div>
         <div class="s3-mat-name">Acero quirúrgico</div>
         <span class="s3-mat-spec">316L · SKU-QS</span>
@@ -1021,7 +1123,7 @@ html, body {
 
     <div class="foot-row">
       <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">Presentación: caja de 2 pares por unidad de venta</span>
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:0.5;">Pūrly™ · 2026</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:0.5;">Pürly™ · 2026</span>
     </div>
   </div>
 </section>
@@ -1115,7 +1217,7 @@ html, body {
 
     <div class="foot-row">
       <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Cifras de referencia · sujetas a volumen y negociación</span>
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Pūrly™ · 2026</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Pürly™ · 2026</span>
     </div>
   </div>
 </section>
@@ -1158,14 +1260,14 @@ html, body {
         <div class="s5-metric" style="visibility:hidden;">&nbsp;</div>
         <span class="s5-col-label">03 — Merma controlada</span>
         <div class="s5-col-title">Merma Controlada</div>
-        <p class="body on-dark">Las condiciones de merma se definen directamente entre Pūrly y la cadena. Estamos abiertos a construir un esquema que se adapte al modelo operativo de cada aliado comercial.</p>
+        <p class="body on-dark">Las condiciones de merma se definen directamente entre Pürly y la cadena. Estamos abiertos a construir un esquema que se adapte al modelo operativo de cada aliado comercial.</p>
         <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-top:20px;">Condiciones a convenir</span>
       </div>
     </div>
 
     <div class="foot-row" style="position:relative;z-index:2;">
       <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Bajo riesgo operativo · alta confianza de categoría</span>
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Pūrly™ · 2026</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Pürly™ · 2026</span>
     </div>
   </div>
 </section>
@@ -1186,7 +1288,7 @@ html, body {
     <div class="head-row">
       <div>
         <span class="kicker" style="margin-bottom:12px;">(06) — Ubicación &amp; exhibición</span>
-        <h2 class="h2" style="font-size:clamp(32px,3.8vw,52px);white-space:nowrap;">Dónde vive Pūrly en el <em>punto de venta</em>.</h2>
+        <h2 class="h2" style="font-size:clamp(32px,3.8vw,52px);white-space:nowrap;">Dónde vive Pürly en el <em>punto de venta</em>.</h2>
       </div>
       <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Sugerencia de exhibición</span>
     </div>
@@ -1237,13 +1339,13 @@ html, body {
     </div>
 
     <div style="border-top:1px solid var(--rule-med);padding-top:24px;margin-top:20px;display:flex;justify-content:space-between;align-items:center;">
-      <p class="lead" style="font-size:clamp(16px,1.8vw,22px);max-width:560px;">Display compacto, limpio y de marca — coherente con la estética <em>Pūrly</em>.</p>
+      <p class="lead" style="font-size:clamp(16px,1.8vw,22px);max-width:560px;">Display compacto, limpio y de marca — coherente con la estética <em>Pürly</em>.</p>
       <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">Material POP disponible bajo acuerdo</span>
     </div>
 
     <div class="foot-row">
       <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Imágenes de referencia · editable por canal</span>
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Pūrly™ · 2026</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Pürly™ · 2026</span>
     </div>
   </div>
 </section>
@@ -1264,7 +1366,7 @@ html, body {
   <div class="pad">
     <div class="head-row" style="position:relative;z-index:2;">
       <span class="mono dim">(07) — Conclusiones</span>
-      <span class="mono dim">Pūrly™ · 2026</span>
+      <span class="mono dim">Pürly™ · 2026</span>
     </div>
 
     <div class="s7-center">
@@ -1285,12 +1387,26 @@ html, body {
           <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.35);">Materiales hipoalergénicos</span>
         </div>
       </div>
+
+      <div class="deck-final-cta">
+        <div class="deck-final-cta-line"></div>
+        <p class="deck-final-cta-label">La marca completa te espera</p>
+        <a href="https://purlyconcept.com" target="_blank" class="deck-final-cta-btn">
+          <span class="btn-text">Conoce Pürly</span>
+          <span class="btn-arrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+          </span>
+        </a>
+        <p class="deck-final-domain">purlyconcept.com</p>
+      </div>
     </div>
 
     <div class="foot-row" style="position:relative;z-index:2;align-items:center;">
       <div style="display:flex;align-items:center;gap:20px;">
         <svg width="40" height="40" viewBox="0 0 1080 1080"><use href="#gota" fill="#C8A775"/></svg>
-        <svg style="height:22px;width:auto;" viewBox="0 0 1080 400" aria-label="Pūrly">
+        <svg style="height:22px;width:auto;" viewBox="0 0 1080 400" aria-label="Pürly">
           <g fill="#C8A775">
             <path d="M151.12,372.22c-60.25,1.62-107.21-40.39-115.54-91.35-5.12-31.33,2.12-60.03,15.76-88.21,10.53-21.77,24.56-40.72,40.5-58.46,15.03-16.72,32.34-30.95,50.64-43.97,3.34-2.38,6.2-2.25,9.46.22,36.29,27.44,67.97,58.97,88.86,100.05,11.62,22.86,18.87,46.87,18.52,72.84-.71,52.98-41.92,99.88-94.39,107.48-4.79.69-9.58.95-13.8,1.41ZM146.24,357.63c5.3.21,10.46-.34,15.57-1.28,37.13-6.84,63.41-27.25,76.57-62.94,10.97-29.75,5.19-58.67-7.33-86.47-17.92-39.79-47.06-70.49-80.82-97.26-2.58-2.05-4.17-1.66-6.64.19-15.8,11.81-30.3,25-43.34,39.81-24.38,27.69-44.02,58-49.58,95.32-3.59,24.05-1.6,47.35,13.04,68.24,20.14,28.76,47.79,43.12,82.53,44.4Z"/>
             <path d="M123,27.77c7.8.04,13.84,5.84,13.92,13.37.08,7.55-6.48,14.32-13.91,14.35-7.81.03-14.98-6.73-14.9-14.04.09-7.92,6.4-13.72,14.89-13.67Z"/>
@@ -1422,6 +1538,67 @@ html, body {
   }
 
   updateUI();
+})();
+</script>
+
+<!-- MOUSE TRAIL -->
+<script>
+(function () {
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isTouchDevice = window.matchMedia('(hover: none)').matches;
+  if (isTouchDevice || reducedMotion) return;
+
+  var canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;top:0;left:0;pointer-events:none;z-index:9999;width:100vw;height:100vh;';
+  document.body.appendChild(canvas);
+  var ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas, { passive: true });
+
+  var trail = [];
+  var GOLD  = [200, 167, 117];
+  var LIFE  = 600;
+
+  document.addEventListener('mousemove', function (e) {
+    for (var i = 0; i < 2; i++) {
+      trail.push({
+        x:    e.clientX + (Math.random() - 0.5) * 8,
+        y:    e.clientY + (Math.random() - 0.5) * 8,
+        size: 2.5 + Math.random() * 2.5,
+        born: performance.now()
+      });
+    }
+  });
+
+  function drawDiamond(c, x, y, s) {
+    c.beginPath();
+    c.moveTo(x,            y - s);
+    c.lineTo(x + s * 0.55, y);
+    c.lineTo(x,            y + s);
+    c.lineTo(x - s * 0.55, y);
+    c.closePath();
+    c.fill();
+  }
+
+  (function tick() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var now = performance.now();
+    trail = trail.filter(function (p) {
+      var t = (now - p.born) / LIFE;
+      if (t >= 1) return false;
+      ctx.globalAlpha = 0.55 * (1 - t);
+      ctx.fillStyle   = 'rgb(' + GOLD[0] + ',' + GOLD[1] + ',' + GOLD[2] + ')';
+      drawDiamond(ctx, p.x, p.y, p.size * (1 - t * 0.4));
+      return true;
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(tick);
+  })();
 })();
 </script>
 </body>
