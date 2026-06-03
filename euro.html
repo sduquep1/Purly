@@ -776,7 +776,12 @@ html, body {
 @media (max-width: 768px) {
 
   /* ── SCROLL LAYOUT ── */
-  html, body { overflow: auto !important; height: auto !important; }
+  html, body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    scroll-behavior: smooth;
+  }
   #deck { width: 100% !important; height: auto !important; overflow: visible !important; }
   #nav-dots, #nav-prev, #nav-next { display: none !important; }
   #mobile-counter { display: block !important; }
@@ -1805,41 +1810,43 @@ html, body {
     if (e.clientX > window.innerWidth / 2) next(); else prev();
   });
 
-  /* Touch swipe — direction lock */
-  function goToSlide(n) {
-    if (n < 0) n = 0;
-    if (n >= total) n = total - 1;
-    if (n === current) return;
-    goTo(n, n > current ? 1 : -1);
+  /* Touch swipe — desktop/tablet only (>768 px). Mobile uses native vertical scroll. */
+  if (window.innerWidth > 768) {
+    function goToSlide(n) {
+      if (n < 0) n = 0;
+      if (n >= total) n = total - 1;
+      if (n === current) return;
+      goTo(n, n > current ? 1 : -1);
+    }
+
+    var touchStartX = 0, touchStartY = 0, touchStartTime = 0, lockedDirection = null;
+
+    document.addEventListener('touchstart', function(e) {
+      touchStartX     = e.touches[0].clientX;
+      touchStartY     = e.touches[0].clientY;
+      touchStartTime  = Date.now();
+      lockedDirection = null;
+    }, { passive: true });
+
+    document.addEventListener('touchmove', function(e) {
+      if (lockedDirection) return;
+      var dx = Math.abs(e.touches[0].clientX - touchStartX);
+      var dy = Math.abs(e.touches[0].clientY - touchStartY);
+      if (dx > 8 || dy > 8) {
+        lockedDirection = dx > dy ? 'h' : 'v';
+      }
+    }, { passive: true });
+
+    document.addEventListener('touchend', function(e) {
+      if (lockedDirection !== 'h') return;
+      var deltaX = touchStartX - e.changedTouches[0].clientX;
+      var dt     = Date.now() - touchStartTime;
+      var speed  = Math.abs(deltaX) / dt;
+      if (Math.abs(deltaX) > 30 || speed > 0.25) {
+        if (deltaX > 0) next(); else prev();
+      }
+    });
   }
-
-  var touchStartX = 0, touchStartY = 0, touchStartTime = 0, lockedDirection = null;
-
-  document.addEventListener('touchstart', function(e) {
-    touchStartX     = e.touches[0].clientX;
-    touchStartY     = e.touches[0].clientY;
-    touchStartTime  = Date.now();
-    lockedDirection = null;
-  }, { passive: true });
-
-  document.addEventListener('touchmove', function(e) {
-    if (lockedDirection) return;
-    var dx = Math.abs(e.touches[0].clientX - touchStartX);
-    var dy = Math.abs(e.touches[0].clientY - touchStartY);
-    if (dx > 8 || dy > 8) {
-      lockedDirection = dx > dy ? 'h' : 'v';
-    }
-  }, { passive: true });
-
-  document.addEventListener('touchend', function(e) {
-    if (lockedDirection !== 'h') return;
-    var deltaX = touchStartX - e.changedTouches[0].clientX;
-    var dt     = Date.now() - touchStartTime;
-    var speed  = Math.abs(deltaX) / dt;
-    if (Math.abs(deltaX) > 30 || speed > 0.25) {
-      if (deltaX > 0) next(); else prev();
-    }
-  });
 
   /* URL hash on load */
   var m = location.hash.match(/slide-(\d+)/);
