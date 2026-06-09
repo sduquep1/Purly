@@ -783,13 +783,11 @@ html, body {
     scroll-snap-type: none;
   }
   html, body {
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    height: auto !important;
-    scroll-behavior: auto;
+    height: 100% !important;
+    overflow: hidden !important;
     overscroll-behavior-y: contain;
   }
-  #deck { width: 100% !important; height: auto !important; overflow: visible !important; }
+  #deck { width: 100% !important; height: 100vh !important; height: 100dvh !important; overflow-y: auto !important; overflow-x: hidden !important; -webkit-overflow-scrolling: touch; }
   #nav-dots, #nav-prev, #nav-next { display: none !important; }
   #mobile-counter { display: block !important; }
 
