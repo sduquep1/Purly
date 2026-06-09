@@ -1743,7 +1743,9 @@ html, body {
     dots.forEach(function(d, i) {
       d.classList.toggle('active', i === current);
     });
-    history.replaceState(null, '', '#slide-' + (current + 1));
+    if (window.innerWidth > 768) {   /* no replaceState en móvil — iOS scrollea al ancla */
+      history.replaceState(null, '', '#slide-' + (current + 1));
+    }
   }
 
   function goTo(idx, dir) {
@@ -1789,6 +1791,7 @@ html, body {
 
   /* Keyboard */
   document.addEventListener('keydown', function(e) {
+    if (window.innerWidth <= 768) return;
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  next();
     if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    prev();
     if (e.key === 'f' || e.key === 'F') {
@@ -1799,12 +1802,19 @@ html, body {
   });
 
   /* Arrow buttons */
-  document.getElementById('nav-prev').addEventListener('click', prev);
-  document.getElementById('nav-next').addEventListener('click', next);
+  document.getElementById('nav-prev').addEventListener('click', function() {
+    if (window.innerWidth <= 768) return;
+    prev();
+  });
+  document.getElementById('nav-next').addEventListener('click', function() {
+    if (window.innerWidth <= 768) return;
+    next();
+  });
 
   /* Dot clicks */
   dots.forEach(function(d) {
     d.addEventListener('click', function() {
+      if (window.innerWidth <= 768) return;
       var idx = parseInt(d.getAttribute('data-idx'), 10);
       goTo(idx, idx > current ? 1 : -1);
     });
