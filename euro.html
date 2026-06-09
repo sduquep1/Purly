@@ -777,15 +777,13 @@ html, body {
 
   /* ── SCROLL LAYOUT ── */
   html {
-    /* scroll-snap en el root container — fix iOS "atasca a media transición" */
-    scroll-snap-type: y mandatory;
-    scroll-padding: 0;
+    scroll-snap-type: none;
   }
   html, body {
     overflow-y: auto !important;
     overflow-x: hidden !important;
     height: auto !important;
-    scroll-behavior: auto; /* smooth conflicta con snap en iOS */
+    scroll-behavior: auto;
     overscroll-behavior-y: contain;
   }
   #deck { width: 100% !important; height: auto !important; overflow: visible !important; }
@@ -795,15 +793,15 @@ html, body {
   .slide {
     position: relative !important;
     inset: auto !important;
-    height: 100vh !important;  /* fallback para iOS < 15.4 */
-    height: 100dvh !important; /* dvh se adapta al URL bar de Safari */
-    min-height: unset !important;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    height: auto !important;
+    min-height: 100vh;     /* fallback iOS < 15.4 */
+    min-height: 100dvh;    /* crece si el contenido es mayor al viewport */
+    box-sizing: border-box;
+    scroll-snap-align: none;
     opacity: 1 !important;
     transform: none !important;
     pointer-events: all !important;
-    overflow: hidden !important; /* contiene el contenido para que el snap no se rompa */
+    overflow: visible !important;
     display: flex !important;
     flex-direction: column;
   }
