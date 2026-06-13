@@ -1191,6 +1191,9 @@ html, body {
   opacity: 0.7;
   margin-top: 16px;
 }
+@media (max-width: 768px) {
+  .merma-grid { grid-template-columns: 1fr 1fr !important; gap: 24px 20px !important; }
+}
 </style>
 </head>
 <body>
@@ -1215,6 +1218,7 @@ html, body {
   <button class="dot" data-idx="4" aria-label="Slide 5"></button>
   <button class="dot" data-idx="5" aria-label="Slide 6"></button>
   <button class="dot" data-idx="6" aria-label="Slide 7"></button>
+  <button class="dot" data-idx="7" aria-label="Slide 8"></button>
 </nav>
 
 <button id="nav-prev" aria-label="Anterior">
@@ -1223,7 +1227,7 @@ html, body {
 <button id="nav-next" aria-label="Siguiente">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
 </button>
-<div id="mobile-counter" aria-live="polite">1 / 7</div>
+<div id="mobile-counter" aria-live="polite">1 / 8</div>
 
 
 <!-- ═══════════════════════════════════════════════
@@ -1387,6 +1391,190 @@ html, body {
 
 
 <!-- ═══════════════════════════════════════════════
+     S6 · UBICACIÓN & EXHIBICIÓN
+     ═══════════════════════════════════════════════ -->
+<section class="slide s6" id="slide-6">
+  <div class="wm-gota" style="right:-70px;top:50%;transform:translateY(-50%);opacity:.038;" aria-hidden="true">
+    <svg width="440" height="440" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
+  </div>
+  <span class="side-label" style="left:22px;top:50%;transform:translateY(-50%) rotate(180deg);">
+    Ubicación · Exhibición · Punto de venta ideal
+  </span>
+
+  <div class="pad">
+    <div class="head-row">
+      <div>
+        <span class="kicker" style="margin-bottom:12px;">(04) — Ubicación &amp; exhibición</span>
+        <h2 class="h2" style="font-size:clamp(28px,3.6vw,46px);white-space:nowrap;">Dónde vive Pürly en el <em>punto de venta</em>.</h2>
+      </div>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Sugerencia de exhibición</span>
+    </div>
+
+    <div class="s6-panels">
+      <div class="gondola-zone">
+        <div class="gondola-text">
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Zona caja</span>
+          <div class="s6-panel-title">Compra por impulso</div>
+          <p class="body" style="margin-top:10px;">Ticket bajo, decisión rápida. El cliente la ve al pagar y la lleva consigo.</p>
+        </div>
+        <div class="gondola-photos-wrap two-photos">
+          <div class="gondola-photo-frame">
+            <img src="img-caja1.jpg" class="gondola-photo" alt="Caja - Compra por impulso" loading="lazy">
+          </div>
+          <div class="gondola-photo-frame">
+            <img src="img-caja2.jpg" class="gondola-photo" alt="Caja - Compra por impulso" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="gondola-zone">
+        <div class="gondola-text">
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Cuidado personal</span>
+          <div class="s6-panel-title">Góndola dermo</div>
+          <p class="body" style="margin-top:10px;">Contexto de piel sensible. Compra consciente por quien ya busca soluciones dermatológicas.</p>
+        </div>
+        <div class="gondola-photos-wrap one-photo">
+          <div class="gondola-photo-frame">
+            <img src="img-belleza.jpg" class="gondola-photo" alt="Zona Belleza" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="gondola-zone">
+        <div class="gondola-text">
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Bebé / mamá</span>
+          <div class="s6-panel-title">Sección infantil</div>
+          <p class="body" style="margin-top:10px;">Primera perforación, regalo de bebé. Decisión emocional de alta confianza de marca.</p>
+        </div>
+        <div class="gondola-photos-wrap two-photos">
+          <div class="gondola-photo-frame">
+            <img src="img-bebes1.jpg" class="gondola-photo" alt="Línea Bebé" loading="lazy">
+          </div>
+          <div class="gondola-photo-frame">
+            <img src="img-bebes2.jpg" class="gondola-photo" alt="Línea Bebé" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid var(--rule-med);padding-top:24px;margin-top:20px;display:flex;justify-content:space-between;align-items:center;">
+      <p class="lead" style="font-size:clamp(16px,1.8vw,22px);max-width:560px;">Display compacto, limpio y de marca — coherente con la estética <em>Pürly</em>.</p>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">Material POP disponible bajo acuerdo</span>
+    </div>
+
+    <div class="foot-row">
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Propuesta adaptada para Euro Supermercados</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Pürly™ · 2026</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     S5 · PENSADO PARA TU GÓNDOLA
+     ═══════════════════════════════════════════════ -->
+<section class="slide s5" id="slide-5">
+  <div class="wm-gota" style="left:-80px;top:50%;transform:translateY(-50%);opacity:.05;" aria-hidden="true">
+    <svg width="460" height="460" viewBox="0 0 1080 1080"><use href="#gota" fill="#C8A775"/></svg>
+  </div>
+  <span class="side-label" style="right:22px;top:50%;transform:translateY(-50%) rotate(180deg);color:rgba(200,167,117,0.25);">
+    Producto versátil · Empaque seguro · Durabilidad
+  </span>
+
+  <div class="pad">
+    <div class="head-row">
+      <div>
+        <span class="kicker on-dark" style="margin-bottom:12px;">(05) — Pensado para tu góndola</span>
+        <h2 class="h2 on-dark">Fácil de tener.<br>Fácil de <em>vender</em>.</h2>
+      </div>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.3);">Ventaja operativa</span>
+    </div>
+
+    <div class="s5-cols" style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);padding:0 80px;box-sizing:border-box;z-index:2;">
+      <div class="s5-col">
+        <div class="s5-metric" style="visibility:hidden;">&nbsp;</div>
+        <span class="s5-col-label">01 — Producto Versátil</span>
+        <div class="s5-col-title">Un diseño para cada cliente</div>
+        <p class="body on-dark">Diseños pensados para impactar tres públicos a la vez —bebés, jóvenes y mamás—: un surtido versátil que mantiene la góndola fresca y le da a cada cliente un motivo para volver.</p>
+      </div>
+      <div class="s5-col">
+        <div class="s5-metric">100<em>%</em></div>
+        <span class="s5-col-label">02 — Listo para góndola</span>
+        <div class="s5-col-title">Empaque premium</div>
+        <p class="body on-dark">Cada caja llega sellada, higiénica y lista para exhibir: presentación de marca impecable en el lineal, sin manipular ni rearmar nada en sala.</p>
+      </div>
+      <div class="s5-col">
+        <div class="s5-metric"><em>∞</em></div>
+        <span class="s5-col-label">03 — Sin vencimiento</span>
+        <div class="s5-col-title">No caduca</div>
+        <p class="body on-dark">Al no ser perecedero, el surtido no vence ni se degrada en góndola: rota a tu ritmo, sin presión de liquidar por temporada.</p>
+      </div>
+    </div>
+
+    <div class="foot-row" style="position:relative;z-index:2;">
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Sin vencimiento · alta confianza de categoría</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Pürly™ · 2026</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     MERMA · MENOS MERMA, MÁS MARGEN
+     ═══════════════════════════════════════════════ -->
+<section class="slide s-merma" id="slide-merma" style="background:var(--ink);">
+  <span class="side-label" style="right:22px;top:50%;transform:translateY(-50%) rotate(180deg);color:rgba(200,167,117,0.25);">
+    Seguridad · Anti-pérdida · Diseñado contra la merma
+  </span>
+
+  <div class="pad">
+    <div class="head-row">
+      <div>
+        <span class="kicker on-dark" style="margin-bottom:12px;">(06) — Diseñado contra la merma</span>
+        <h2 class="h2 on-dark">Menos merma,<br>más <em>margen</em>.</h2>
+      </div>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.3);max-width:200px;text-align:right;line-height:1.7;">Cinco capas de seguridad<br>en cada caja</span>
+    </div>
+
+    <p class="lead on-dark" style="max-width:640px;margin-top:18px;font-size:clamp(15px,1.6vw,20px);">Cada caja llega equipada para reducir la pérdida en tu operación —del exhibidor a la registradora—. No asumimos reposición: <em>la prevenimos en el empaque</em>.</p>
+
+    <div style="flex:1;display:flex;align-items:center;">
+      <div class="merma-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:30px;width:100%;">
+        <div>
+          <div style="font-family:var(--f-display);font-style:italic;font-size:46px;line-height:1;color:var(--gold);margin-bottom:16px;">01</div>
+          <div style="font-family:var(--f-display);font-size:19px;font-weight:500;color:var(--cream);margin-bottom:9px;line-height:1.2;">Empaque inviolable</div>
+          <p style="font-family:var(--f-body);font-size:12.5px;font-weight:300;line-height:1.55;color:rgba(244,238,228,0.5);">Sellado de fábrica: nadie lo abre antes que el cliente.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--f-display);font-style:italic;font-size:46px;line-height:1;color:var(--gold);margin-bottom:16px;">02</div>
+          <div style="font-family:var(--f-display);font-size:19px;font-weight:500;color:var(--cream);margin-bottom:9px;line-height:1.2;">Precinto de seguridad</div>
+          <p style="font-family:var(--f-body);font-size:12.5px;font-weight:300;line-height:1.55;color:rgba(244,238,228,0.5);">Sello visible en la apertura: la manipulación queda a la vista.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--f-display);font-style:italic;font-size:46px;line-height:1;color:var(--gold);margin-bottom:16px;">03</div>
+          <div style="font-family:var(--f-display);font-size:19px;font-weight:500;color:var(--cream);margin-bottom:9px;line-height:1.2;">Colgador de bloqueo</div>
+          <p style="font-family:var(--f-body);font-size:12.5px;font-weight:300;line-height:1.55;color:rgba(244,238,228,0.5);">Curvatura anti-descuelgue: no se vacía el gancho del exhibidor.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--f-display);font-style:italic;font-size:46px;line-height:1;color:var(--gold);margin-bottom:16px;">04</div>
+          <div style="font-family:var(--f-display);font-size:19px;font-weight:500;color:var(--cream);margin-bottom:9px;line-height:1.2;">Pestaña de doble pliegue</div>
+          <p style="font-family:var(--f-body);font-size:12.5px;font-weight:300;line-height:1.55;color:rgba(244,238,228,0.5);">Refuerzo estructural que dificulta forzar la caja en sala.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--f-display);font-style:italic;font-size:46px;line-height:1;color:var(--gold);margin-bottom:16px;">05</div>
+          <div style="font-family:var(--f-display);font-size:19px;font-weight:500;color:var(--cream);margin-bottom:9px;line-height:1.2;">Etiqueta EAS</div>
+          <p style="font-family:var(--f-body);font-size:12.5px;font-weight:300;line-height:1.55;color:rgba(244,238,228,0.5);">Compatible con tus antenas: activa la alarma si sale sin pagar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-row">
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Prevención en el empaque · reducimos tu merma</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Pürly™ · 2026</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
      S4 · ESTRUCTURA DE PRECIOS
      ═══════════════════════════════════════════════ -->
 <section class="slide s4" id="slide-4">
@@ -1397,7 +1585,7 @@ html, body {
   <div class="pad">
     <div class="head-row">
       <div>
-        <span class="kicker on-dark" style="margin-bottom:12px;">(04) — Estructura de Precios</span>
+        <span class="kicker on-dark" style="margin-bottom:12px;">(07) — Estructura de Precios</span>
         <h2 class="h2 on-dark">Margen <em>garantizado</em><br>para el canal.</h2>
         <div style="margin-top:18px;display:inline-flex;align-items:baseline;gap:10px;padding:9px 16px;border:1px solid rgba(200,167,117,0.45);border-radius:3px;">
           <span style="font-family:var(--f-display);font-size:22px;font-weight:500;color:var(--gold);">2 pares</span>
@@ -1485,133 +1673,6 @@ html, body {
 
 
 <!-- ═══════════════════════════════════════════════
-     S5 · PENSADO PARA TU GÓNDOLA
-     ═══════════════════════════════════════════════ -->
-<section class="slide s5" id="slide-5">
-  <div class="wm-gota" style="left:-80px;top:50%;transform:translateY(-50%);opacity:.05;" aria-hidden="true">
-    <svg width="460" height="460" viewBox="0 0 1080 1080"><use href="#gota" fill="#C8A775"/></svg>
-  </div>
-  <span class="side-label" style="right:22px;top:50%;transform:translateY(-50%) rotate(180deg);color:rgba(200,167,117,0.25);">
-    Producto versátil · Empaque seguro · Durabilidad
-  </span>
-
-  <div class="pad">
-    <div class="head-row">
-      <div>
-        <span class="kicker on-dark" style="margin-bottom:12px;">(05) — Pensado para tu góndola</span>
-        <h2 class="h2 on-dark">Fácil de tener.<br>Fácil de <em>vender</em>.</h2>
-      </div>
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.3);">Ventaja operativa</span>
-    </div>
-
-    <div class="s5-cols" style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);padding:0 80px;box-sizing:border-box;z-index:2;">
-      <div class="s5-col">
-        <div class="s5-metric" style="visibility:hidden;">&nbsp;</div>
-        <span class="s5-col-label">01 — Producto Versátil</span>
-        <div class="s5-col-title">Un diseño para cada cliente</div>
-        <p class="body on-dark">Diseños pensados para impactar tres públicos a la vez —bebés, jóvenes y mamás—: un surtido versátil que mantiene la góndola fresca y le da a cada cliente un motivo para volver.</p>
-      </div>
-      <div class="s5-col">
-        <div class="s5-metric">100<em>%</em></div>
-        <span class="s5-col-label">02 — Empaque seguro</span>
-        <div class="s5-col-title">Sellado y seguro</div>
-        <p class="body on-dark">Cada caja llega sellada e inviolable: cuida la higiene del producto y llega lista para tu góndola, con anclaje antirrobo en el exhibidor y compatible con etiquetas EAS.</p>
-      </div>
-      <div class="s5-col">
-        <div class="s5-metric"><em>∞</em></div>
-        <span class="s5-col-label">03 — Sin vencimiento</span>
-        <div class="s5-col-title">No caduca</div>
-        <p class="body on-dark">Al no ser perecedero, el surtido no vence ni se degrada en góndola: rota a tu ritmo, sin presión de liquidar por temporada.</p>
-      </div>
-    </div>
-
-    <div class="foot-row" style="position:relative;z-index:2;">
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Sin vencimiento · alta confianza de categoría</span>
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.28);">Pürly™ · 2026</span>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-     S6 · UBICACIÓN & EXHIBICIÓN
-     ═══════════════════════════════════════════════ -->
-<section class="slide s6" id="slide-6">
-  <div class="wm-gota" style="right:-70px;top:50%;transform:translateY(-50%);opacity:.038;" aria-hidden="true">
-    <svg width="440" height="440" viewBox="0 0 1080 1080"><use href="#gota" fill="#1A1510"/></svg>
-  </div>
-  <span class="side-label" style="left:22px;top:50%;transform:translateY(-50%) rotate(180deg);">
-    Ubicación · Exhibición · Punto de venta ideal
-  </span>
-
-  <div class="pad">
-    <div class="head-row">
-      <div>
-        <span class="kicker" style="margin-bottom:12px;">(06) — Ubicación &amp; exhibición</span>
-        <h2 class="h2" style="font-size:clamp(28px,3.6vw,46px);white-space:nowrap;">Dónde vive Pürly en el <em>punto de venta</em>.</h2>
-      </div>
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Sugerencia de exhibición</span>
-    </div>
-
-    <div class="s6-panels">
-      <div class="gondola-zone">
-        <div class="gondola-text">
-          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Zona caja</span>
-          <div class="s6-panel-title">Compra por impulso</div>
-          <p class="body" style="margin-top:10px;">Ticket bajo, decisión rápida. El cliente la ve al pagar y la lleva consigo.</p>
-        </div>
-        <div class="gondola-photos-wrap two-photos">
-          <div class="gondola-photo-frame">
-            <img src="img-caja1.jpg" class="gondola-photo" alt="Caja - Compra por impulso" loading="lazy">
-          </div>
-          <div class="gondola-photo-frame">
-            <img src="img-caja2.jpg" class="gondola-photo" alt="Caja - Compra por impulso" loading="lazy">
-          </div>
-        </div>
-      </div>
-      <div class="gondola-zone">
-        <div class="gondola-text">
-          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Cuidado personal</span>
-          <div class="s6-panel-title">Góndola dermo</div>
-          <p class="body" style="margin-top:10px;">Contexto de piel sensible. Compra consciente por quien ya busca soluciones dermatológicas.</p>
-        </div>
-        <div class="gondola-photos-wrap one-photo">
-          <div class="gondola-photo-frame">
-            <img src="img-belleza.jpg" class="gondola-photo" alt="Zona Belleza" loading="lazy">
-          </div>
-        </div>
-      </div>
-      <div class="gondola-zone">
-        <div class="gondola-text">
-          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Bebé / mamá</span>
-          <div class="s6-panel-title">Sección infantil</div>
-          <p class="body" style="margin-top:10px;">Primera perforación, regalo de bebé. Decisión emocional de alta confianza de marca.</p>
-        </div>
-        <div class="gondola-photos-wrap two-photos">
-          <div class="gondola-photo-frame">
-            <img src="img-bebes1.jpg" class="gondola-photo" alt="Línea Bebé" loading="lazy">
-          </div>
-          <div class="gondola-photo-frame">
-            <img src="img-bebes2.jpg" class="gondola-photo" alt="Línea Bebé" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="border-top:1px solid var(--rule-med);padding-top:24px;margin-top:20px;display:flex;justify-content:space-between;align-items:center;">
-      <p class="lead" style="font-size:clamp(16px,1.8vw,22px);max-width:560px;">Display compacto, limpio y de marca — coherente con la estética <em>Pürly</em>.</p>
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">Material POP disponible bajo acuerdo</span>
-    </div>
-
-    <div class="foot-row">
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Propuesta adaptada para Euro Supermercados</span>
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Pürly™ · 2026</span>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
      S7 · CIERRE
      ═══════════════════════════════════════════════ -->
 <section class="slide s7" id="slide-7">
@@ -1625,7 +1686,7 @@ html, body {
 
   <div class="pad">
     <div class="head-row" style="position:relative;z-index:2;">
-      <span class="mono dim">(07) — Conclusiones</span>
+      <span class="mono dim">(08) — Conclusiones</span>
       <span class="mono dim">Pürly™ · 2026</span>
     </div>
 
@@ -1682,8 +1743,9 @@ html, body {
         </svg>
       </div>
       <div style="text-align:right;">
-        <div style="font-family:var(--f-display);font-style:italic;font-size:24px;color:var(--gold);margin-bottom:6px;">Gracias.</div>
-        <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.32);">@purlyconcept · Medellín, Colombia</span>
+        <div style="font-family:var(--f-display);font-style:italic;font-size:24px;color:var(--gold);margin-bottom:8px;">Gracias.</div>
+        <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.5);display:block;margin-bottom:3px;">purlyconcept.com · @purlyconcept</span>
+        <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.3);">Medellín, Colombia · Pürly™ 2026</span>
       </div>
     </div>
   </div>
