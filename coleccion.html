@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Colección — Pūrly · Joyería Hipoalergénica</title>
-<meta name="description" content="Las tres presentaciones de packaging Pūrly: Gold Bonded 18k, Plata Laminada y Surgical Steel 316L. 2 pares por caja.">
+<title>La Colección — Pūrly · Topos Hipoalergénicos</title>
+<meta name="description" content="Las tres presentaciones de packaging Pūrly: Gold Bonded 18K, Silver Bonded y Premium Steel 316L. 2 pares por caja.">
 <link rel="stylesheet" href="purly.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
@@ -93,8 +93,8 @@ body { background: var(--ink-soft); color: var(--cream); }
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.15fr 1fr;
-  align-items: end;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
   gap: 40px;
   position: relative;
   z-index: 2;
@@ -107,10 +107,9 @@ body { background: var(--ink-soft); color: var(--cream); }
   gap: 28px;
 }
 
-/* Asymmetric elevation — order: Oro(1) · Plata(2) · Acero(3) */
-.pkg-item.gold   { padding-bottom: 0;    order: 1; }
-.pkg-item.silver { padding-bottom: 64px; order: 2; }
-.pkg-item.steel  { padding-bottom: 32px; order: 3; }
+.pkg-item.gold   { padding-bottom: 0; order: 1; }
+.pkg-item.silver { padding-bottom: 0; order: 2; }
+.pkg-item.steel  { padding-bottom: 0; order: 3; }
 
 .pkg-img-wrap {
   position: relative;
@@ -132,7 +131,6 @@ body { background: var(--ink-soft); color: var(--cream); }
   object-fit: contain;
   display: block;
 }
-.pkg-item.gold .pkg-img { max-width: 300px; }
 
 .pkg-label {
   text-align: center;
@@ -352,11 +350,11 @@ body { background: var(--ink-soft); color: var(--cream); }
       <div class="pkg-img-wrap">
         <img class="pkg-img"
              src="pkg-silver.png"
-             alt="Pūrly Plata Laminada — 2 pares"
+             alt="Pūrly Silver Bonded — 2 pares"
              loading="lazy">
       </div>
       <div class="pkg-label">
-        <span class="pkg-mat">Plata Laminada</span>
+        <span class="pkg-mat">Silver Bonded</span>
         <span class="pkg-mat-full">Silver Bonded</span>
         <span class="pkg-sku">2 pares por caja</span>
       </div>
@@ -367,7 +365,7 @@ body { background: var(--ink-soft); color: var(--cream); }
       <div class="pkg-img-wrap">
         <img class="pkg-img"
              src="pkg-gold.png"
-             alt="Pūrly Gold Bonded 18k — Oro laminado 18k, 2 pares"
+             alt="Pūrly Gold Bonded 18K — 2 pares"
              loading="eager">
       </div>
       <div class="pkg-label">
@@ -382,12 +380,12 @@ body { background: var(--ink-soft); color: var(--cream); }
       <div class="pkg-img-wrap">
         <img class="pkg-img"
              src="pkg-steel.png"
-             alt="Pūrly Surgical Steel 316L — Acero quirúrgico 316L, 2 pares"
+             alt="Pūrly Premium Steel 316L — 2 pares"
              loading="lazy">
       </div>
       <div class="pkg-label">
-        <span class="pkg-mat">Acero · 316L</span>
-        <span class="pkg-mat-full">Surgical Steel</span>
+        <span class="pkg-mat">Premium Steel 316L</span>
+        <span class="pkg-mat-full">Premium Steel</span>
         <span class="pkg-sku">2 pares por caja</span>
       </div>
     </div>
@@ -461,7 +459,7 @@ body { background: var(--ink-soft); color: var(--cream); }
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Pūrly · Joyería Hipoalergénica · Medellín, Colombia</span>
+    <span>© 2026 Pūrly · Topos Hipoalergénicos · Medellín, Colombia</span>
   </div>
 </footer>
 
