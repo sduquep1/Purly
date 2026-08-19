@@ -420,14 +420,14 @@ html, body {
   grid-template-columns: clamp(200px, 22vw, 310px) 1fr;
   gap: 72px;
   flex: 1;
-  align-items: center;
+  align-items: start;
   margin-top: 36px;
 }
 .s4-margin-big {
   font-family: var(--f-display);
   font-weight: 200;
   font-style: italic;
-  font-size: clamp(160px, 20vw, 280px);
+  font-size: clamp(96px, 12vw, 168px);
   line-height: 0.9;
   letter-spacing: -0.04em;
   color: var(--gold);
@@ -468,9 +468,11 @@ html, body {
   font-size: 20px;
   font-weight: 400;
   color: rgba(244,238,228,0.82);
-  padding: 18px 0;
+  padding: 9px 0;
   vertical-align: middle;
 }
+.s4-table td.pres { text-align: left; font-family: var(--f-body); font-size: 14px; color: rgba(244,238,228,0.55); font-weight: 400; }
+.s4-table th.pres-th { text-align: left; }
 .s4-table td.num {
   font-family: var(--f-body);
   font-size: 17px;
@@ -1499,16 +1501,17 @@ html, body {
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-family:var(--f-mono);font-size:10px;letter-spacing:0.5px;color:rgba(244,238,228,0.62);">
     <span>Balín 3mm</span>
     <span>Balín 4mm</span>
-    <span>Circon 3mm</span>
-    <span>Circon 4mm</span>
-    <span>Esmeralda 3mm</span>
-    <span>Esmeralda 4mm</span>
-    <span>Candonga Mini</span>
-    <span>Cruz Pequeña</span>
-    <span>Corazón Mini</span>
-    <span>Huellita Mini</span>
-    <span>Luna</span>
+    <span>Circón blanco 3mm</span>
+    <span>Circón blanco 4mm</span>
+    <span>Circón verde 3mm</span>
+    <span>Circón verde 4mm</span>
+    <span>Huellita</span>
+    <span>Corazón</span>
+    <span>Cruz pequeña</span>
     <span>Estrella</span>
+    <span>Luna</span>
+    <span>Candonga mini</span>
+    <span style="color:var(--gold);">y otros de temporada</span>
   </div>
 </div>
       </div>
@@ -1606,8 +1609,8 @@ html, body {
         <span class="kicker on-dark" style="margin-bottom:12px;">(07) — Estructura de Precios</span>
         <h2 class="h2 on-dark">Margen <em>real</em><br>para el canal.</h2>
         <div style="margin-top:18px;display:inline-flex;align-items:baseline;gap:10px;padding:9px 16px;border:1px solid rgba(200,167,117,0.45);border-radius:3px;">
-          <span style="font-family:var(--f-display);font-size:22px;font-weight:500;color:var(--gold);">2 pares</span>
-          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.6);">por caja · los precios son por caja</span>
+          <span style="font-family:var(--f-display);font-size:20px;font-weight:500;color:var(--gold);">2 presentaciones</span>
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.6);">Caja × 1 par y Caja × 2 pares · más de 16 diseños</span>
         </div>
       </div>
       <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.32);">Cifras en COP · sin IVA</span>
@@ -1628,7 +1631,7 @@ html, body {
                 <thead>
                   <tr>
                     <th>Material</th>
-                    <th>Presentación</th>
+                    <th class="pres-th">Presentación</th>
                     <th>P. Neto al Canal</th>
                     <th>PVPS</th>
                     <th>Margen</th>
@@ -1637,42 +1640,42 @@ html, body {
                 <tbody>
                   <tr>
                     <td><div style="display:flex;align-items:center;gap:14px;"><div style="width:12px;height:12px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 35% 35%,#ECD08C,#C8A775 50%,#A88550 100%);"></div>Gold Bonded 18K</div></td>
-                    <td>Caja × 1 par</td>
+                    <td class="pres">Caja × 1 par</td>
                     <td class="num">$15.500</td>
                     <td class="pvps">$22.650</td>
                     <td class="num" style="color:var(--gold);font-weight:500;">31,6%</td>
                   </tr>
                   <tr>
                     <td><div style="display:flex;align-items:center;gap:14px;"><div style="width:12px;height:12px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 35% 35%,#ECD08C,#C8A775 50%,#A88550 100%);"></div>Gold Bonded 18K</div></td>
-                    <td>Caja × 2 pares</td>
+                    <td class="pres">Caja × 2 pares</td>
                     <td class="num">$27.300</td>
                     <td class="pvps">$42.000</td>
                     <td class="num" style="color:var(--gold);font-weight:500;">35,0%</td>
                   </tr>
                   <tr>
                     <td><div style="display:flex;align-items:center;gap:14px;"><div style="width:12px;height:12px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 35% 35%,#F4F4F6,#CACACE 50%,#9A9EA2 100%);"></div>Silver Bonded</div></td>
-                    <td>Caja × 1 par</td>
+                    <td class="pres">Caja × 1 par</td>
                     <td class="num">$14.000</td>
                     <td class="pvps">$19.300</td>
                     <td class="num" style="color:var(--gold);font-weight:500;">27,5%</td>
                   </tr>
                   <tr>
                     <td><div style="display:flex;align-items:center;gap:14px;"><div style="width:12px;height:12px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 35% 35%,#F4F4F6,#CACACE 50%,#9A9EA2 100%);"></div>Silver Bonded</div></td>
-                    <td>Caja × 2 pares</td>
+                    <td class="pres">Caja × 2 pares</td>
                     <td class="num">$24.700</td>
                     <td class="pvps">$37.800</td>
                     <td class="num" style="color:var(--gold);font-weight:500;">34,7%</td>
                   </tr>
                   <tr>
                     <td><div style="display:flex;align-items:center;gap:14px;"><div style="width:12px;height:12px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 35% 35%,#DCE0E4,#AEB6BE 50%,#707880 100%);"></div>Premium Steel 316L</div></td>
-                    <td>Caja × 1 par</td>
+                    <td class="pres">Caja × 1 par</td>
                     <td class="num">$11.700</td>
                     <td class="pvps">$16.800</td>
                     <td class="num" style="color:var(--gold);font-weight:500;">30,4%</td>
                   </tr>
                   <tr>
                     <td><div style="display:flex;align-items:center;gap:14px;"><div style="width:12px;height:12px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 35% 35%,#DCE0E4,#AEB6BE 50%,#707880 100%);"></div>Premium Steel 316L</div></td>
-                    <td>Caja × 2 pares</td>
+                    <td class="pres">Caja × 2 pares</td>
                     <td class="num">$21.450</td>
                     <td class="pvps">$32.750</td>
                     <td class="num" style="color:var(--gold);font-weight:500;">34,5%</td>
@@ -1680,7 +1683,7 @@ html, body {
                 </tbody>
               </table>
               <div style="margin-top:14px;display:inline-block;padding:8px 14px;border:1px solid rgba(200,167,117,0.4);border-radius:3px;">
-                <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);">Todos los precios expresados SIN IVA · el IVA es adicional</span>
+                <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);">Precios expresados antes de IVA</span>
               </div>
 
         <div style="margin-top:18px;display:flex;gap:48px;border-top:1px solid rgba(244,238,228,0.12);padding-top:16px;">
