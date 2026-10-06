@@ -1,4 +1,9 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/gold-bonded", "destination": "/", "permanent": false },
+    { "source": "/silver", "destination": "/", "permanent": false },
+    { "source": "/steel-premium", "destination": "/", "permanent": false }
+  ]
 }
