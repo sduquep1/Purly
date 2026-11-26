@@ -2,8 +2,35 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/gold-bonded", "destination": "/", "permanent": false },
-    { "source": "/silver", "destination": "/", "permanent": false },
-    { "source": "/steel-premium", "destination": "/", "permanent": false }
+    {
+      "source": "/gold-bonded",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/silver",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/steel-premium",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/supermu",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/euro",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/maxiofertas",
+      "destination": "/",
+      "permanent": false
+    }
   ]
 }

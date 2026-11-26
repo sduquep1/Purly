@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<meta name="robots" content="noindex, nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pürly™ — Propuesta Euro Supermercados · 2026</title>
+<title>Pürly™ — Propuesta Supermú Supermercados · 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -83,6 +84,9 @@ html, body {
 .s5  { background: var(--ink); }
 .s6  { background: var(--paper); }
 .s7  { background: var(--ink); }
+.s8  { background: var(--paper); }
+.s9  { background: var(--ink); }
+.s10 { background: var(--cream); }
 
 /* ── PADDING WRAPPER ── */
 .pad {
@@ -420,7 +424,7 @@ html, body {
   grid-template-columns: clamp(200px, 22vw, 310px) 1fr;
   gap: 72px;
   flex: 1;
-  align-items: start;
+  align-items: center;
   margin-top: 36px;
 }
 .s4-margin-big {
@@ -471,8 +475,6 @@ html, body {
   padding: 13px 0;
   vertical-align: middle;
 }
-.s4-table td.pres { text-align: left; font-family: var(--f-body); font-size: 14px; color: rgba(244,238,228,0.55); font-weight: 400; }
-.s4-table th.pres-th { text-align: left; }
 .s4-table td.num {
   font-family: var(--f-body);
   font-size: 17px;
@@ -1082,7 +1084,7 @@ html, body {
   #slide-2 img:nth-child(2) { display: none !important; }
 }
 
-/* EURO — PKG IMAGES */
+/* SUPERMU — PKG IMAGES */
 .pkg-img-wrap {
   overflow: hidden;
   display: flex;
@@ -1106,7 +1108,7 @@ html, body {
   transform: scale(1.08);
 }
 
-/* EURO — FINAL CTA */
+/* SUPERMU — FINAL CTA */
 .deck-final-cta {
   display: flex;
   flex-direction: column;
@@ -1183,7 +1185,7 @@ html, body {
   color: rgba(200,167,117,0.25);
 }
 
-/* EURO — CLIENT NAME */
+/* SUPERMU — CLIENT NAME */
 .deck-client-name {
   font-family: var(--f-mono);
   font-size: 10px;
@@ -1221,6 +1223,9 @@ html, body {
   <button class="dot" data-idx="5" aria-label="Slide 6"></button>
   <button class="dot" data-idx="6" aria-label="Slide 7"></button>
   <button class="dot" data-idx="7" aria-label="Slide 8"></button>
+  <button class="dot" data-idx="8" aria-label="Slide 9"></button>
+  <button class="dot" data-idx="9" aria-label="Slide 10"></button>
+  <button class="dot" data-idx="10" aria-label="Slide 11"></button>
 </nav>
 
 <button id="nav-prev" aria-label="Anterior">
@@ -1262,7 +1267,7 @@ html, body {
         </g>
       </svg>
       <span class="mono dim">Propuesta Comercial — Grandes Superficies</span>
-      <p class="deck-client-name">Presentado a: Euro Supermercados</p>
+      <p class="deck-client-name">Presentado a: Supermú Supermercados</p>
     </div>
 
     <div class="cover-center" style="position:relative;z-index:2;">
@@ -1291,7 +1296,7 @@ html, body {
 <section class="slide s2" id="slide-2">
   <div class="wm-text" style="font-size:clamp(110px,16vw,230px);right:38%;bottom:-20px;">Pürly</div>
   <div class="s2-img" aria-hidden="true">
-    <img src="img-hero.png" alt="" loading="lazy">
+    <img src="/img-hero.png" alt="" loading="lazy">
   </div>
 
   <div class="pad">
@@ -1357,7 +1362,7 @@ html, body {
       <div class="s3-mat">
         <div class="s3-pkg-img">
           <div class="pkg-img-wrap">
-            <img src="pkg-gold.png" class="pkg-img" alt="Pürly Gold Bonded 18K" loading="lazy">
+            <img src="/pkg-gold.png" class="pkg-img" alt="Pürly Gold Bonded 18K" loading="lazy">
           </div>
         </div>
         <div class="s3-mat-name">Gold Bonded 18K</div>
@@ -1366,7 +1371,7 @@ html, body {
       <div class="s3-mat">
         <div class="s3-pkg-img">
           <div class="pkg-img-wrap">
-            <img src="pkg-silver.png" class="pkg-img" alt="Pürly Silver Bonded" loading="lazy">
+            <img src="/pkg-silver.png" class="pkg-img" alt="Pürly Silver Bonded" loading="lazy">
           </div>
         </div>
         <div class="s3-mat-name">Silver Bonded</div>
@@ -1375,7 +1380,7 @@ html, body {
       <div class="s3-mat">
         <div class="s3-pkg-img">
           <div class="pkg-img-wrap">
-            <img src="pkg-steel.png" class="pkg-img" alt="Pürly Premium Steel 316L" loading="lazy">
+            <img src="/pkg-steel.png" class="pkg-img" alt="Pürly Premium Steel 316L" loading="lazy">
           </div>
         </div>
         <div class="s3-mat-name">Premium Steel 316L</div>
@@ -1421,10 +1426,10 @@ html, body {
         </div>
         <div class="gondola-photos-wrap two-photos">
           <div class="gondola-photo-frame">
-            <img src="clientes/euro/caja-1.jpg" class="gondola-photo" alt="Caja - Compra por impulso" loading="lazy">
+            <img src="/clientes/supermu/caja-1.jpeg" class="gondola-photo" alt="Caja - Compra por impulso" loading="lazy">
           </div>
           <div class="gondola-photo-frame">
-            <img src="clientes/euro/caja-2.jpg" class="gondola-photo" alt="Caja - Compra por impulso" loading="lazy">
+            <img src="/clientes/supermu/caja-2.jpeg" class="gondola-photo" alt="Caja - Compra por impulso" loading="lazy">
           </div>
         </div>
       </div>
@@ -1436,7 +1441,7 @@ html, body {
         </div>
         <div class="gondola-photos-wrap one-photo">
           <div class="gondola-photo-frame">
-            <img src="clientes/euro/belleza.jpg" class="gondola-photo" alt="Zona Belleza" loading="lazy">
+            <img src="/clientes/supermu/belleza.jpeg" class="gondola-photo" alt="Zona Belleza" loading="lazy">
           </div>
         </div>
       </div>
@@ -1446,12 +1451,9 @@ html, body {
           <div class="s6-panel-title">Sección infantil</div>
           <p class="body" style="margin-top:10px;">Primera perforación, regalo de bebé. Decisión emocional de alta confianza de marca.</p>
         </div>
-        <div class="gondola-photos-wrap two-photos">
+        <div class="gondola-photos-wrap one-photo">
           <div class="gondola-photo-frame">
-            <img src="clientes/euro/bebes-1.jpg" class="gondola-photo" alt="Línea Bebé" loading="lazy">
-          </div>
-          <div class="gondola-photo-frame">
-            <img src="clientes/euro/bebes-2.jpg" class="gondola-photo" alt="Línea Bebé" loading="lazy">
+            <img src="/clientes/supermu/bebes-1.jpeg" class="gondola-photo" alt="Línea Bebé" loading="lazy">
           </div>
         </div>
       </div>
@@ -1463,7 +1465,7 @@ html, body {
     </div>
 
     <div class="foot-row">
-      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Propuesta adaptada para Euro Supermercados</span>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Propuesta adaptada para Supermú Supermercados</span>
       <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);opacity:.5;">Pürly™ · 2026</span>
     </div>
   </div>
@@ -1501,17 +1503,16 @@ html, body {
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-family:var(--f-mono);font-size:10px;letter-spacing:0.5px;color:rgba(244,238,228,0.62);">
     <span>Balín 3mm</span>
     <span>Balín 4mm</span>
-    <span>Circón blanco 3mm</span>
-    <span>Circón blanco 4mm</span>
-    <span>Circón verde 3mm</span>
-    <span>Circón verde 4mm</span>
-    <span>Huellita</span>
-    <span>Corazón</span>
-    <span>Cruz pequeña</span>
-    <span>Estrella</span>
+    <span>Circon 3mm</span>
+    <span>Circon 4mm</span>
+    <span>Esmeralda 3mm</span>
+    <span>Esmeralda 4mm</span>
+    <span>Candonga Mini</span>
+    <span>Cruz Pequeña</span>
+    <span>Corazón Mini</span>
+    <span>Huellita Mini</span>
     <span>Luna</span>
-    <span>Candonga mini</span>
-    <span style="color:var(--gold);">y otros de temporada</span>
+    <span>Estrella</span>
   </div>
 </div>
       </div>
@@ -1615,9 +1616,9 @@ html, body {
     <div class="s4-layout">
       <!-- Big 35% -->
       <div>
-        <div style="font-family:var(--f-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:2px;">Desde</div>
-        <div class="s4-margin-big">30%</div>
-        <div class="s4-margin-label">Margen del canal<br>garantizado<br>hasta 35% en caja de 2 pares</div>
+        <div style="font-family:var(--f-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:2px;">Hasta</div>
+        <div class="s4-margin-big">35%</div>
+        <div class="s4-margin-label">Margen del canal<br>30% – 35%<br>según presentación</div>
       </div>
 
       <!-- Table -->
@@ -1708,6 +1709,168 @@ html, body {
 <!-- ═══════════════════════════════════════════════
      S7 · CIERRE
      ═══════════════════════════════════════════════ -->
+<!-- =====================  (08) PLAN DE CRECIMIENTO  ===================== -->
+<section class="slide s8" id="slide-8">
+  <span class="side-label" style="left:22px;top:50%;transform:translateY(-50%) rotate(180deg);color:rgba(200,167,117,0.45);">
+    Plan de crecimiento · Tres palancas
+  </span>
+
+  <div class="pad">
+    <div class="head-row">
+      <div>
+        <span class="kicker" style="margin-bottom:12px;">(08) — Plan de crecimiento</span>
+        <h2 class="h2">Tres palancas,<br>un mismo <em>disparador</em>.</h2>
+      </div>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);max-width:210px;text-align:right;line-height:1.7;">Todo se activa con<br>una sola cosa: tu compra</span>
+    </div>
+
+    <p class="lead" style="max-width:660px;margin-top:18px;font-size:clamp(15px,1.6vw,20px);">Pürly no entrega una lista de precios y se va. Entre más alto el hito de compra, más fuerte entramos a mover el producto —y mejor queda el precio de tu siguiente pedido—.</p>
+
+    <div style="flex:1;display:flex;align-items:center;">
+      <div class="plan-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:56px;width:100%;">
+        <div>
+          <div style="font-family:var(--f-display);font-style:italic;font-size:46px;line-height:1;color:var(--gold);margin-bottom:16px;">01</div>
+          <div style="font-family:var(--f-display);font-size:21px;font-weight:500;color:var(--ink);margin-bottom:10px;line-height:1.2;">Medios digitales</div>
+          <div style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Trae gente a la tienda</div>
+          <p style="font-family:var(--f-body);font-size:13px;font-weight:300;line-height:1.6;color:var(--muted);">Contenido de creadores con pauta paga detrás. Cada hito desbloquea más alcance, con una meta de visualizaciones que se puede medir.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--f-display);font-style:italic;font-size:46px;line-height:1;color:var(--gold);margin-bottom:16px;">02</div>
+          <div style="font-family:var(--f-display);font-size:21px;font-weight:500;color:var(--ink);margin-bottom:10px;line-height:1.2;">Marketing relacional</div>
+          <div style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Mueve lo que ya está en góndola</div>
+          <p style="font-family:var(--f-body);font-size:13px;font-weight:300;line-height:1.6;color:var(--muted);">WhatsApp, email y SMS sobre la base de datos de Supermú, segmentada. Pürly pone el contenido; la relación con tu cliente sigue siendo tuya.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--f-display);font-style:italic;font-size:46px;line-height:1;color:var(--gold);margin-bottom:16px;">03</div>
+          <div style="font-family:var(--f-display);font-size:21px;font-weight:500;color:var(--ink);margin-bottom:10px;line-height:1.2;">Descuentos por hito</div>
+          <div style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Premia el volumen</div>
+          <p style="font-family:var(--f-body);font-size:13px;font-weight:300;line-height:1.6;color:var(--muted);">Un porcentaje que baja el costo de tu siguiente pedido. No es una promoción suelta: es una escalera que sube contigo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(26,21,16,0.12);padding-top:16px;">
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);">Tráfico · Rotación · Precio — las tres empujan el mismo número</span>
+    </div>
+  </div>
+</section>
+
+<!-- =====================  (09) HITOS Y BENEFICIOS  ===================== -->
+<section class="slide s9" id="slide-9">
+  <span class="side-label" style="right:22px;top:50%;transform:translateY(-50%) rotate(180deg);color:rgba(200,167,117,0.25);">
+    Hitos de compra · Beneficios · Escalera comercial
+  </span>
+
+  <div class="pad">
+    <div class="head-row">
+      <div>
+        <span class="kicker on-dark" style="margin-bottom:12px;">(09) — Hitos y beneficios</span>
+        <h2 class="h2 on-dark">Entre más <em>compras</em>,<br>más te devolvemos.</h2>
+      </div>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.32);">Cifras en COP · sin IVA</span>
+    </div>
+
+    <p class="lead on-dark" style="max-width:640px;margin-top:18px;font-size:clamp(15px,1.6vw,20px);">El hito se mide sobre tu compra acumulada. Al alcanzarlo se activan las dos cosas a la vez: <em>el descuento del siguiente pedido</em> y la inversión en medios.</p>
+
+    <div style="flex:1;display:flex;align-items:center;">
+      <table class="s4-table">
+        <thead>
+          <tr>
+            <th>Hito de compra</th>
+            <th>Descuento · siguiente pedido</th>
+            <th>Medios digitales que desbloquea</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:14px;">
+                <div style="width:12px;height:12px;border-radius:50%;flex-shrink:0;background:rgba(200,167,117,0.35);"></div>
+                $50.000.000
+              </div>
+            </td>
+            <td class="num">1,5%</td>
+            <td class="pvps" style="font-size:15px;">1 UGC con pauta paga</td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:14px;">
+                <div style="width:12px;height:12px;border-radius:50%;flex-shrink:0;background:rgba(200,167,117,0.65);"></div>
+                $80.000.000
+              </div>
+            </td>
+            <td class="num">3%</td>
+            <td class="pvps" style="font-size:15px;">1 UGC de mayor alcance, o 3 pequeños — todos con pauta</td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:14px;">
+                <div style="width:12px;height:12px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 35% 35%,#ECD08C,#C8A775 50%,#A88550 100%);"></div>
+                $110.000.000
+              </div>
+            </td>
+            <td class="num">5%</td>
+            <td class="pvps" style="font-size:15px;">1 UGC de alto alcance, o 5 pequeños — con inversión superior</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display:flex;gap:48px;border-top:1px solid rgba(244,238,228,0.12);padding-top:16px;align-items:flex-start;">
+      <div style="flex:1;">
+        <span class="mono gold-lite" style="display:block;margin-bottom:4px;">Siempre, sin hito</span>
+        <span style="font-family:var(--f-mono);font-size:8.5px;letter-spacing:1px;color:rgba(244,238,228,0.32);">Pürly mantiene presencia constante en redes con creadores de alto alcance</span>
+      </div>
+      <div style="flex:1;">
+        <span class="mono gold-lite" style="display:block;margin-bottom:4px;">UGC</span>
+        <span style="font-family:var(--f-mono);font-size:8.5px;letter-spacing:1px;color:rgba(244,238,228,0.32);">Contenido hecho por creadores, con presupuesto de pauta y meta de visualizaciones</span>
+      </div>
+    </div>
+
+    <p class="s4-footnote">* Hitos, porcentajes, presupuestos de pauta y metas de alcance son cifras de referencia para esta conversación. Se cierran con el análisis de volumen y la negociación.</p>
+  </div>
+</section>
+
+<!-- =====================  (10) MARKETING RELACIONAL  ===================== -->
+<section class="slide s10" id="slide-10">
+  <span class="side-label" style="left:22px;top:50%;transform:translateY(-50%) rotate(180deg);color:rgba(200,167,117,0.45);">
+    Marketing relacional · WhatsApp · Email · SMS
+  </span>
+
+  <div class="pad">
+    <div class="head-row">
+      <div>
+        <span class="kicker" style="margin-bottom:12px;">(10) — Marketing relacional</span>
+        <h2 class="h2">Hablarle a quien<br>ya te <em>compra</em>.</h2>
+      </div>
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);max-width:210px;text-align:right;line-height:1.7;">Sobre tu base de datos,<br>segmentada</span>
+    </div>
+
+    <p class="lead" style="max-width:660px;margin-top:18px;font-size:clamp(15px,1.6vw,20px);">La publicidad trae gente nueva; esto mueve a la que ya entra a Supermú. Segmentada por edad, género, frecuencia de compra y ubicación —con campañas dirigidas a puntos de venta específicos—.</p>
+
+    <div style="flex:1;display:flex;align-items:center;">
+      <div class="canal-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:56px;width:100%;">
+        <div>
+          <div style="font-family:var(--f-display);font-style:italic;font-size:40px;line-height:1;color:var(--gold);margin-bottom:14px;">WhatsApp</div>
+          <p style="font-family:var(--f-body);font-size:13px;font-weight:300;line-height:1.6;color:var(--muted);">Mensaje corto con una imagen. Es el canal de lo inmediato: una promoción que arranca hoy.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--f-display);font-style:italic;font-size:40px;line-height:1;color:var(--gold);margin-bottom:14px;">Email</div>
+          <p style="font-family:var(--f-body);font-size:13px;font-weight:300;line-height:1.6;color:var(--muted);">La pieza elaborada: producto, materiales y novedades, con el espacio para explicar por qué es hipoalergénica.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--f-display);font-style:italic;font-size:40px;line-height:1;color:var(--gold);margin-bottom:14px;">SMS</div>
+          <p style="font-family:var(--f-body);font-size:13px;font-weight:300;line-height:1.6;color:var(--muted);">Puntual y geolocalizado. Para llevar a alguien que está cerca al punto de venta que le queda a la mano.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(26,21,16,0.12);padding-top:16px;">
+      <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);">Pürly pone el contenido y la pauta — la relación con tu cliente sigue siendo de Supermú</span>
+    </div>
+  </div>
+</section>
+
 <section class="slide s7" id="slide-7">
   <div style="position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(200,167,117,0.11) 0%,transparent 60%);pointer-events:none;" aria-hidden="true"></div>
   <div class="wm-gota" style="right:-110px;top:50%;transform:translateY(-50%);opacity:.055;" aria-hidden="true">
@@ -1719,7 +1882,7 @@ html, body {
 
   <div class="pad">
     <div class="head-row" style="position:relative;z-index:2;">
-      <span class="mono dim">(08) — Conclusiones</span>
+      <span class="mono dim">(11) — Conclusiones</span>
       <span class="mono dim">Pürly™ · 2026</span>
     </div>
 
@@ -1729,7 +1892,7 @@ html, body {
       </h1>
       <div class="s7-metrics">
         <div class="s7-metric">
-          <div class="s7-metric-num">27–35<em>%</em></div>
+          <div class="s7-metric-num">35<em>%</em></div>
           <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,228,0.35);">Margen canal</span>
         </div>
         <div class="s7-metric">
