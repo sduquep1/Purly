@@ -5,13 +5,13 @@ se sube se sirve, así que este archivo no puede vivir desplegado.
 
 | Cliente | Enlace |
 |---|---|
-| Supermú | https://www.purlyconcept.com/p/supermu-w46q94vjh9 |
-| Euro | https://www.purlyconcept.com/p/euro-fzscfvx9c8 |
-| Maxiofertas | https://www.purlyconcept.com/p/maxiofertas-msa9zdhu74 |
+| Supermú | https://www.purlyconcept.com/supermu-w46q94vjh9 |
+| Euro | https://www.purlyconcept.com/euro-fzscfvx9c8 |
+| Maxiofertas | https://www.purlyconcept.com/maxiofertas-msa9zdhu74 |
 
 El nombre va delante para identificarlos sin abrirlos; **lo que protege es el
 código**, no el nombre. Quien tenga el de Euro sabe que el patrón es
-`/p/<cliente>-<código>`, y aun así no puede llegar al de Maxiofertas: tendría
+`/<cliente>-<código>`, y aun así no puede llegar al de Maxiofertas: tendría
 que adivinar diez caracteres.
 
 Los códigos no llevan `0`, `O`, `1`, `l` ni `I`, por si hay que dictar uno.
