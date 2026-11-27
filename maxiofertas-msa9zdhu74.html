@@ -780,7 +780,21 @@ html, body {
    MOBILE — max-width: 768px
    Slides flow vertically. Scroll natural. UX tactil.
    ═══════════════════════════════════════════════════ */
+
+/* Rejillas de columnas: van en CLASE y no en estilo en linea, porque a un
+   estilo en linea no lo alcanza ninguna media query — y en el telefono las
+   columnas se salian del borde: en la de canales, "SMS" no aparecia. */
+.merma-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; width: 100%; }
+.plan-grid  { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px; width: 100%; }
+.canal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px; width: 100%; }
+
 @media (max-width: 768px) {
+
+    /* ── Rejillas en una columna: en el telefono no caben tres ni cuatro ── */
+    .merma-grid { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+    .plan-grid,
+    .canal-grid { grid-template-columns: 1fr !important; gap: 30px !important; }
+
 
   /* ── SCROLL LAYOUT ── */
   html {
@@ -1556,7 +1570,7 @@ html, body {
     <p class="lead on-dark" style="max-width:640px;margin-top:18px;font-size:clamp(15px,1.6vw,20px);">Cada caja llega equipada para reducir la pérdida en tu operación —del exhibidor a la registradora—. No asumimos reposición: <em>la prevenimos en el empaque</em>.</p>
 
     <div style="flex:1;display:flex;align-items:center;">
-      <div class="merma-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px;width:100%;">
+      <div class="merma-grid">
         <div>
           <div style="font-family:var(--f-display);font-style:italic;font-size:46px;line-height:1;color:var(--gold);margin-bottom:16px;">01</div>
           <div style="font-family:var(--f-display);font-size:19px;font-weight:500;color:var(--cream);margin-bottom:9px;line-height:1.2;">Empaque inviolable</div>
